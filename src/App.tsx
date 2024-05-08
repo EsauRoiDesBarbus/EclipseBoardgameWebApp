@@ -28,8 +28,10 @@ type Ship = {
   missile: Omit<Weapon, 'cannonP'>
 }
 
+type FormData = { ships: Ship[] }
+
 function App() {
-  const { register, control, handleSubmit, getValues, setValue } = useForm<{ ships: Ship[] }>({
+  const { register, control, handleSubmit, getValues, setValue } = useForm<FormData>({
     defaultValues: {
       ships: Array(4).fill({
         initiative: 0,
@@ -58,7 +60,7 @@ function App() {
     name: 'ships',
   })
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormData) => {
     console.log(data)
   }
 
