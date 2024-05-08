@@ -83,12 +83,18 @@ function App() {
             gap: 16,
           }}>
           <label>Ship {index + 1}</label>
-          <select {...register(`ships.${index}.type`)}>
-            <option value="interceptor">Interceptor</option>
-            <option value="cruiser">Cruiser</option>
-            <option value="dreadnought">Dreadnought</option>
-            <option value="starbase">Star base</option>
-          </select>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <label htmlFor={`ships.${index}.type`}>Type</label>
+            <select
+              {...register(`ships.${index}.type`)}
+              id={`ships.${index}.type`}
+              style={{ display: 'flex', flexGrow: 1 }}>
+              <option value="interceptor">Interceptor</option>
+              <option value="cruiser">Cruiser</option>
+              <option value="dreadnought">Dreadnought</option>
+              <option value="starbase">Star base</option>
+            </select>
+          </div>
           <NumberInput
             {...register(`ships.${index}.initiative`)}
             id={`ships.${index}.initiative`}
