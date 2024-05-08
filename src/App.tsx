@@ -16,6 +16,7 @@ import PinkWeaponImage from './assets/weaponPink.png'
 
 import type { FormValues } from './types'
 import { getShipImage } from './getShipImage'
+import { getWinChance } from './api/getWinChance'
 
 const defaultShip = {
   count: 1,
@@ -57,7 +58,7 @@ function App() {
   const fields = { attackerShips: attackerShipFields, defenderShips: defenderShipFields }
 
   const onSubmit = (data: FormValues) => {
-    console.log(data)
+    getWinChance(data)
   }
 
   return (
