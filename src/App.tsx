@@ -43,7 +43,7 @@ type Ship = {
 type FormData = { ships: Ship[] }
 
 function App() {
-  const { register, control, handleSubmit, getValues, setValue, watch } = useForm<FormData>({
+  const { register, control, handleSubmit, watch } = useForm<FormData>({
     defaultValues: {
       ships: Array(2).fill({
         count: 1,
@@ -75,22 +75,6 @@ function App() {
 
   const onSubmit = (data: FormData) => {
     console.log(data)
-  }
-
-  const incrementValue = (
-    field: `ships.${number}.${Exclude<keyof Ship, 'type' | 'cannon' | 'missile'>}`
-  ) => {
-    const currentHullValue = getValues(field)
-    setValue(field, Number(currentHullValue) + 1)
-  }
-
-  const incrementArmamentValue = (
-    field:
-      | `ships.${number}.cannon.${keyof Weapon}`
-      | `ships.${number}.missile.${Exclude<keyof Weapon, 'pink'>}`
-  ) => {
-    const currentHullValue = getValues(field)
-    setValue(field, Number(currentHullValue) + 1)
   }
 
   return (
@@ -129,44 +113,39 @@ function App() {
                 </select>
               </div>
               <NumberInput
-                {...register(`ships.${index}.count`)}
-                id={`ships.${index}.count`}
-                name="Number"
+                control={control}
+                name={`ships.${index}.count`}
+                label="Number"
                 accessibilityLabel="increase number of ships"
                 image={getShipImage(shipType)}
-                onIncrement={() => incrementValue(`ships.${index}.count`)}
               />
               <NumberInput
-                {...register(`ships.${index}.initiative`)}
-                id={`ships.${index}.initiative`}
-                name="Initiative"
+                control={control}
+                name={`ships.${index}.initiative`}
+                label="Initiative"
                 accessibilityLabel="increase initiative"
                 image={InitiativeImage}
-                onIncrement={() => incrementValue(`ships.${index}.initiative`)}
               />
               <NumberInput
-                {...register(`ships.${index}.hull`)}
-                id={`ships.${index}.hull`}
-                name="Hull"
+                control={control}
+                name={`ships.${index}.hull`}
+                label="Hull"
                 accessibilityLabel="increase hull"
                 image={HullImage}
-                onIncrement={() => incrementValue(`ships.${index}.hull`)}
               />
               <NumberInput
-                {...register(`ships.${index}.computer`)}
-                id={`ships.${index}.computer`}
-                name="Computer"
+                control={control}
+                name={`ships.${index}.computer`}
+                label="Computer"
                 accessibilityLabel="increase computer"
                 image={ComputerImage}
-                onIncrement={() => incrementValue(`ships.${index}.computer`)}
               />
               <NumberInput
-                {...register(`ships.${index}.shield`)}
-                id={`ships.${index}.shield`}
-                name="Shield"
+                control={control}
+                name={`ships.${index}.shield`}
+                label="Shield"
                 accessibilityLabel="increase shield"
                 image={ShieldImage}
-                onIncrement={() => incrementValue(`ships.${index}.shield`)}
               />
             </div>
             <div
@@ -182,61 +161,61 @@ function App() {
                 Cannons
               </label>
               <NumberInput
-                {...register(`ships.${index}.cannon.yellow`)}
+                control={control}
+                name={`ships.${index}.cannon.yellow`}
                 accessibilityLabel="increase yellow cannon"
                 image={YellowWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.yellow`)}
               />
               <NumberInput
-                {...register(`ships.${index}.cannon.orange`)}
+                control={control}
+                name={`ships.${index}.cannon.orange`}
                 accessibilityLabel="increase orange cannon"
                 image={OrangeWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.orange`)}
               />
               <NumberInput
-                {...register(`ships.${index}.cannon.blue`)}
+                control={control}
+                name={`ships.${index}.cannon.blue`}
                 accessibilityLabel="increase blue cannon"
                 image={BlueWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.blue`)}
               />
               <NumberInput
-                {...register(`ships.${index}.cannon.red`)}
+                control={control}
+                name={`ships.${index}.cannon.red`}
                 accessibilityLabel="increase red cannon"
                 image={RedWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.red`)}
               />
               <NumberInput
-                {...register(`ships.${index}.cannon.pink`)}
+                control={control}
+                name={`ships.${index}.cannon.pink`}
                 accessibilityLabel="increase rift cannon"
                 image={PinkWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.pink`)}
               />
               <label style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
                 Missiles
               </label>
               <NumberInput
-                {...register(`ships.${index}.missile.yellow`)}
+                control={control}
+                name={`ships.${index}.missile.yellow`}
                 accessibilityLabel="increase yellow missile"
                 image={YellowWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.missile.yellow`)}
               />
               <NumberInput
-                {...register(`ships.${index}.missile.orange`)}
+                control={control}
+                name={`ships.${index}.missile.orange`}
                 accessibilityLabel="increase orange missile"
                 image={OrangeWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.missile.orange`)}
               />
               <NumberInput
-                {...register(`ships.${index}.missile.blue`)}
+                control={control}
+                name={`ships.${index}.missile.blue`}
                 accessibilityLabel="increase blue missile"
                 image={BlueWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.missile.blue`)}
               />
               <NumberInput
-                {...register(`ships.${index}.missile.red`)}
+                control={control}
+                name={`ships.${index}.missile.red`}
                 accessibilityLabel="increase red missile"
                 image={RedWeaponImage}
-                onIncrement={() => incrementArmamentValue(`ships.${index}.missile.red`)}
               />
             </div>
           </div>

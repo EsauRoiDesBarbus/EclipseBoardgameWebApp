@@ -1,19 +1,31 @@
-import { ComponentProps, FunctionComponent, forwardRef } from 'react'
+import { ComponentProps, FunctionComponent } from 'react'
+import { useController } from 'react-hook-form'
 
 const BUTTON_SIZE = 30
 
 type Props = {
-  id?: string
-  name?: string
+  name: string
+  control: any
+  label?: string
   accessibilityLabel: string
   image: any
-  onIncrement: () => void
 } & ComponentProps<'input'>
 
-type Ref = HTMLInputElement
+export const NumberInput: FunctionComponent<Props> = ({
+  name,
+  control,
+  label,
+  accessibilityLabel,
+  image,
+  ...inputProps
+}) => {
+  const { field } = useController({ name, control })
 
-export const NumberInput: FunctionComponent<Props> = forwardRef<Ref, Props>(
-  ({ id, name, accessibilityLabel, image, onIncrement, ...inputProps }, ref) => (
+  const onIncrement = () => {
+    field.onChange((field.value || 0) + 1)
+  }
+
+  return (
     <div
       style={{
         display: 'flex',
@@ -22,9 +34,9 @@ export const NumberInput: FunctionComponent<Props> = forwardRef<Ref, Props>(
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-      {name && id ? <label htmlFor={id}>{name}</label> : null}
+      {label ? <label htmlFor={name}>{label}</label> : null}
       <div style={{ display: 'flex', gap: 8 }}>
-        <input id={id} type="number" ref={ref} min={0} {...inputProps} style={{ width: 30 }} />
+        <input id={name} type="number" min={0} {...field} {...inputProps} style={{ width: 30 }} />
         <button
           type="button"
           onClick={onIncrement}
@@ -34,4 +46,4 @@ export const NumberInput: FunctionComponent<Props> = forwardRef<Ref, Props>(
       </div>
     </div>
   )
-)
+}
