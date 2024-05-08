@@ -14,31 +14,8 @@ import BlueWeaponImage from './assets/weaponBlue.png'
 import RedWeaponImage from './assets/weaponRed.png'
 import PinkWeaponImage from './assets/weaponPink.png'
 
-import InterceptorImage from './assets/ship/interceptor.png'
-import CruiserImage from './assets/ship/cruiser.png'
-import DreadnoughtImage from './assets/ship/dreadnought.png'
-import StarbaseImage from './assets/ship/starbase.png'
-
-type Weapon = {
-  yellow: number
-  orange: number
-  blue: number
-  red: number
-  pink: number
-}
-
-type ShipType = 'interceptor' | 'cruiser' | 'dreadnought' | 'starbase'
-
-type Ship = {
-  count: number
-  type: ShipType
-  initiative: number
-  hull: number
-  computer: number
-  shield: number
-  cannon: Weapon
-  missile: Omit<Weapon, 'pink'>
-}
+import type { Ship } from './types'
+import { getShipImage } from './getShipImage'
 
 type FormData = { ships: Ship[] }
 
@@ -224,21 +201,6 @@ function App() {
       <button type="submit">Submit</button>
     </form>
   )
-}
-
-const getShipImage = (shipType: ShipType) => {
-  switch (shipType) {
-    case 'interceptor':
-      return InterceptorImage
-    case 'cruiser':
-      return CruiserImage
-    case 'dreadnought':
-      return DreadnoughtImage
-    case 'starbase':
-      return StarbaseImage
-    default:
-      return InterceptorImage
-  }
 }
 
 export default App
