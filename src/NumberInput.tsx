@@ -1,14 +1,24 @@
 import { ComponentProps, FunctionComponent } from 'react'
-import { useController } from 'react-hook-form'
+import { UseControllerProps, useController } from 'react-hook-form'
+import type { FormValues } from './types'
 
 const BUTTON_SIZE = 30
 
+type NumberFieldNames = Exclude<
+  UseControllerProps<FormValues>['name'],
+  | 'ships'
+  | `ships.${number}`
+  | `ships.${number}.type`
+  | `ships.${number}.cannon`
+  | `ships.${number}.missile`
+>
+
 type Props = {
-  name: string
-  control: any
+  name: NumberFieldNames
+  control: UseControllerProps<FormValues>['control']
   label?: string
   accessibilityLabel: string
-  image: any
+  image: string
 } & ComponentProps<'input'>
 
 export const NumberInput: FunctionComponent<Props> = ({

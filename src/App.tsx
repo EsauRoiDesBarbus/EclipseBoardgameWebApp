@@ -14,13 +14,11 @@ import BlueWeaponImage from './assets/weaponBlue.png'
 import RedWeaponImage from './assets/weaponRed.png'
 import PinkWeaponImage from './assets/weaponPink.png'
 
-import type { Ship } from './types'
+import type { FormValues } from './types'
 import { getShipImage } from './getShipImage'
 
-type FormData = { ships: Ship[] }
-
 function App() {
-  const { register, control, handleSubmit, watch } = useForm<FormData>({
+  const { register, control, handleSubmit, watch } = useForm<FormValues>({
     defaultValues: {
       ships: Array(2).fill({
         count: 1,
@@ -50,7 +48,7 @@ function App() {
     name: 'ships',
   })
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: FormValues) => {
     console.log(data)
   }
 

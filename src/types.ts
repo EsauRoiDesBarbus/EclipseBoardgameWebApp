@@ -18,3 +18,5 @@ export type Ship = {
   cannon: Weapon
   missile: Omit<Weapon, 'pink'>
 }
+
+export type FormValues = { ships: Ship[] }
