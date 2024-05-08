@@ -46,7 +46,14 @@ export const NumberInput: FunctionComponent<Props> = ({
       }}>
       {label ? <label htmlFor={name}>{label}</label> : null}
       <div style={{ display: 'flex', gap: 8 }}>
-        <input id={name} type="number" min={0} {...field} {...inputProps} style={{ width: 30 }} />
+        <input
+          id={name}
+          type="number"
+          min={0}
+          {...field}
+          {...inputProps}
+          style={{ margin: 3, maxWidth: BUTTON_SIZE - 6, textAlign: 'center' }}
+        />
         <button
           type="button"
           onClick={onIncrement}
