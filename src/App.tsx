@@ -8,12 +8,18 @@ import HullImage from './assets/hull.png'
 import ComputerImage from './assets/computer.png'
 import ShieldImage from './assets/shield.png'
 
+import YellowWeaponImage from './assets/weaponYellow.png'
+import OrangeWeaponImage from './assets/weaponOrange.png'
+import BlueWeaponImage from './assets/weaponBlue.png'
+import RedWeaponImage from './assets/weaponRed.png'
+import PinkWeaponImage from './assets/weaponPink.png'
+
 type Weapon = {
-  cannonY: number
-  cannonO: number
-  cannonB: number
-  cannonR: number
-  cannonP: number
+  yellow: number
+  orange: number
+  blue: number
+  red: number
+  pink: number
 }
 
 type ShipType = 'interceptor' | 'cruiser' | 'dreadnought' | 'starbase'
@@ -24,8 +30,8 @@ type Ship = {
   hull: number
   computer: number
   shield: number
-  weapon: Weapon
-  missile: Omit<Weapon, 'cannonP'>
+  cannon: Weapon
+  missile: Omit<Weapon, 'pink'>
 }
 
 type FormData = { ships: Ship[] }
@@ -38,18 +44,18 @@ function App() {
         hull: 0,
         computer: 0,
         shield: 0,
-        weapon: {
-          cannonY: 0,
-          cannonO: 0,
-          cannonB: 0,
-          cannonR: 0,
-          cannonP: 0,
+        cannon: {
+          yellow: 0,
+          orange: 0,
+          blue: 0,
+          red: 0,
+          pink: 0,
         },
         missile: {
-          cannonY: 0,
-          cannonO: 0,
-          cannonB: 0,
-          cannonR: 0,
+          yellow: 0,
+          orange: 0,
+          blue: 0,
+          red: 0,
         },
       }),
     },
@@ -65,11 +71,34 @@ function App() {
   }
 
   const incrementValue = (
-    path: `ships.${number}.${Exclude<keyof Ship, 'type' | 'weapon' | 'missile'>}`
+    field: `ships.${number}.${Exclude<keyof Ship, 'type' | 'cannon' | 'missile'>}`
   ) => {
-    const currentHullValue = getValues(path)
-    setValue(path, Number(currentHullValue) + 1)
+    const currentHullValue = getValues(field)
+    setValue(field, Number(currentHullValue) + 1)
   }
+
+  const incrementArmamentValue = (
+    field:
+      | `ships.${number}.cannon.${keyof Weapon}`
+      | `ships.${number}.missile.${Exclude<keyof Weapon, 'pink'>}`
+  ) => {
+    const currentHullValue = getValues(field)
+    setValue(field, Number(currentHullValue) + 1)
+  }
+
+  // const incrementArmamentValue = (
+  //   field: `ships.${number}.${'weapon' | 'missile'}`,
+  //   weapon: keyof Weapon
+  // ) => {
+  //   if (field.endsWith('missile') && weapon === 'pink') return
+
+  //   const newPath = `${field}.${weapon}` as Exclude<
+  //     `ships.${number}.${'weapon' | 'missile'}.${keyof Weapon}`,
+  //     `ships.${number}.missile.pink` // there is no pink missile
+  //   >
+  //   const currentHullValue = getValues(newPath)
+  //   setValue(newPath, Number(currentHullValue) + 1)
+  // }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -83,12 +112,18 @@ function App() {
             gap: 16,
           }}>
           <label>Ship {index + 1}</label>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 8,
+              justifyContent: 'space-between',
+            }}>
             <label htmlFor={`ships.${index}.type`}>Type</label>
             <select
               {...register(`ships.${index}.type`)}
               id={`ships.${index}.type`}
-              style={{ display: 'flex', flexGrow: 1 }}>
+              style={{ display: 'flex', flexGrow: 1, maxHeight: 36 }}>
               <option value="interceptor">Interceptor</option>
               <option value="cruiser">Cruiser</option>
               <option value="dreadnought">Dreadnought</option>
@@ -127,8 +162,75 @@ function App() {
             image={ShieldImage}
             onIncrement={() => incrementValue(`ships.${index}.shield`)}
           />
-          {/* <input type="number" {...register(`ships.${index}.weapon`)} placeholder="Weapon" />
-          <input type="number" {...register(`ships.${index}.missile`)} placeholder="Missile" /> */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(6, 1fr)',
+              border: '1px solid white',
+              padding: 8,
+              gap: 16,
+            }}>
+            <label style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
+              Cannons
+            </label>
+            <NumberInput
+              {...register(`ships.${index}.cannon.yellow`)}
+              accessibilityLabel="increase yellow cannon"
+              image={YellowWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.yellow`)}
+            />
+            <NumberInput
+              {...register(`ships.${index}.cannon.orange`)}
+              accessibilityLabel="increase orange cannon"
+              image={OrangeWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.orange`)}
+            />
+            <NumberInput
+              {...register(`ships.${index}.cannon.blue`)}
+              accessibilityLabel="increase blue cannon"
+              image={BlueWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.blue`)}
+            />
+            <NumberInput
+              {...register(`ships.${index}.cannon.red`)}
+              accessibilityLabel="increase red cannon"
+              image={RedWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.red`)}
+            />
+            <NumberInput
+              {...register(`ships.${index}.cannon.pink`)}
+              accessibilityLabel="increase rift cannon"
+              image={PinkWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.cannon.pink`)}
+            />
+            <label style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
+              Missiles
+            </label>
+            <NumberInput
+              {...register(`ships.${index}.missile.yellow`)}
+              accessibilityLabel="increase yellow missile"
+              image={YellowWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.missile.yellow`)}
+            />
+            <NumberInput
+              {...register(`ships.${index}.missile.orange`)}
+              accessibilityLabel="increase orange missile"
+              image={OrangeWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.missile.orange`)}
+            />
+            <NumberInput
+              {...register(`ships.${index}.missile.blue`)}
+              accessibilityLabel="increase blue missile"
+              image={BlueWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.missile.blue`)}
+            />
+            <NumberInput
+              {...register(`ships.${index}.missile.red`)}
+              accessibilityLabel="increase red missile"
+              image={RedWeaponImage}
+              onIncrement={() => incrementArmamentValue(`ships.${index}.missile.red`)}
+            />
+          </div>
         </div>
       ))}
       <button type="submit">Submit</button>
