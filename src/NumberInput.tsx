@@ -21,7 +21,7 @@ export const NumberInput: FunctionComponent<Props> = forwardRef<Ref, Props>(
         <button
           type="button"
           onClick={onIncrement}
-          style={{ padding: 0, backgroundColor: '#FF0000' }}>
+          style={{ display: 'flex', padding: 2, backgroundColor: 'rgba(0,0,0,0)' }}>
           <img src={image} height={BUTTON_SIZE} width={BUTTON_SIZE} alt={accessibilityLabel} />
         </button>
       </div>
