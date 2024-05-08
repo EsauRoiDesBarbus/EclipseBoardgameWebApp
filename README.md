@@ -1,30 +1,9 @@
-# React + TypeScript + Vite
+# WebApp for a Eclipse board game simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application for a board game simulator. The game is called [Eclipse](https://boardgamegeek.com/boardgame/72125/eclipse) and it is a 4X game (eXplore, eXpand, eXploit, eXterminate). The game is played on a hexagonal grid and the players have to manage their resources, research new technologies, build ships and conquer new territories.
 
-Currently, two official plugins are available:
+This simulator gives the win rate of each player for a given ship battle. The simulator doesn't use a Monte Carlo method to simulate the battle, but it goes through a mathematical model to calculate the win rate.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Thanks to
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [Vite](https://vitejs.dev/) for the web application bundler
