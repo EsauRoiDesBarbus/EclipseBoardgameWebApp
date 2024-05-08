@@ -32,7 +32,7 @@ export const NumberInput: FunctionComponent<Props> = ({
   const { field } = useController({ name, control })
 
   const onIncrement = () => {
-    field.onChange((field.value || 0) + 1)
+    field.onChange((Number(field.value) || 0) + 1)
   }
 
   return (
