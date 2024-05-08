@@ -6,11 +6,12 @@ const BUTTON_SIZE = 30
 
 type NumberFieldNames = Exclude<
   UseControllerProps<FormValues>['name'],
-  | 'ships'
-  | `ships.${number}`
-  | `ships.${number}.type`
-  | `ships.${number}.cannon`
-  | `ships.${number}.missile`
+  | 'attackerShips'
+  | 'defenderShips'
+  | `${'attackerShips' | 'defenderShips'}.${number}`
+  | `${'attackerShips' | 'defenderShips'}.${number}.type`
+  | `${'attackerShips' | 'defenderShips'}.${number}.cannon`
+  | `${'attackerShips' | 'defenderShips'}.${number}.missile`
 >
 
 type Props = {
