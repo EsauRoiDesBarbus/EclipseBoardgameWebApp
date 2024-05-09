@@ -17,6 +17,7 @@ import PinkWeaponImage from './assets/weaponPink.png'
 import type { FormValues, SimulationResult } from './types'
 import { getShipImage } from './getShipImage'
 import { getSimulationResult } from './api/getSimulationResult'
+import { ProbabilityDiagram } from './ProbabilityDiagram'
 import { useState } from 'react'
 import { formatPercent } from './utils/formatPercent'
 
@@ -222,6 +223,7 @@ function App() {
         <div>
           <h2>Results</h2>
           <p>Attacker wins: {formatPercent(simulationResult.winChance)}</p>
+          <ProbabilityDiagram survivalChances={simulationResult.survivalChances} />
         </div>
       )}
     </form>
