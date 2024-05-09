@@ -57,8 +57,9 @@ function App() {
   })
   const fields = { attackerShips: attackerShipFields, defenderShips: defenderShipFields }
 
-  const onSubmit = (data: FormValues) => {
-    getWinChance(data)
+  const onSubmit = async (data: FormValues) => {
+    const winChance = getWinChance(data)
+    console.log(winChance)
   }
 
   return (
