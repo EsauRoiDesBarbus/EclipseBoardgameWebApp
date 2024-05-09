@@ -14,9 +14,11 @@ import BlueWeaponImage from './assets/weaponBlue.png'
 import RedWeaponImage from './assets/weaponRed.png'
 import PinkWeaponImage from './assets/weaponPink.png'
 
-import type { FormValues } from './types'
+import type { FormValues, SimulationResult } from './types'
 import { getShipImage } from './getShipImage'
-import { getWinChance } from './api/getWinChance'
+import { getSimulationResult } from './api/getSimulationResult'
+import { useState } from 'react'
+import { formatPercent } from './utils/formatPercent'
 
 const defaultShip = {
   count: 1,
@@ -40,6 +42,8 @@ const defaultShip = {
 }
 
 function App() {
+  const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
+
   const { register, control, handleSubmit, watch } = useForm<FormValues>({
     defaultValues: {
       attackerShips: Array(2).fill(defaultShip),
@@ -58,12 +62,12 @@ function App() {
   const fields = { attackerShips: attackerShipFields, defenderShips: defenderShipFields }
 
   const onSubmit = async (data: FormValues) => {
-    const winChance = getWinChance(data)
-    console.log(winChance)
+    const result = await getSimulationResult(data)
+    setSimulationResult(result)
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
       {(['attackerShips', 'defenderShips'] as const).map((shipType) => (
         <div key={shipType}>
           <h2>{shipType === 'attackerShips' ? 'Attack' : 'Defense'}</h2>
@@ -213,6 +217,13 @@ function App() {
       ))}
 
       <button type="submit">Submit</button>
+
+      {simulationResult && (
+        <div>
+          <h2>Results</h2>
+          <p>Attacker wins: {formatPercent(simulationResult.winChance)}</p>
+        </div>
+      )}
     </form>
   )
 }
