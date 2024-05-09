@@ -15,17 +15,18 @@ export const getWinChance = ({attackerShips, defenderShips}: Params) => {
 
   console.log(ships)
 
-  // return fetch(`${API_BASE_URL}/winChance`, {
-  //   method: 'GET',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: ships,
-  // })
-  //   .then((response) => response.json())
-  //   .then((data) => data.winChance)
-  //   .catch((error) => {
-  //     console.error('Error:', error)
-  //     return 0
-  //   })
+  return fetch(`${API_BASE_URL}/winChance`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'text/plain',
+    },
+    body: ships,
+  })
+    .then((response) => {
+      console.log("Received response:", response)
+      return response.text})
+    .catch((error) => {
+      console.error('Error:', error)
+      return 0
+    })
 }
