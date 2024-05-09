@@ -21,6 +21,9 @@ export const getWinChance = async ({attackerShips, defenderShips}: Params) => {
   url.searchParams.append('battleInfo', battleInfo)
 
   const response = await fetch(url)
+  console.log({response});
+  
   const json: Response = await response.json()
+  console.log({json});
   return json.winChance
 }
