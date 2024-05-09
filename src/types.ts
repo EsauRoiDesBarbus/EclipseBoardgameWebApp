@@ -19,4 +19,13 @@ export type Ship = {
   missile: Omit<Weapon, 'pink'>
 }
 
-export type FormValues = { attackerShips: Ship[], defenderShips: Ship[]}
+export type FormValues = { attackerShips: Ship[]; defenderShips: Ship[] }
+
+export type Side = 'attack' | 'defense'
+
+export type SurvivalChance = { label: string; value: number; side: Side }
+
+export type SimulationResult = {
+  winChance: number
+  survivalChances: SurvivalChance[]
+}
