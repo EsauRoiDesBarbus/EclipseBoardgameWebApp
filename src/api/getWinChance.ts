@@ -17,7 +17,7 @@ export const getWinChance = async ({attackerShips, defenderShips}: Params) => {
   const defender = defenderShips.map(parseShip).join(' + ')
   const battleInfo = `${attacker} vs ${defender}`
 
-  const url = new URL(`${API_BASE_URL}/winChance`)
+  const url = new URL(`${API_BASE_URL}winChance`)
   url.searchParams.append('battleInfo', battleInfo)
 
   const response = await fetch(url)
