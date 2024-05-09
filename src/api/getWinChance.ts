@@ -11,16 +11,16 @@ type Params = {
 export const getWinChance = ({attackerShips, defenderShips}: Params) => {
   const attacker = attackerShips.map(parseShip).join(' + ')
   const defender = defenderShips.map(parseShip).join(' + ')
-  const ships = `${attacker} vs ${defender}`
+  const battleInfo = `${attacker} vs ${defender}`
 
-  console.log(ships)
+  const url = new URL(`${API_BASE_URL}/winChance`)
+  url.searchParams.append('battleInfo', battleInfo)
 
-  return fetch(`${API_BASE_URL}/winChance`, {
+  console.log({battleInfo})
+  console.log({url})
+
+  return fetch(url, {
     method: 'GET',
-    headers: {
-      'Content-Type': 'text/plain',
-    },
-    body: ships,
   })
     .then((response) => {
       console.log("Received response:", response)
