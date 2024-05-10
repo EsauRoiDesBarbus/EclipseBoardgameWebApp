@@ -20,8 +20,9 @@ import { getSimulationResult } from './api/getSimulationResult'
 import { ProbabilityDiagram } from './ProbabilityDiagram'
 import { useState } from 'react'
 import { formatPercent } from './utils/formatPercent'
-import { ancientBlueprint, defaultBlueprint, gardianBlueprint, gcdsBlueprint } from './blueprints'
+import { defaultBlueprint } from './blueprints'
 import { AddBlueprintButton } from './AddBlueprintButton'
+import { getNpcBlueprint } from './getNpcBlueprint'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
@@ -91,18 +92,7 @@ function App() {
                         shipType={shipType}
                         key={`add-${shipSide}-${shipType}`}
                         onClick={() => {
-                          appendFunctions[shipSide](
-                            (() => {
-                              switch (shipType) {
-                                case 'ancient':
-                                  return ancientBlueprint
-                                case 'gardian':
-                                  return gardianBlueprint
-                                case 'gcds':
-                                  return gcdsBlueprint
-                              }
-                            })()
-                          )
+                          appendFunctions[shipSide](getNpcBlueprint(shipType))
                         }}
                       />
                     ))}
