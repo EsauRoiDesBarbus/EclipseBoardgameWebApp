@@ -17,6 +17,6 @@ export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...butt
     }}
     {...buttonProps}>
     Add {shipType}
-    <img src={getShipImage(shipType)} height={30} width={30} alt={`add ${shipType}`} />
+    <img src={getShipImage(shipType)} width={30} alt={`add ${shipType}`} />
   </button>
 )

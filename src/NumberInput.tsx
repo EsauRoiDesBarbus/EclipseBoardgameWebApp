@@ -47,7 +47,7 @@ export const NumberInput: FunctionComponent<Props> = ({
         justifyContent: 'space-between',
       }}>
       {label ? <label htmlFor={name}>{label}</label> : null}
-      <div style={{ display: 'flex', gap: 8 }}>
+      <div style={{ display: 'flex', gap: 8, flexGrow: 1 }}>
         <input
           id={name}
           type="number"
@@ -59,8 +59,13 @@ export const NumberInput: FunctionComponent<Props> = ({
         <button
           type="button"
           onClick={onIncrement}
-          style={{ display: 'flex', padding: 2, backgroundColor: 'rgba(0,0,0,0)' }}>
-          <img src={image} height={BUTTON_SIZE} width={BUTTON_SIZE} alt={accessibilityLabel} />
+          style={{
+            display: 'flex',
+            padding: 2,
+            backgroundColor: 'rgba(0,0,0,0)',
+            alignSelf: 'center',
+          }}>
+          <img src={image} width={BUTTON_SIZE} alt={accessibilityLabel} />
         </button>
       </div>
     </div>
