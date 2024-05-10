@@ -11,6 +11,7 @@ export type ShipType = 'interceptor' | 'cruiser' | 'dreadnought' | 'starbase'
 export type Ship = {
   count: number
   type: ShipType
+  isNpc?: boolean
   initiative: number
   hull: number
   computer: number

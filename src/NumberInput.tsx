@@ -10,6 +10,7 @@ type NumberFieldNames = Exclude<
   | 'defenderShips'
   | `${'attackerShips' | 'defenderShips'}.${number}`
   | `${'attackerShips' | 'defenderShips'}.${number}.type`
+  | `${'attackerShips' | 'defenderShips'}.${number}.isNpc`
   | `${'attackerShips' | 'defenderShips'}.${number}.cannon`
   | `${'attackerShips' | 'defenderShips'}.${number}.missile`
 >

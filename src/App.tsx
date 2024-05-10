@@ -141,6 +141,16 @@ function App() {
                     accessibilityLabel="increase shield"
                     image={ShieldImage}
                   />
+                  {shipType === 'defenderShips' ? (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                      <input
+                        type="checkbox"
+                        id={`${shipType}.${index}.isNpc`}
+                        {...register(`${shipType}.${index}.isNpc`)}
+                      />
+                      <label htmlFor={`${shipType}.${index}.isNpc`}>NPC</label>
+                    </div>
+                  ) : null}
                 </div>
                 <div
                   style={{
