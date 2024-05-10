@@ -25,6 +25,7 @@ import { AddBlueprintButton } from './AddBlueprintButton'
 import { getNpcBlueprint } from './getNpcBlueprint'
 import { TrashBinIcon } from './icons/TrashBinIcon'
 import { basicShipsDemo, optimalDamageSplittingDemo } from './demos'
+import { AboutModal } from './AboutModal'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
@@ -32,6 +33,7 @@ const npcBlueprints = ['ancient', 'gardian', 'gcds'] as const
 
 function App() {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
+  const [showModal, setShowModal] = useState(false)
 
   const { register, control, handleSubmit, watch } = useForm<FormValues>({
     defaultValues: {
@@ -69,17 +71,27 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
+      <AboutModal show={showModal} onClose={() => setShowModal(false)} />
       <h1>Eclipse Battle Simulator</h1>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <button
-          type="button"
-          onClick={() => {
-            attackerShipReplace([])
-            defenderShipReplace([])
-            setSimulationResult(undefined)
-          }}>
-          Clear
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
+          <button
+            type="button"
+            onClick={() => {
+              setShowModal(true)
+            }}>
+            About
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              attackerShipReplace([])
+              defenderShipReplace([])
+              setSimulationResult(undefined)
+            }}>
+            Clear
+          </button>
+        </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
           <label>Load a demo:</label>
           <button
