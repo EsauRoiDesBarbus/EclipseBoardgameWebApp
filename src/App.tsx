@@ -69,24 +69,36 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
-        <label>Load a demo:</label>
+      <h1>Eclipse Battle Simulator</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <button
           type="button"
           onClick={() => {
-            attackerShipReplace(basicShipsDemo.attackerShips)
-            defenderShipReplace(basicShipsDemo.defenderShips)
+            attackerShipReplace([])
+            defenderShipReplace([])
+            setSimulationResult(undefined)
           }}>
-          Basic ships
+          Clear
         </button>
-        <button
-          type="button"
-          onClick={() => {
-            attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
-            defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
-          }}>
-          Optimal damage splitting
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
+          <label>Load a demo:</label>
+          <button
+            type="button"
+            onClick={() => {
+              attackerShipReplace(basicShipsDemo.attackerShips)
+              defenderShipReplace(basicShipsDemo.defenderShips)
+            }}>
+            Basic ships
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
+              defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
+            }}>
+            Optimal damage splitting
+          </button>
+        </div>
       </div>
       {(['attackerShips', 'defenderShips'] as const).map((shipSide) => (
         <div key={shipSide}>
