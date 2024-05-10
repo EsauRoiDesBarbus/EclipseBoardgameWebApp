@@ -146,7 +146,9 @@ function App() {
                       onClick={() => {
                         appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
                       }}
-                      disabled={fields[shipSide].some((field) => field.type === shipType)}
+                      disabled={fields[shipSide].some(
+                        (field) => field.type === shipType || field.type == 'npc' // a NPC can only fight alone
+                      )}
                     />
                   )
                 )}
@@ -162,6 +164,7 @@ function App() {
                         onClick={() => {
                           appendFunctions[shipSide](getNpcBlueprint(shipType))
                         }}
+                        disabled={fields[shipSide].length > 0} // a NPC can only fight alone
                       />
                     ))}
                   </div>
