@@ -54,6 +54,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.elevation-1 {
+  background-color: #333333;
+}
+.elevation-2 {
+  background-color: #4A4A4A;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -63,7 +70,13 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    color: #f9f9f9;
+  }
+  .elevation-1 {
+    background-color: #dedede;
+  }
+  .elevation-2 {
+    background-color: #ababab;
   }
 }
 

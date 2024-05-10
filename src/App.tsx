@@ -82,10 +82,10 @@ function App() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 16,
-                  backgroundColor: '#333333',
                   padding: 16,
                   borderRadius: 8,
-                }}>
+                }}
+                className="elevation-1">
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <div
                     style={{
@@ -148,9 +148,9 @@ function App() {
                     gridTemplateColumns: 'repeat(6, 1fr)',
                     padding: 8,
                     gap: 16,
-                    backgroundColor: '#4A4A4A',
                     borderRadius: 8,
-                  }}>
+                  }}
+                  className="elevation-2">
                   <label style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
                     Cannons
                   </label>
