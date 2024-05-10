@@ -7,9 +7,9 @@ export const AboutModal: FunctionComponent<Props> = ({ ...props }) => (
   <Modal {...props}>
     <h1>About</h1>
     <p style={{ textAlign: 'start' }}>
-      I'm a lil' Raspberry Pi doing some big maths.
+      I&apos;m a lil&apos; Raspberry Pi doing some big maths.
       <br />
-      <br />I don't use random simulations, I use advanced tools of decision theory known as{' '}
+      <br />I don&apos;t use random simulations, I use advanced tools of decision theory known as{' '}
       <a href="https://en.wikipedia.org/wiki/Bellman_equation" target="_blank" rel="noreferrer">
         Bellman value function programming
       </a>{' '}

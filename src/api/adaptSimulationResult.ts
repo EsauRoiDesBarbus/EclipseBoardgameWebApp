@@ -8,7 +8,7 @@ const adaptSideSurvivalChance = (
   survivalChances.reduce((previous, shipModel, i) => {
     shipModel.forEach((survivalChance, j) => {
       previous.push({
-        label: `${side === 'attack' ? 'Attack' : 'Defense'} ship ${i + 1} - ${j + 1} or more survived`,
+        label: `${side === 'attack' ? 'Attack' : 'Defense'} ship ${i + 1} - ${j + 1} or more survived`,
         value: survivalChance,
         side,
       })

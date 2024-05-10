@@ -71,7 +71,12 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
-      <AboutModal show={showModal} onClose={() => setShowModal(false)} />
+      <AboutModal
+        show={showModal}
+        onClose={() => {
+          setShowModal(false)
+        }}
+      />
       <h1>Eclipse Battle Simulator</h1>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>

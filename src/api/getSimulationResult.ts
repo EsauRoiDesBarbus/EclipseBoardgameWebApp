@@ -22,6 +22,6 @@ export const getSimulationResult = async ({
   url.searchParams.append('battleInfo', battleInfo)
 
   const response = await fetch(url)
-  const json: SimulationResultResponse = await response.json()
+  const json = (await response.json()) as SimulationResultResponse
   return adaptSimulationResult(json)
 }
