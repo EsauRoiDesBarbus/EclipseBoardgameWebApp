@@ -20,71 +20,74 @@ export const ProbabilityDiagram: FunctionComponent<Props> = ({
   useEffect(() => {
     if (ref.current) {
       // Setup the SVG
-      const svg = d3.select(ref.current).attr('width', width).attr('height', height)
+      const svg = d3.select(ref.current)
 
       // Draw the diagram
-      drawDiagram(svg)
+      drawDiagram(svg, survivalChances)
     }
   }, [survivalChances])
 
-  const drawDiagram = (svg: d3.Selection<SVGSVGElement, unknown, null, undefined>) => {
-    // Remove all previous contents of the svg
-    svg.selectAll('*').remove()
+  return <svg width={width} height={height} ref={ref} />
+}
 
-    // Set up scales
-    const xScale = d3
-      .scaleBand()
-      .domain(survivalChances.map((d) => d.label))
-      .range([0, 700])
-      .padding(0.2)
+const drawDiagram = (
+  svg: d3.Selection<SVGSVGElement, unknown, null, undefined>,
+  data: Props['survivalChances']
+) => {
+  // Remove all previous contents of the svg
+  svg.selectAll('*').remove()
 
-    const yScale = d3
-      .scaleLinear()
-      .domain([0, d3.max(survivalChances, (d) => d.value)] as [number, number])
-      .range([300, 0])
+  // Set up scales
+  const xScale = d3
+    .scaleBand()
+    .domain(data.map((d) => d.label))
+    .range([0, 700])
+    .padding(0.2)
 
-    // Create bars
-    svg
-      .append('g')
-      .attr('transform', 'translate(50, 50)') // Adjust position
-      .selectAll('rect')
-      .data(survivalChances)
-      .enter()
-      .append('rect')
-      .attr('x', (d) => xScale(d.label) ?? 0)
-      .attr('y', (d) => yScale(d.value))
-      .attr('width', xScale.bandwidth())
-      .attr('height', (d) => 300 - yScale(d.value))
-      .attr('fill', (d) => (d.side === 'attack' ? 'blue' : 'red'))
+  const yScale = d3
+    .scaleLinear()
+    .domain([0, d3.max(data, (d) => d.value)] as [number, number])
+    .range([300, 0])
 
-    // Add text labels
-    svg
-      .append('g')
-      .attr('transform', 'translate(50, 50)')
-      .selectAll('text')
-      .data(survivalChances)
-      .enter()
-      .append('text')
-      .text((d) => formatPercent(d.value)) // Format value as percentage
-      .attr('x', (d) => xScale(d.label)! + xScale.bandwidth() / 2) // Center text in bar
-      .attr('y', (d) => yScale(d.value) + 20) // Position text slightly above top of bar
-      .attr('text-anchor', 'middle') // Center text horizontally
-      .attr('fill', 'white') // Text color
-      .attr('font-size', '12px')
+  // Create bars
+  svg
+    .append('g')
+    .attr('transform', 'translate(50, 50)') // Adjust position
+    .selectAll('rect')
+    .data(data)
+    .enter()
+    .append('rect')
+    .attr('x', (d) => xScale(d.label) ?? 0)
+    .attr('y', (d) => yScale(d.value))
+    .attr('width', xScale.bandwidth())
+    .attr('height', (d) => 300 - yScale(d.value))
+    .attr('fill', (d) => (d.side === 'attack' ? 'blue' : 'red'))
 
-    // Add x-axis
-    svg
-      .append('g')
-      .attr('transform', 'translate(50, 350)')
-      .call(d3.axisBottom(xScale))
-      .selectAll('.tick text')
-      .call(wrap, xScale.bandwidth())
+  // Add text labels
+  svg
+    .append('g')
+    .attr('transform', 'translate(50, 50)')
+    .selectAll('text')
+    .data(data)
+    .enter()
+    .append('text')
+    .text((d) => formatPercent(d.value)) // Format value as percentage
+    .attr('x', (d) => xScale(d.label)! + xScale.bandwidth() / 2) // Center text in bar
+    .attr('y', (d) => yScale(d.value) + 20) // Position text slightly above top of bar
+    .attr('text-anchor', 'middle') // Center text horizontally
+    .attr('fill', 'white') // Text color
+    .attr('font-size', '12px')
 
-    // Add y-axis
-    svg.append('g').attr('transform', 'translate(50, 50)').call(d3.axisLeft(yScale))
-  }
+  // Add x-axis
+  svg
+    .append('g')
+    .attr('transform', 'translate(50, 350)')
+    .call(d3.axisBottom(xScale))
+    .selectAll('.tick text')
+    .call(wrap, xScale.bandwidth())
 
-  return <svg ref={ref}></svg>
+  // Add y-axis
+  svg.append('g').attr('transform', 'translate(50, 50)').call(d3.axisLeft(yScale))
 }
 
 function wrap(text: d3.Selection<d3.BaseType, unknown, SVGGElement, unknown>, width: number) {
