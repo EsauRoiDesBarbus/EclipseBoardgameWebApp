@@ -20,27 +20,7 @@ import { getSimulationResult } from './api/getSimulationResult'
 import { ProbabilityDiagram } from './ProbabilityDiagram'
 import { useState } from 'react'
 import { formatPercent } from './utils/formatPercent'
-
-const defaultShip = {
-  count: 1,
-  initiative: 0,
-  hull: 0,
-  computer: 0,
-  shield: 0,
-  cannon: {
-    yellow: 0,
-    orange: 0,
-    blue: 0,
-    red: 0,
-    pink: 0,
-  },
-  missile: {
-    yellow: 0,
-    orange: 0,
-    blue: 0,
-    red: 0,
-  },
-}
+import { defaultBlueprint } from './blueprints'
 
 function App() {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
@@ -91,7 +71,7 @@ function App() {
                       key={`add-${shipSide}-${shipType}`}
                       type="button"
                       onClick={() => {
-                        appendFunctions[shipSide]({ ...defaultShip, type: shipType })
+                        appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
                       }}
                       style={{
                         display: 'flex',
