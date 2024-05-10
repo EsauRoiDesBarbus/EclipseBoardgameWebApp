@@ -23,6 +23,7 @@ import { formatPercent } from './utils/formatPercent'
 import { defaultBlueprint } from './blueprints'
 import { AddBlueprintButton } from './AddBlueprintButton'
 import { getNpcBlueprint } from './getNpcBlueprint'
+import { TrashBinIcon } from './icons/TrashBinIcon'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
@@ -38,16 +39,25 @@ function App() {
     },
   })
 
-  const { fields: attackerShipFields, append: attackerShipAppend } = useFieldArray({
+  const {
+    fields: attackerShipFields,
+    append: attackerShipAppend,
+    remove: attackerShipRemove,
+  } = useFieldArray({
     control,
     name: 'attackerShips',
   })
-  const { fields: defenderShipFields, append: defenderShipAppend } = useFieldArray({
+  const {
+    fields: defenderShipFields,
+    append: defenderShipAppend,
+    remove: defenderShipRemove,
+  } = useFieldArray({
     control,
     name: 'defenderShips',
   })
   const fields = { attackerShips: attackerShipFields, defenderShips: defenderShipFields }
   const appendFunctions = { attackerShips: attackerShipAppend, defenderShips: defenderShipAppend }
+  const removeFunctions = { attackerShips: attackerShipRemove, defenderShips: defenderShipRemove }
 
   const onSubmit = async (data: FormValues) => {
     const result = await getSimulationResult(data)
@@ -168,6 +178,19 @@ function App() {
                       accessibilityLabel="increase shield"
                       image={ShieldImage}
                     />
+                    <button
+                      type="button"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: 'fit-content',
+                        padding: 4,
+                      }}
+                      onClick={() => {
+                        removeFunctions[shipSide](index)
+                      }}>
+                      <TrashBinIcon />
+                    </button>
                   </div>
                   <div
                     className="elevation-2"
