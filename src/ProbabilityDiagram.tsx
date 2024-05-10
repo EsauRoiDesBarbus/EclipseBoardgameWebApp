@@ -25,9 +25,12 @@ export const ProbabilityDiagram: FunctionComponent<Props> = ({
       // Draw the diagram
       drawDiagram(svg)
     }
-  }, [])
+  }, [survivalChances])
 
   const drawDiagram = (svg: d3.Selection<SVGSVGElement, unknown, null, undefined>) => {
+    // Remove all previous contents of the svg
+    svg.selectAll('*').remove()
+
     // Set up scales
     const xScale = d3
       .scaleBand()
