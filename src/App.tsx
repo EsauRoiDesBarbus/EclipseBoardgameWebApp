@@ -96,6 +96,9 @@ function App() {
             }}>
             Clear
           </button>
+          <a href="https://forms.gle/Ud5MHFKXUMSHkwhW9" target="_blank" rel="noreferrer">
+            Feedback
+          </a>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
           <label>Load a demo:</label>
