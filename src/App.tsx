@@ -21,6 +21,7 @@ import { ProbabilityDiagram } from './ProbabilityDiagram'
 import { useState } from 'react'
 import { formatPercent } from './utils/formatPercent'
 import { defaultBlueprint } from './blueprints'
+import { AddBlueprintButton } from './AddBlueprintButton'
 
 function App() {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
@@ -67,27 +68,13 @@ function App() {
               <div style={{ display: 'flex', gap: 16 }}>
                 {(['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const).map(
                   (shipType) => (
-                    <button
+                    <AddBlueprintButton
+                      shipType={shipType}
                       key={`add-${shipSide}-${shipType}`}
-                      type="button"
                       onClick={() => {
                         appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
                       }}
-                      style={{
-                        display: 'flex',
-                        flexShrink: 0,
-                        alignItems: 'center',
-                        gap: 8,
-                        maxWidth: 180,
-                      }}>
-                      Add {shipType}
-                      <img
-                        src={getShipImage(shipType)}
-                        height={30}
-                        width={30}
-                        alt={`add ${shipType}`}
-                      />
-                    </button>
+                    />
                   )
                 )}
               </div>
