@@ -153,7 +153,7 @@ function App() {
               </div>
               {shipSide === 'defenderShips' ? (
                 <>
-                  <div style={{ height: 8 }} />
+                  <div style={{ height: 16 }} />
                   <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
                     {npcBlueprints.map((shipType) => (
                       <AddBlueprintButton
