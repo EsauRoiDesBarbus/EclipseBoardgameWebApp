@@ -34,6 +34,7 @@ const npcBlueprints = ['ancient', 'gardian', 'gcds'] as const
 function App() {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
   const [showModal, setShowModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const { register, control, handleSubmit, watch } = useForm<FormValues>({
     defaultValues: {
@@ -65,8 +66,10 @@ function App() {
   const removeFunctions = { attackerShips: attackerShipRemove, defenderShips: defenderShipRemove }
 
   const onSubmit = async (data: FormValues) => {
+    setIsLoading(true)
     const result = await getSimulationResult(data)
     setSimulationResult(result)
+    setIsLoading(false)
   }
 
   return (
@@ -324,7 +327,18 @@ function App() {
       ))}
 
       <div style={{ height: 20 }} />
-      <button type="submit">Battle!</button>
+      <button type="submit">
+        {isLoading ? (
+          <img
+            src="/gcds-icon.png"
+            width={26}
+            className="loader"
+            style={{ margin: '-0.6em 0 -0.5em 0' }}
+          />
+        ) : (
+          'Battle!'
+        )}
+      </button>
 
       {simulationResult && (
         <div>
