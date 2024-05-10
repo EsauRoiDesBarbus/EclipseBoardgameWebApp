@@ -6,18 +6,23 @@ type Props = Omit<ComponentProps<typeof Modal>, 'children'>
 export const AboutModal: FunctionComponent<Props> = ({ ...props }) => (
   <Modal {...props}>
     <h1>About</h1>
-    <p style={{ textAlign: 'start' }}>
-      I&apos;m a lil&apos; Raspberry Pi doing some big maths.
-      <br />
-      <br />I don&apos;t use random simulations, I use advanced tools of decision theory known as{' '}
-      <a href="https://en.wikipedia.org/wiki/Bellman_equation" target="_blank" rel="noreferrer">
-        Bellman value function programming
-      </a>{' '}
-      to compute win chance of{' '}
-      <a href="https://boardgamegeek.com/boardgame/72125/eclipse" target="_blank" rel="noreferrer">
-        Eclipse
-      </a>{' '}
-      battles, with:
+    <div style={{ textAlign: 'start' }}>
+      <p>
+        I&apos;m a lil&apos; Raspberry Pi doing some big maths.
+        <br />
+        <br />I don&apos;t use random simulations, I use advanced tools of decision theory known as{' '}
+        <a href="https://en.wikipedia.org/wiki/Bellman_equation" target="_blank" rel="noreferrer">
+          Bellman value function programming
+        </a>{' '}
+        to compute win chance of{' '}
+        <a
+          href="https://boardgamegeek.com/boardgame/72125/eclipse"
+          target="_blank"
+          rel="noreferrer">
+          Eclipse
+        </a>{' '}
+        battles, with:
+      </p>
       <ul>
         <li>floating point precision (the UI truncs it for readability),</li>
         <li>graph with the probability of survival of each ship,</li>
@@ -39,6 +44,6 @@ export const AboutModal: FunctionComponent<Props> = ({ ...props }) => (
           for the frontend.
         </li>
       </ul>
-    </p>
+    </div>
   </Modal>
 )
