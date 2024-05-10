@@ -6,12 +6,11 @@ export type Weapon = {
   pink: number
 }
 
-export type ShipType = 'interceptor' | 'cruiser' | 'dreadnought' | 'starbase'
+export type ShipType = 'interceptor' | 'cruiser' | 'dreadnought' | 'starbase' | 'npc'
 
 export type Ship = {
   count: number
   type: ShipType
-  isNpc?: boolean
   initiative: number
   hull: number
   computer: number

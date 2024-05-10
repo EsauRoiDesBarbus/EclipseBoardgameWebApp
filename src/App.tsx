@@ -141,6 +141,7 @@ function App() {
                         <option value="cruiser">Cruiser</option>
                         <option value="dreadnought">Dreadnought</option>
                         <option value="starbase">Star base</option>
+                        {shipSide === 'defenderShips' ? <option value="npc">NPC</option> : null}
                       </select>
                     </div>
                     <NumberInput
@@ -179,16 +180,6 @@ function App() {
                       accessibilityLabel="increase shield"
                       image={ShieldImage}
                     />
-                    {shipSide === 'defenderShips' ? (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                        <input
-                          type="checkbox"
-                          id={`${shipSide}.${index}.isNpc`}
-                          {...register(`${shipSide}.${index}.isNpc`)}
-                        />
-                        <label htmlFor={`${shipSide}.${index}.isNpc`}>NPC</label>
-                      </div>
-                    ) : null}
                   </div>
                   <div
                     className="elevation-2"
