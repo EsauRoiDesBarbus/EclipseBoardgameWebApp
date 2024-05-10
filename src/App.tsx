@@ -320,7 +320,7 @@ function App() {
       ))}
 
       <div style={{ height: 20 }} />
-      <button type="submit">Submit</button>
+      <button type="submit">Battle!</button>
 
       {simulationResult && (
         <div>
