@@ -143,6 +143,7 @@ function App() {
                       onClick={() => {
                         appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
                       }}
+                      disabled={fields[shipSide].some((field) => field.type === shipType)}
                     />
                   )
                 )}
