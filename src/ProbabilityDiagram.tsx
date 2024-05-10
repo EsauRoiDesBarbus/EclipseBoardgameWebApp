@@ -13,7 +13,7 @@ type Props = {
 export const ProbabilityDiagram: FunctionComponent<Props> = ({
   survivalChances,
   width = 800,
-  height = 600,
+  height = 400,
 }) => {
   const ref = useRef<SVGSVGElement>(null)
 
@@ -23,16 +23,23 @@ export const ProbabilityDiagram: FunctionComponent<Props> = ({
       const svg = d3.select(ref.current)
 
       // Draw the diagram
-      drawDiagram(svg, survivalChances)
+      drawDiagram(svg, survivalChances, width, height)
     }
-  }, [survivalChances])
+  }, [survivalChances, width, height])
 
   return <svg width={width} height={height} ref={ref} />
 }
 
+const xAxisOffset = 30
+const yAxisTopOffset = 10
+const yAxisBottomOffset = 50
+const yAxisOffset = yAxisTopOffset + yAxisBottomOffset
+
 const drawDiagram = (
   svg: d3.Selection<SVGSVGElement, unknown, null, undefined>,
-  data: Props['survivalChances']
+  data: Props['survivalChances'],
+  width: number,
+  height: number
 ) => {
   // Remove all previous contents of the svg
   svg.selectAll('*').remove()
@@ -41,18 +48,18 @@ const drawDiagram = (
   const xScale = d3
     .scaleBand()
     .domain(data.map((d) => d.label))
-    .range([0, 700])
+    .range([0, width - xAxisOffset])
     .padding(0.2)
 
   const yScale = d3
     .scaleLinear()
     .domain([0, d3.max(data, (d) => d.value)] as [number, number])
-    .range([300, 0])
+    .range([height - yAxisOffset, 0])
 
   // Create bars
   svg
     .append('g')
-    .attr('transform', 'translate(50, 50)') // Adjust position
+    .attr('transform', `translate(${xAxisOffset}, ${yAxisTopOffset})`) // Adjust position
     .selectAll('rect')
     .data(data)
     .enter()
@@ -60,13 +67,13 @@ const drawDiagram = (
     .attr('x', (d) => xScale(d.label) ?? 0)
     .attr('y', (d) => yScale(d.value))
     .attr('width', xScale.bandwidth())
-    .attr('height', (d) => 300 - yScale(d.value))
+    .attr('height', (d) => height - yAxisOffset - yScale(d.value))
     .attr('fill', (d) => (d.side === 'attack' ? 'blue' : 'red'))
 
   // Add text labels
   svg
     .append('g')
-    .attr('transform', 'translate(50, 50)')
+    .attr('transform', `translate(${xAxisOffset},  ${yAxisTopOffset})`)
     .selectAll('text')
     .data(data)
     .enter()
@@ -81,13 +88,16 @@ const drawDiagram = (
   // Add x-axis
   svg
     .append('g')
-    .attr('transform', 'translate(50, 350)')
+    .attr('transform', `translate(${xAxisOffset},  ${height - yAxisBottomOffset})`)
     .call(d3.axisBottom(xScale))
     .selectAll('.tick text')
     .call(wrap, xScale.bandwidth())
 
   // Add y-axis
-  svg.append('g').attr('transform', 'translate(50, 50)').call(d3.axisLeft(yScale))
+  svg
+    .append('g')
+    .attr('transform', `translate(${xAxisOffset}, ${yAxisTopOffset})`)
+    .call(d3.axisLeft(yScale))
 }
 
 // from https://stackoverflow.com/a/37936945
