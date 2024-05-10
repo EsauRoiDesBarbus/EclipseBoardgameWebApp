@@ -19,7 +19,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #747bff;
 }
 
 body {
@@ -56,9 +56,11 @@ button:focus-visible {
 
 .elevation-1 {
   background-color: #333333;
+  border-radius: 8px;
 }
 .elevation-2 {
   background-color: #4A4A4A;
+  border-radius: 8px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -67,18 +69,16 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #535bf2;
   }
   button {
     color: #f9f9f9;
   }
   .elevation-1 {
     background-color: #dedede;
-    border-radius: 8px;
   }
   .elevation-2 {
     background-color: #ababab;
-    border-radius: 8px;
   }
 }
 
