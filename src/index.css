@@ -74,9 +74,11 @@ button:focus-visible {
   }
   .elevation-1 {
     background-color: #dedede;
+    border-radius: 8px;
   }
   .elevation-2 {
     background-color: #ababab;
+    border-radius: 8px;
   }
 }
 
