@@ -90,6 +90,7 @@ const drawDiagram = (
   svg.append('g').attr('transform', 'translate(50, 50)').call(d3.axisLeft(yScale))
 }
 
+// from https://stackoverflow.com/a/37936945
 function wrap(text: d3.Selection<d3.BaseType, unknown, SVGGElement, unknown>, width: number) {
   text.each(function () {
     const text = d3.select(this)
