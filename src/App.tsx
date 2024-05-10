@@ -90,15 +90,6 @@ function App() {
             }}>
             About
           </button>
-          <button
-            type="button"
-            onClick={() => {
-              attackerShipReplace([])
-              defenderShipReplace([])
-              setSimulationResult(undefined)
-            }}>
-            Clear
-          </button>
           <a href="https://forms.gle/Ud5MHFKXUMSHkwhW9" target="_blank" rel="noreferrer">
             Feedback
           </a>
@@ -329,19 +320,32 @@ function App() {
         </div>
       ))}
 
-      <div style={{ height: 20 }} />
-      <button type="submit">
-        {isLoading ? (
-          <img
-            src="/gcds-icon.png"
-            width={26}
-            className="loader"
-            style={{ margin: '-0.6em 0 -0.5em 0' }}
-          />
-        ) : (
-          'Battle!'
-        )}
-      </button>
+      <div style={{ display: 'flex', marginTop: 20, gap: 32 }}>
+        <button
+          type="button"
+          style={{ display: 'flex', flex: 1, justifyContent: 'center' }}
+          onClick={() => {
+            attackerShipReplace([])
+            defenderShipReplace([])
+            setSimulationResult(undefined)
+          }}>
+          Clear
+        </button>
+        <button
+          type="submit"
+          style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+          {isLoading ? (
+            <img
+              src="/gcds-icon.png"
+              width={26}
+              className="loader"
+              style={{ margin: '-0.6em 0 -0.5em 0' }}
+            />
+          ) : (
+            'Battle!'
+          )}
+        </button>
+      </div>
 
       {simulationResult && (
         <div>
