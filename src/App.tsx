@@ -20,8 +20,12 @@ import { getSimulationResult } from './api/getSimulationResult'
 import { ProbabilityDiagram } from './ProbabilityDiagram'
 import { useState } from 'react'
 import { formatPercent } from './utils/formatPercent'
-import { defaultBlueprint } from './blueprints'
+import { ancientBlueprint, defaultBlueprint, gardianBlueprint, gcdsBlueprint } from './blueprints'
 import { AddBlueprintButton } from './AddBlueprintButton'
+
+const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
+const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
+const npcBlueprints = ['ancient', 'gardian', 'gcds'] as const
 
 function App() {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
@@ -65,8 +69,8 @@ function App() {
               <h3>
                 Add blueprint on {shipSide === 'attackerShips' ? 'attacker' : 'defender'} side
               </h3>
-              <div style={{ display: 'flex', gap: 16 }}>
-                {(['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const).map(
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
+                {(shipSide === 'attackerShips' ? attackerBlueprints : defenderBlueprints).map(
                   (shipType) => (
                     <AddBlueprintButton
                       shipType={shipType}
@@ -78,6 +82,33 @@ function App() {
                   )
                 )}
               </div>
+              {shipSide === 'defenderShips' ? (
+                <>
+                  <div style={{ height: 8 }} />
+                  <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
+                    {npcBlueprints.map((shipType) => (
+                      <AddBlueprintButton
+                        shipType={shipType}
+                        key={`add-${shipSide}-${shipType}`}
+                        onClick={() => {
+                          appendFunctions[shipSide](
+                            (() => {
+                              switch (shipType) {
+                                case 'ancient':
+                                  return ancientBlueprint
+                                case 'gardian':
+                                  return gardianBlueprint
+                                case 'gcds':
+                                  return gcdsBlueprint
+                              }
+                            })()
+                          )
+                        }}
+                      />
+                    ))}
+                  </div>
+                </>
+              ) : null}
             </div>
             {fields[shipSide].map((field, index) => {
               const shipTypeValue = watch(`${shipSide}.${index}.type`)
@@ -107,7 +138,7 @@ function App() {
                         <option value="interceptor">Interceptor</option>
                         <option value="cruiser">Cruiser</option>
                         <option value="dreadnought">Dreadnought</option>
-                        <option value="starbase">Star base</option>
+                        <option value="starbase">Starbase</option>
                         {shipSide === 'defenderShips' ? <option value="npc">NPC</option> : null}
                       </select>
                     </div>

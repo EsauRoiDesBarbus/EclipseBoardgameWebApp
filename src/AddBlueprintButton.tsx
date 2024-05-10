@@ -1,9 +1,8 @@
 import { ComponentProps, FunctionComponent } from 'react'
-import { ShipType } from './types'
 import { getShipImage } from './getShipImage'
 
 type Props = {
-  shipType: ShipType
+  shipType: Parameters<typeof getShipImage>[0]
 } & ComponentProps<'button'>
 
 export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...buttonProps }) => (

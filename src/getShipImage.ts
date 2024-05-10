@@ -3,9 +3,9 @@ import CruiserImage from './assets/ship/cruiser.png'
 import DreadnoughtImage from './assets/ship/dreadnought.png'
 import StarbaseImage from './assets/ship/starbase.png'
 
-import type { ShipType } from "./types"
+import type { ShipType } from './types'
 
-export const getShipImage = (shipType: ShipType) => {
+export const getShipImage = (shipType: ShipType | 'ancient' | 'gardian' | 'gcds') => {
   switch (shipType) {
     case 'interceptor':
       return InterceptorImage
