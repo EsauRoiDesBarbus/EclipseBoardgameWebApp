@@ -24,6 +24,7 @@ import { defaultBlueprint } from './blueprints'
 import { AddBlueprintButton } from './AddBlueprintButton'
 import { getNpcBlueprint } from './getNpcBlueprint'
 import { TrashBinIcon } from './icons/TrashBinIcon'
+import { basicShipsDemo, optimalDamageSplittingDemo } from './demos'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
@@ -43,6 +44,7 @@ function App() {
     fields: attackerShipFields,
     append: attackerShipAppend,
     remove: attackerShipRemove,
+    replace: attackerShipReplace,
   } = useFieldArray({
     control,
     name: 'attackerShips',
@@ -51,6 +53,7 @@ function App() {
     fields: defenderShipFields,
     append: defenderShipAppend,
     remove: defenderShipRemove,
+    replace: defenderShipReplace,
   } = useFieldArray({
     control,
     name: 'defenderShips',
@@ -66,6 +69,25 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
+        <label>Load a demo:</label>
+        <button
+          type="button"
+          onClick={() => {
+            attackerShipReplace(basicShipsDemo.attackerShips)
+            defenderShipReplace(basicShipsDemo.defenderShips)
+          }}>
+          Basic ships
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
+            defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
+          }}>
+          Optimal damage splitting
+        </button>
+      </div>
       {(['attackerShips', 'defenderShips'] as const).map((shipSide) => (
         <div key={shipSide}>
           <h2>{shipSide === 'attackerShips' ? 'Attack' : 'Defense'}</h2>
