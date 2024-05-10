@@ -108,6 +108,7 @@ function App() {
                   <NumberInput
                     control={control}
                     name={`${shipType}.${index}.count`}
+                    min={1}
                     label="Number"
                     accessibilityLabel="increase number of ships"
                     image={getShipImage(shipTypeValue)}
