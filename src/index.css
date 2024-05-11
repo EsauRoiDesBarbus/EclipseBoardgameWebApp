@@ -50,6 +50,7 @@ button:hover {
   border-color: #646cff;
 }
 button:disabled:hover {
+  cursor: default;
   border-color: transparent;
 }
 button:focus,
