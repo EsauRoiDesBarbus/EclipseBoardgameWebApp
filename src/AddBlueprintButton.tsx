@@ -1,5 +1,6 @@
 import { ComponentProps, FunctionComponent } from 'react'
 import { getShipImage } from './getShipImage'
+import { firstLetterToUppercase } from './utils/firstLetterToUppercase'
 
 type Props = {
   shipType: Parameters<typeof getShipImage>[0]
@@ -15,7 +16,7 @@ export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...butt
       gap: 8,
     }}
     {...buttonProps}>
-    Add {shipType}
+    {firstLetterToUppercase(shipType)}
     <img src={getShipImage(shipType)} width={30} alt={`add ${shipType}`} />
   </button>
 )
