@@ -10,10 +10,9 @@ export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...butt
     type="button"
     style={{
       display: 'flex',
-      flexShrink: 0,
       alignItems: 'center',
+      justifyContent: 'center',
       gap: 8,
-      maxWidth: 180,
     }}
     {...buttonProps}>
     Add {shipType}

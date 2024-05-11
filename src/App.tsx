@@ -81,7 +81,7 @@ function App() {
         }}
       />
       <h1>Eclipse Battle Simulator</h1>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
           <button
             type="button"
@@ -128,7 +128,12 @@ function App() {
               <h3>
                 Add blueprint on {shipSide === 'attackerShips' ? 'attacker' : 'defender'} side
               </h3>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
+              <div
+                style={{
+                  display: 'grid',
+                  gridGap: 16,
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+                }}>
                 {(shipSide === 'attackerShips' ? attackerBlueprints : defenderBlueprints).map(
                   (shipType) => (
                     <AddBlueprintButton
@@ -143,24 +148,18 @@ function App() {
                     />
                   )
                 )}
+                {shipSide === 'defenderShips' &&
+                  npcBlueprints.map((shipType) => (
+                    <AddBlueprintButton
+                      shipType={shipType}
+                      key={`add-${shipSide}-${shipType}`}
+                      onClick={() => {
+                        appendFunctions[shipSide](getNpcBlueprint(shipType))
+                      }}
+                      disabled={fields[shipSide].length > 0} // a NPC can only fight alone
+                    />
+                  ))}
               </div>
-              {shipSide === 'defenderShips' ? (
-                <>
-                  <div style={{ height: 16 }} />
-                  <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
-                    {npcBlueprints.map((shipType) => (
-                      <AddBlueprintButton
-                        shipType={shipType}
-                        key={`add-${shipSide}-${shipType}`}
-                        onClick={() => {
-                          appendFunctions[shipSide](getNpcBlueprint(shipType))
-                        }}
-                        disabled={fields[shipSide].length > 0} // a NPC can only fight alone
-                      />
-                    ))}
-                  </div>
-                </>
-              ) : null}
             </div>
             {fields[shipSide].map((field, index) => {
               const shipTypeValue = watch(`${shipSide}.${index}.type`)
@@ -174,7 +173,12 @@ function App() {
                     gap: 16,
                     padding: 16,
                   }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <div
+                    style={{
+                      display: 'grid',
+                      gap: 16,
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(82px, 1fr))',
+                    }}>
                     <div
                       style={{
                         display: 'flex',
@@ -230,25 +234,12 @@ function App() {
                       accessibilityLabel="increase shield"
                       image={ShieldImage}
                     />
-                    <button
-                      type="button"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        height: 'fit-content',
-                        padding: 4,
-                      }}
-                      onClick={() => {
-                        removeFunctions[shipSide](index)
-                      }}>
-                      <TrashBinIcon />
-                    </button>
                   </div>
                   <div
                     className="elevation-2"
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: 'repeat(6, 1fr)',
+                      gridTemplateColumns: 'repeat(auto-fill, minmax(82px, 1fr))',
                       padding: 8,
                       gap: 16,
                     }}>
@@ -285,6 +276,15 @@ function App() {
                       accessibilityLabel="increase rift cannon"
                       image={PinkWeaponImage}
                     />
+                  </div>
+                  <div
+                    className="elevation-2"
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fill, minmax(82px, 1fr))',
+                      padding: 8,
+                      gap: 16,
+                    }}>
                     <label style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
                       Missiles
                     </label>
@@ -313,6 +313,21 @@ function App() {
                       image={RedWeaponImage}
                     />
                   </div>
+                  <button
+                    type="button"
+                    style={{
+                      display: 'flex',
+                      alignSelf: 'flex-end',
+                      justifyContent: 'center',
+                      padding: 4,
+                      width: '100%',
+                      maxWidth: 100,
+                    }}
+                    onClick={() => {
+                      removeFunctions[shipSide](index)
+                    }}>
+                    <TrashBinIcon />
+                  </button>
                 </div>
               )
             })}
@@ -352,7 +367,10 @@ function App() {
         <div>
           <h2>Results</h2>
           <p>Attacker wins: {formatPercent(simulationResult.winChance)}</p>
-          <ProbabilityDiagram survivalChances={simulationResult.survivalChances} />
+          <ProbabilityDiagram
+            survivalChances={simulationResult.survivalChances}
+            width={Math.min(1096, window.innerWidth - 64)}
+          />
         </div>
       )}
     </form>
