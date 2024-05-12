@@ -355,7 +355,7 @@ function App() {
               src="/gcds-icon.png"
               width={26}
               className="loader"
-              style={{ margin: '-0.6em 0 -0.5em 0' }}
+              style={{ margin: '-0.3em 0' }}
             />
           ) : (
             'Battle!'
