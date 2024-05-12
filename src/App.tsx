@@ -18,7 +18,7 @@ import type { FormValues, SimulationResult } from './types'
 import { getShipImage } from './getShipImage'
 import { getSimulationResult } from './api/getSimulationResult'
 import { ProbabilityDiagram } from './ProbabilityDiagram'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { formatPercent } from './utils/formatPercent'
 import { defaultBlueprint } from './blueprints'
 import { AddBlueprintButton } from './AddBlueprintButton'
@@ -35,6 +35,12 @@ function App() {
   const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
   const [showModal, setShowModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    if (simulationResult) {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    }
+  }, [simulationResult])
 
   const { register, control, handleSubmit, watch } = useForm<FormValues>({
     defaultValues: {
