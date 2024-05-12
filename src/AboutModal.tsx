@@ -24,7 +24,7 @@ export const AboutModal: FunctionComponent<Props> = ({ ...props }) => (
         battles, with:
       </p>
       <ul>
-        <li>floating point precision (the UI truncs it for readability),</li>
+        <li>floating point precision (the UI truncates it for readability),</li>
         <li>graph with the probability of survival of each ship,</li>
         <li>
           optimal targeting: player ships deal damage in the way that maximizes their chance of
@@ -41,8 +41,9 @@ export const AboutModal: FunctionComponent<Props> = ({ ...props }) => (
           <a href="https://github.com/voisinhugo/" target="_blank" rel="noreferrer">
             Hugo Voisin
           </a>{' '}
-          for the frontend.
+          for the frontend,
         </li>
+        <li>FiF for OPS.</li>
       </ul>
     </div>
   </Modal>
