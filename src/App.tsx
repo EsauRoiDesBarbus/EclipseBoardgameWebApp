@@ -141,18 +141,21 @@ function App() {
                   gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
                 }}>
                 {(shipSide === 'attackerShips' ? attackerBlueprints : defenderBlueprints).map(
-                  (shipType) => (
-                    <AddBlueprintButton
-                      shipType={shipType}
-                      key={`add-${shipSide}-${shipType}`}
-                      onClick={() => {
-                        appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
-                      }}
-                      disabled={fields[shipSide].some(
-                        (field) => field.type === shipType || field.type == 'npc' // a NPC can only fight alone
-                      )}
-                    />
-                  )
+                  (shipType) => {
+                    const ships = watch(shipSide)
+                    return (
+                      <AddBlueprintButton
+                        shipType={shipType}
+                        key={`add-${shipSide}-${shipType}`}
+                        onClick={() => {
+                          appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
+                        }}
+                        disabled={ships.some(
+                          (ship) => ship.type === shipType || ship.type == 'npc' // a NPC can only fight alone
+                        )}
+                      />
+                    )
+                  }
                 )}
                 {shipSide === 'defenderShips' &&
                   npcBlueprints.map((shipType) => (
