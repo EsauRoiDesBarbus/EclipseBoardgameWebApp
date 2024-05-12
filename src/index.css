@@ -84,6 +84,7 @@ button.primary {
   }
   button.primary {
     color: #646cff;
+    outline: 1px solid #1a1a1a;
   }
   .elevation-1 {
     background-color: #dedede;
