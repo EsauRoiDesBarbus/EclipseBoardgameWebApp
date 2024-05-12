@@ -14,9 +14,9 @@ import BlueWeaponImage from './assets/weaponBlue.png'
 import RedWeaponImage from './assets/weaponRed.png'
 import PinkWeaponImage from './assets/weaponPink.png'
 
-import type { FormValues, SimulationResult } from './types'
+import type { FormValues, CalculationResult } from './types'
 import { getShipImage } from './getShipImage'
-import { getSimulationResult } from './api/getSimulationResult'
+import { getCalculationResult } from './api/getCalculationResult'
 import { ProbabilityDiagram } from './ProbabilityDiagram'
 import { useEffect, useState } from 'react'
 import { formatPercent } from './utils/formatPercent'
@@ -32,15 +32,15 @@ const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase']
 const npcBlueprints = ['ancient', 'gardian', 'gcds'] as const
 
 function App() {
-  const [simulationResult, setSimulationResult] = useState<SimulationResult | undefined>()
+  const [calculationResult, setCalculationResult] = useState<CalculationResult | undefined>()
   const [showModal, setShowModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    if (simulationResult) {
+    if (calculationResult) {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
     }
-  }, [simulationResult])
+  }, [calculationResult])
 
   const { register, control, handleSubmit, watch } = useForm<FormValues>({
     defaultValues: {
@@ -73,8 +73,8 @@ function App() {
 
   const onSubmit = async (data: FormValues) => {
     setIsLoading(true)
-    const result = await getSimulationResult(data)
-    setSimulationResult(result)
+    const result = await getCalculationResult(data)
+    setCalculationResult(result)
     setIsLoading(false)
   }
 
@@ -348,7 +348,7 @@ function App() {
           onClick={() => {
             attackerShipReplace([])
             defenderShipReplace([])
-            setSimulationResult(undefined)
+            setCalculationResult(undefined)
           }}>
           Clear
         </button>
@@ -369,12 +369,12 @@ function App() {
         </button>
       </div>
 
-      {simulationResult && (
+      {calculationResult && (
         <div>
           <h2>Results</h2>
-          <p>Attacker wins: {formatPercent(simulationResult.winChance)}</p>
+          <p>Attacker wins: {formatPercent(calculationResult.winChance)}</p>
           <ProbabilityDiagram
-            survivalChances={simulationResult.survivalChances}
+            survivalChances={calculationResult.survivalChances}
             width={Math.min(1096, window.innerWidth - 64)}
           />
         </div>

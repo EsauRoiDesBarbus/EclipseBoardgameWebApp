@@ -1,7 +1,7 @@
-import { Ship, SimulationResult } from '../types'
-import { adaptSimulationResult } from './adaptSimulationResult'
+import { Ship, CalculationResult } from '../types'
+import { adaptCalculationResult } from './adaptCalculationResult'
 import { parseShip } from './parseShip'
-import { SimulationResultResponse } from './types'
+import { CalculationResultResponse } from './types'
 
 const API_BASE_URL = window.location.href
 
@@ -10,10 +10,10 @@ type Params = {
   defenderShips: Ship[]
 }
 
-export const getSimulationResult = async ({
+export const getCalculationResult = async ({
   attackerShips,
   defenderShips,
-}: Params): Promise<SimulationResult> => {
+}: Params): Promise<CalculationResult> => {
   const attacker = attackerShips.map(parseShip).join(' + ')
   const defender = defenderShips.map(parseShip).join(' + ')
   const battleInfo = `${attacker} vs ${defender}`
@@ -22,6 +22,6 @@ export const getSimulationResult = async ({
   url.searchParams.append('battleInfo', battleInfo)
 
   const response = await fetch(url)
-  const json = (await response.json()) as SimulationResultResponse
-  return adaptSimulationResult(json)
+  const json = (await response.json()) as CalculationResultResponse
+  return adaptCalculationResult(json)
 }
