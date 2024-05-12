@@ -19,7 +19,11 @@ export const Modal: FunctionComponent<Props> = ({ show, onClose, children }) => 
         e.stopPropagation()
       }}>
       {children}
-      <button type="button" onClick={onClose} className="primary" style={{ marginTop: 20 }}>
+      <button
+        type="button"
+        onClick={onClose}
+        className="primary"
+        style={{ marginTop: 20, width: 'fit-content', alignSelf: 'center' }}>
         Close
       </button>
     </section>
