@@ -86,7 +86,7 @@ function App() {
           setShowModal(false)
         }}
       />
-      <h1>Eclipse Battle Simulator</h1>
+      <h1>Eclipse Battle Calculator</h1>
       <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
           <button
