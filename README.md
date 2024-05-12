@@ -4,6 +4,8 @@ This is a web application for a board game calculator. The game is called [Eclip
 
 For a given ship battle, this calculator gives the win chance, and the survival chance for each ship. The calculator doesn't use a Monte Carlo method to simulate the battle, but it uses advanced tools of decision theory known as [Bellman value function programming](https://en.wikipedia.org/wiki/Bellman_equation) to compute win chance.
 
+The website is hosted on a [Flask server](https://github.com/EsauRoiDesBarbus/EclipseBoardgameServer) and you can access it [here](http://eclipseboardgamecalculator.duckdns.org/).
+
 ## How to install
 
 To install the web application, you need to have [Node.js](https://nodejs.org/) installed on your computer. Then, you can install the dependencies with the following commands:
