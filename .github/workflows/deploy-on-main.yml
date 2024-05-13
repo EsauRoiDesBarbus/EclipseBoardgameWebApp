@@ -17,7 +17,7 @@ jobs:
 
       - name: Deploy Frontend to Raspberry Pi
         run: |
-          ssh -o StrictHostKeyChecking=no pi@eclipseboardgamecalculator.duckdns.org << 'EOF'
+          ssh -o StrictHostKeyChecking=no -T pi@eclipseboardgamecalculator.duckdns.org <<EOF
             cd /home/pi/Eclipse/EclipseBoardgameWebApp/
             git pull
             npm install
