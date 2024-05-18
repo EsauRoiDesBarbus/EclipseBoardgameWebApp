@@ -1,4 +1,4 @@
-name: Deploy Frontend to Raspberry Pi
+name: Deploy WebApp build
 
 on:
   push:
@@ -6,23 +6,31 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
+    name: Build React App
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout frontend repo
+        uses: actions/checkout@v4
 
-      - uses: webfactory/ssh-agent@v0.9.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          node-version: '20'
 
-      - name: Deploy Frontend to Raspberry Pi
-        run: |
-          ssh -o StrictHostKeyChecking=no -T pi@eclipseboardgamecalculator.duckdns.org <<EOF
-            cd /home/pi/Eclipse/EclipseBoardgameWebApp/
-            git pull
-            npm install
-            npm run build
-            rm -r ../EclipseBoardgameServer/dist
-            mv dist ../EclipseBoardgameServer/
-            sudo systemctl restart eclipseServer
-          EOF
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the React app
+        run: npm run build
+
+      - name: Archive production artifacts
+        run: tar -czf dist.tar.gz dist
+        continue-on-error: true
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eclipseWebAppdist
+          path: dist.tar.gz
