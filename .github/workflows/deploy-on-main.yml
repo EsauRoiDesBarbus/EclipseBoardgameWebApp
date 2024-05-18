@@ -34,3 +34,11 @@ jobs:
         with:
           name: eclipseWebAppdist
           path: dist.tar.gz
+          overwrite: true
+
+      - name: Trigger server deploy
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GA_SERVER_REPO_TRIGGER_TOKEN }}
+          repository: voisinhugo/EclipseBoardgameServer
+          event-type: frontend-build-finished
