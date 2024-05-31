@@ -71,8 +71,8 @@ button.primary {
   border-radius: 8px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
+[data-theme='light'] {
+  body {
     color: #213547;
     background-color: #ffffff;
   }

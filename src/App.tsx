@@ -26,6 +26,7 @@ import { getNpcBlueprint } from './getNpcBlueprint'
 import { TrashBinIcon } from './icons/TrashBinIcon'
 import { basicShipsDemo, optimalDamageSplittingDemo } from './demos'
 import { AboutModal } from './AboutModal'
+import { ColorModeToggle } from './theme/ColorModeToggle'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
@@ -96,6 +97,7 @@ function App() {
             }}>
             About
           </button>
+          <ColorModeToggle />
           <a href="https://forms.gle/Ud5MHFKXUMSHkwhW9" target="_blank" rel="noreferrer">
             Feedback
           </a>
