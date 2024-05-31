@@ -1,5 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from 'react'
 import './modal.css'
+import { Trans } from '@lingui/macro'
 
 type Props = PropsWithChildren<{
   show: boolean
@@ -24,7 +25,7 @@ export const Modal: FunctionComponent<Props> = ({ show, onClose, children }) => 
         onClick={onClose}
         className="primary"
         style={{ marginTop: 20, width: 'fit-content', alignSelf: 'center' }}>
-        Close
+        <Trans>Close</Trans>
       </button>
     </section>
   </div>

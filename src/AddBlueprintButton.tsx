@@ -1,22 +1,37 @@
 import { ComponentProps, FunctionComponent } from 'react'
 import { getShipImage } from './getShipImage'
-import { firstLetterToUppercase } from './utils/firstLetterToUppercase'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
 type Props = {
   shipType: Parameters<typeof getShipImage>[0]
 } & ComponentProps<'button'>
 
-export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...buttonProps }) => (
-  <button
-    type="button"
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 8,
-    }}
-    {...buttonProps}>
-    {firstLetterToUppercase(shipType)}
-    <img src={getShipImage(shipType)} width={30} alt={`add ${shipType}`} />
-  </button>
-)
+const getShipName = {
+  interceptor: msg`Interceptor`,
+  cruiser: msg`Cruiser`,
+  dreadnought: msg`Dreadnought`,
+  starbase: msg`Starbase`,
+  npc: msg`NPC`,
+  ancient: msg`Ancient`,
+  guardian: msg`Guardian`,
+  gcds: msg`GCDS`,
+} as const
+
+export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...buttonProps }) => {
+  const { _ } = useLingui()
+  return (
+    <button
+      type="button"
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8,
+      }}
+      {...buttonProps}>
+      {_(getShipName[shipType])}
+      <img src={getShipImage(shipType)} width={30} alt={`add ${shipType}`} />
+    </button>
+  )
+}

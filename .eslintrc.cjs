@@ -9,9 +9,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'lingui.config.ts'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'lingui'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     "@typescript-eslint/no-misused-promises": ['error', { // https://github.com/orgs/react-hook-form/discussions/8622#discussioncomment-4060570

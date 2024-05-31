@@ -1,0 +1,160 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-05-31 23:42+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: fr\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/AboutModal.tsx:11
+#: src/App.tsx:115
+msgid "About"
+msgstr "À propos"
+
+#: src/App.tsx:156
+msgid "Add blueprint on {0} side"
+msgstr "Ajouter un plan de vaisseau du côté {0}"
+
+#: src/AddBlueprintButton.tsx:16
+msgid "Ancient"
+msgstr ""
+
+#: src/AboutModal.tsx:48
+msgid "Any question, suggestion, bug report, use the feedback button."
+msgstr "Si tu as des questions, des suggestions, des bugs, utilise le bouton de feedback."
+
+#: src/App.tsx:146
+msgid "Attack"
+msgstr "Attaque"
+
+#: src/App.tsx:157
+msgid "attacker"
+msgstr "attaquant"
+
+#: src/App.tsx:418
+msgid "Attacker wins:"
+msgstr "Chances de victoire de l'attaquant :"
+
+#: src/App.tsx:407
+msgid "Battle!"
+msgstr "Combat !"
+
+#: src/AboutModal.tsx:19
+msgid "Bellman value function programming"
+msgstr "programmation par fonction de valeur de Bellman"
+
+#: src/App.tsx:292
+msgid "Cannons"
+msgstr "Canons"
+
+#: src/App.tsx:393
+msgid "Clear"
+msgstr "Effacer"
+
+#: src/Modal.tsx:28
+msgid "Close"
+msgstr "Fermer"
+
+#: src/AboutModal.tsx:50
+msgid "Credits"
+msgstr "Remerciements"
+
+#: src/AddBlueprintButton.tsx:12
+#: src/App.tsx:230
+msgid "Cruiser"
+msgstr "Frégate"
+
+#: src/App.tsx:157
+msgid "defender"
+msgstr "défenseur"
+
+#: src/App.tsx:146
+msgid "Defense"
+msgstr "Défense"
+
+#: src/AddBlueprintButton.tsx:13
+#: src/App.tsx:233
+msgid "Dreadnought"
+msgstr "Croiseur"
+
+#: src/App.tsx:105
+msgid "Eclipse Battle Calculator"
+msgstr "Calculateur de bataille pour Eclipse"
+
+#: src/AboutModal.tsx:54
+msgid "Etienne Bertin (aka. esauroidesbarbus) for the maths and the backend,"
+msgstr "Etienne Bertin (ou esauroidesbarbus) pour les maths et le backend,"
+
+#: src/App.tsx:119
+msgid "Feedback"
+msgstr ""
+
+#: src/AboutModal.tsx:63
+msgid "FiF for OPS."
+msgstr "FiF pour la partie OPS."
+
+#: src/AboutModal.tsx:34
+msgid "floating point precision (the UI truncates it for readability),"
+msgstr "la précision d'un nombre à virgule flottante (l'interface utilisateur le tronque pour la lisibilité),"
+
+#: src/AboutModal.tsx:60
+msgid "for the frontend,"
+msgstr "pour la partie frontend,"
+
+#: src/AddBlueprintButton.tsx:18
+msgid "GCDS"
+msgstr ""
+
+#: src/AboutModal.tsx:37
+msgid "graph with the probability of survival of each ship,"
+msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
+
+#: src/AddBlueprintButton.tsx:17
+msgid "Guardian"
+msgstr "Gardien"
+
+#: src/AboutModal.tsx:15
+msgid "I don't use random simulations, I use advanced tools of decision theory known as"
+msgstr "Je ne fais pas de simulations aléatoires, j'utilise des outils avancés en théorie des jeux, connus sous le nom de"
+
+#: src/AddBlueprintButton.tsx:11
+#: src/App.tsx:227
+msgid "Interceptor"
+msgstr "Intercepteur"
+
+#: src/App.tsx:124
+msgid "Load a demo:"
+msgstr "Charger une démo :"
+
+#: src/App.tsx:335
+msgid "Missiles"
+msgstr ""
+
+#: src/AddBlueprintButton.tsx:15
+#: src/App.tsx:240
+msgid "NPC"
+msgstr "PNJ"
+
+#: src/AboutModal.tsx:40
+msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
+msgstr "ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Optimal damage splitting</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
+
+#: src/App.tsx:415
+msgid "Results"
+msgstr "Résultats"
+
+#: src/AddBlueprintButton.tsx:14
+#: src/App.tsx:236
+msgid "Starbase"
+msgstr "Base stellaire"
+
+#: src/AboutModal.tsx:21
+msgid "to compute win chance of <0>Eclipse</0> battles, with:"
+msgstr "pour calculer les chances de victoire de batailles d'<0>Eclipse</0>, avec :"
