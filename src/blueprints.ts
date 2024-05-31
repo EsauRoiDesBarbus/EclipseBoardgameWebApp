@@ -44,7 +44,7 @@ export const ancientBlueprint = {
   },
 } as const satisfies Ship
 
-export const gardianBlueprint = {
+export const guardianBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 3,

@@ -29,7 +29,7 @@ import { AboutModal } from './AboutModal'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
-const npcBlueprints = ['ancient', 'gardian', 'gcds'] as const
+const npcBlueprints = ['ancient', 'guardian', 'gcds'] as const
 
 function App() {
   const [calculationResult, setCalculationResult] = useState<CalculationResult | undefined>()
