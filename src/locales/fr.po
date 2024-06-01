@@ -14,11 +14,11 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/AboutModal.tsx:11
-#: src/App.tsx:115
+#: src/App.tsx:105
 msgid "About"
 msgstr "À propos"
 
-#: src/App.tsx:156
+#: src/App.tsx:147
 msgid "Add blueprint on {0} side"
 msgstr "Ajouter un plan de vaisseau du côté {0}"
 
@@ -30,19 +30,19 @@ msgstr ""
 msgid "Any question, suggestion, bug report, use the feedback button."
 msgstr "Si tu as des questions, des suggestions, des bugs, utilise le bouton de feedback."
 
-#: src/App.tsx:146
+#: src/App.tsx:137
 msgid "Attack"
 msgstr "Attaque"
 
-#: src/App.tsx:157
+#: src/App.tsx:148
 msgid "attacker"
 msgstr "attaquant"
 
-#: src/App.tsx:418
+#: src/App.tsx:408
 msgid "Attacker wins:"
 msgstr "Chances de victoire de l'attaquant :"
 
-#: src/App.tsx:407
+#: src/App.tsx:397
 msgid "Battle!"
 msgstr "Combat !"
 
@@ -50,11 +50,11 @@ msgstr "Combat !"
 msgid "Bellman value function programming"
 msgstr "programmation par fonction de valeur de Bellman"
 
-#: src/App.tsx:292
+#: src/App.tsx:283
 msgid "Cannons"
 msgstr "Canons"
 
-#: src/App.tsx:393
+#: src/App.tsx:383
 msgid "Clear"
 msgstr "Effacer"
 
@@ -62,29 +62,33 @@ msgstr "Effacer"
 msgid "Close"
 msgstr "Fermer"
 
+#: src/App.tsx:262
+msgid "Computer"
+msgstr "Ordinateur"
+
 #: src/AboutModal.tsx:50
 msgid "Credits"
 msgstr "Remerciements"
 
 #: src/AddBlueprintButton.tsx:12
-#: src/App.tsx:230
+#: src/App.tsx:222
 msgid "Cruiser"
 msgstr "Frégate"
 
-#: src/App.tsx:157
+#: src/App.tsx:148
 msgid "defender"
 msgstr "défenseur"
 
-#: src/App.tsx:146
+#: src/App.tsx:137
 msgid "Defense"
 msgstr "Défense"
 
 #: src/AddBlueprintButton.tsx:13
-#: src/App.tsx:233
+#: src/App.tsx:225
 msgid "Dreadnought"
 msgstr "Croiseur"
 
-#: src/App.tsx:105
+#: src/App.tsx:96
 msgid "Eclipse Battle Calculator"
 msgstr "Calculateur de bataille pour Eclipse"
 
@@ -92,7 +96,7 @@ msgstr "Calculateur de bataille pour Eclipse"
 msgid "Etienne Bertin (aka. esauroidesbarbus) for the maths and the backend,"
 msgstr "Etienne Bertin (ou esauroidesbarbus) pour les maths et le backend,"
 
-#: src/App.tsx:119
+#: src/App.tsx:110
 msgid "Feedback"
 msgstr ""
 
@@ -120,38 +124,74 @@ msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
 msgid "Guardian"
 msgstr "Gardien"
 
+#: src/App.tsx:255
+msgid "Hull"
+msgstr "Coque"
+
 #: src/AboutModal.tsx:15
 msgid "I don't use random simulations, I use advanced tools of decision theory known as"
 msgstr "Je ne fais pas de simulations aléatoires, j'utilise des outils avancés en théorie des jeux, connus sous le nom de"
 
+#: src/App.tsx:263
+msgid "increase computer"
+msgstr "augmenter l'ordinateur"
+
+#: src/App.tsx:256
+msgid "increase hull"
+msgstr "augmenter la coque"
+
+#: src/App.tsx:249
+msgid "increase initiative"
+msgstr "augmenter l'initiative"
+
+#: src/App.tsx:242
+msgid "increase number of ships"
+msgstr "augmenter le nombre de vaisseaux"
+
+#: src/App.tsx:270
+msgid "increase shield"
+msgstr "augmenter le bouclier"
+
+#: src/App.tsx:248
+msgid "Initiative"
+msgstr ""
+
 #: src/AddBlueprintButton.tsx:11
-#: src/App.tsx:227
+#: src/App.tsx:219
 msgid "Interceptor"
 msgstr "Intercepteur"
 
-#: src/App.tsx:124
+#: src/App.tsx:115
 msgid "Load a demo:"
 msgstr "Charger une démo :"
 
-#: src/App.tsx:335
+#: src/App.tsx:325
 msgid "Missiles"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:15
-#: src/App.tsx:240
+#: src/App.tsx:232
 msgid "NPC"
 msgstr "PNJ"
+
+#: src/App.tsx:241
+msgid "Number"
+msgstr "Nombre"
 
 #: src/AboutModal.tsx:40
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr "ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Optimal damage splitting</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
 
-#: src/App.tsx:415
+#: src/App.tsx:405
 msgid "Results"
 msgstr "Résultats"
 
+#: src/App.tsx:269
+msgid "Shield"
+msgstr "Bouclier"
+
 #: src/AddBlueprintButton.tsx:14
-#: src/App.tsx:236
+#: src/App.tsx:228
 msgid "Starbase"
 msgstr "Base stellaire"
 
