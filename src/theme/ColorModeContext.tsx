@@ -14,7 +14,7 @@ export type ContextValue = {
   setColorMode: (colorMode: ColorMode) => void
 }
 
-export const ColorModeContext = React.createContext<ContextValue | undefined>(undefined)
+export const ColorModeContext = React.createContext<ContextValue | null>(null)
 
 // Ensure to always return a valid colorMode even if input is invalid
 const coerceToColorMode = (colorMode?: string | null): ColorMode =>
