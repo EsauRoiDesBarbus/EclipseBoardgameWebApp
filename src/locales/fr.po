@@ -13,6 +13,11 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-explicit-id
+#: src/features/i18n/updateLocale.ts:12
+msgid "Eclipse Battle Calculator"
+msgstr "Eclipse - Calculateur de bataille"
+
 #: src/features/about/AboutModal.tsx:11
 #: src/Header.tsx:24
 msgid "About"
