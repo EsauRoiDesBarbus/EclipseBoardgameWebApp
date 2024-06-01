@@ -40,7 +40,7 @@ msgstr "attaquant"
 
 #: src/App.tsx:408
 msgid "Attacker wins:"
-msgstr "Chances de victoire de l'attaquant :"
+msgstr "Chances de victoire de l'attaquant :"
 
 #: src/App.tsx:123
 msgid "Basic ships"
@@ -167,7 +167,7 @@ msgstr "Intercepteur"
 
 #: src/App.tsx:115
 msgid "Load a demo:"
-msgstr "Charger une démo :"
+msgstr "Charger une démo :"
 
 #: src/App.tsx:325
 msgid "Missiles"
@@ -188,7 +188,7 @@ msgstr "Répartition des dégâts optimale"
 
 #: src/AboutModal.tsx:40
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
-msgstr "ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Répartition des dégâts optimale</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
+msgstr "ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Répartition des dégâts optimale</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
 
 #: src/App.tsx:405
 msgid "Results"
@@ -205,4 +205,4 @@ msgstr "Base stellaire"
 
 #: src/AboutModal.tsx:21
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
-msgstr "pour calculer les chances de victoire de batailles d'<0>Eclipse</0>, avec :"
+msgstr "pour calculer les chances de victoire de batailles d'<0>Eclipse</0>, avec :"
