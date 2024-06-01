@@ -85,7 +85,7 @@ function App() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
+    <>
       <AboutModal
         show={showModal}
         onClose={() => {
@@ -95,326 +95,330 @@ function App() {
       <h1>
         <Trans>Eclipse Battle Calculator</Trans>
       </h1>
-      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
+      <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
         <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            gap: 16,
-          }}>
-          <button
-            type="button"
-            onClick={() => {
-              setShowModal(true)
+          style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: 16,
             }}>
-            <Trans>About</Trans>
-          </button>
-          <ColorModeToggle />
-          <LocaleSelect />
-          <a href="https://forms.gle/Ud5MHFKXUMSHkwhW9" target="_blank" rel="noreferrer">
-            <Trans>Feedback</Trans>
-          </a>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: 16,
-          }}>
-          <label>
-            <Trans>Load a demo:</Trans>
-          </label>
-          <button
-            type="button"
-            onClick={() => {
-              attackerShipReplace(basicShipsDemo.attackerShips)
-              defenderShipReplace(basicShipsDemo.defenderShips)
-            }}>
-            <Trans>Basic ships</Trans>
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
-              defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
-            }}>
-            <Trans>Optimal damage splitting</Trans>
-          </button>
-        </div>
-      </div>
-      {(['attackerShips', 'defenderShips'] as const).map((shipSide) => (
-        <div key={shipSide}>
-          <h2>{_(shipSide === 'attackerShips' ? msg`Attack` : msg`Defense`)}</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div
-              className="elevation-1"
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '0px 16px 16px 16px',
+            <button
+              type="button"
+              onClick={() => {
+                setShowModal(true)
               }}>
-              <h3>
-                <Trans>
-                  Add blueprint on {_(shipSide === 'attackerShips' ? msg`attacker` : msg`defender`)}{' '}
-                  side
-                </Trans>
-              </h3>
+              <Trans>About</Trans>
+            </button>
+            <ColorModeToggle />
+            <LocaleSelect />
+            <a href="https://forms.gle/Ud5MHFKXUMSHkwhW9" target="_blank" rel="noreferrer">
+              <Trans>Feedback</Trans>
+            </a>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: 16,
+            }}>
+            <label>
+              <Trans>Load a demo:</Trans>
+            </label>
+            <button
+              type="button"
+              onClick={() => {
+                attackerShipReplace(basicShipsDemo.attackerShips)
+                defenderShipReplace(basicShipsDemo.defenderShips)
+              }}>
+              <Trans>Basic ships</Trans>
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
+                defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
+              }}>
+              <Trans>Optimal damage splitting</Trans>
+            </button>
+          </div>
+        </div>
+        {(['attackerShips', 'defenderShips'] as const).map((shipSide) => (
+          <div key={shipSide}>
+            <h2>{_(shipSide === 'attackerShips' ? msg`Attack` : msg`Defense`)}</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               <div
+                className="elevation-1"
                 style={{
-                  display: 'grid',
-                  gridGap: 16,
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '0px 16px 16px 16px',
                 }}>
-                {(shipSide === 'attackerShips' ? attackerBlueprints : defenderBlueprints).map(
-                  (shipType) => {
-                    const ships = watch(shipSide)
-                    return (
+                <h3>
+                  <Trans>
+                    Add blueprint on{' '}
+                    {_(shipSide === 'attackerShips' ? msg`attacker` : msg`defender`)} side
+                  </Trans>
+                </h3>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridGap: 16,
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+                  }}>
+                  {(shipSide === 'attackerShips' ? attackerBlueprints : defenderBlueprints).map(
+                    (shipType) => {
+                      const ships = watch(shipSide)
+                      return (
+                        <AddBlueprintButton
+                          shipType={shipType}
+                          key={`add-${shipSide}-${shipType}`}
+                          onClick={() => {
+                            appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
+                          }}
+                          disabled={ships.some(
+                            (ship) => ship.type === shipType || ship.type == 'npc' // a NPC can only fight alone
+                          )}
+                        />
+                      )
+                    }
+                  )}
+                  {shipSide === 'defenderShips' &&
+                    npcBlueprints.map((shipType) => (
                       <AddBlueprintButton
                         shipType={shipType}
                         key={`add-${shipSide}-${shipType}`}
                         onClick={() => {
-                          appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
+                          appendFunctions[shipSide](getNpcBlueprint(shipType))
                         }}
-                        disabled={ships.some(
-                          (ship) => ship.type === shipType || ship.type == 'npc' // a NPC can only fight alone
-                        )}
+                        disabled={fields[shipSide].length > 0} // a NPC can only fight alone
                       />
-                    )
-                  }
-                )}
-                {shipSide === 'defenderShips' &&
-                  npcBlueprints.map((shipType) => (
-                    <AddBlueprintButton
-                      shipType={shipType}
-                      key={`add-${shipSide}-${shipType}`}
-                      onClick={() => {
-                        appendFunctions[shipSide](getNpcBlueprint(shipType))
-                      }}
-                      disabled={fields[shipSide].length > 0} // a NPC can only fight alone
-                    />
-                  ))}
+                    ))}
+                </div>
               </div>
-            </div>
-            {fields[shipSide].map((field, index) => {
-              const shipTypeValue = watch(`${shipSide}.${index}.type`)
-              return (
-                <div
-                  key={field.id}
-                  className="elevation-1"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 16,
-                    padding: 16,
-                  }}>
+              {fields[shipSide].map((field, index) => {
+                const shipTypeValue = watch(`${shipSide}.${index}.type`)
+                return (
                   <div
+                    key={field.id}
+                    className="elevation-1"
                     style={{
-                      display: 'grid',
+                      display: 'flex',
+                      flexDirection: 'column',
                       gap: 16,
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(82px, 1fr))',
+                      padding: 16,
                     }}>
                     <div
                       style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: 8,
-                        justifyContent: 'space-between',
+                        display: 'grid',
+                        gap: 16,
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(82px, 1fr))',
                       }}>
-                      <label htmlFor={`ships.${index}.type`}>Type</label>
-                      <select
-                        {...register(`${shipSide}.${index}.type`)}
-                        id={`${shipSide}.${index}.type`}
-                        style={{ display: 'flex', flexGrow: 1, maxHeight: 36 }}>
-                        <option value="interceptor">
-                          <Trans>Interceptor</Trans>
-                        </option>
-                        <option value="cruiser">
-                          <Trans>Cruiser</Trans>
-                        </option>
-                        <option value="dreadnought">
-                          <Trans>Dreadnought</Trans>
-                        </option>
-                        <option value="starbase">
-                          <Trans>Starbase</Trans>
-                        </option>
-                        {shipSide === 'defenderShips' ? (
-                          <option value="npc">
-                            <Trans>NPC</Trans>
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: 8,
+                          justifyContent: 'space-between',
+                        }}>
+                        <label htmlFor={`ships.${index}.type`}>Type</label>
+                        <select
+                          {...register(`${shipSide}.${index}.type`)}
+                          id={`${shipSide}.${index}.type`}
+                          style={{ display: 'flex', flexGrow: 1, maxHeight: 36 }}>
+                          <option value="interceptor">
+                            <Trans>Interceptor</Trans>
                           </option>
-                        ) : null}
-                      </select>
+                          <option value="cruiser">
+                            <Trans>Cruiser</Trans>
+                          </option>
+                          <option value="dreadnought">
+                            <Trans>Dreadnought</Trans>
+                          </option>
+                          <option value="starbase">
+                            <Trans>Starbase</Trans>
+                          </option>
+                          {shipSide === 'defenderShips' ? (
+                            <option value="npc">
+                              <Trans>NPC</Trans>
+                            </option>
+                          ) : null}
+                        </select>
+                      </div>
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.count`}
+                        min={1}
+                        label={_(msg`Number`)}
+                        accessibilityLabel={_(msg`increase number of ships`)}
+                        image={getShipImage(shipTypeValue)}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.initiative`}
+                        label={_(msg`Initiative`)}
+                        accessibilityLabel={_(msg`increase initiative`)}
+                        image={InitiativeImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.hull`}
+                        label={_(msg`Hull`)}
+                        accessibilityLabel={_(msg`increase hull`)}
+                        image={HullImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.computer`}
+                        label={_(msg`Computer`)}
+                        accessibilityLabel={_(msg`increase computer`)}
+                        image={ComputerImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.shield`}
+                        label={_(msg`Shield`)}
+                        accessibilityLabel={_(msg`increase shield`)}
+                        image={ShieldImage}
+                      />
                     </div>
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.count`}
-                      min={1}
-                      label={_(msg`Number`)}
-                      accessibilityLabel={_(msg`increase number of ships`)}
-                      image={getShipImage(shipTypeValue)}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.initiative`}
-                      label={_(msg`Initiative`)}
-                      accessibilityLabel={_(msg`increase initiative`)}
-                      image={InitiativeImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.hull`}
-                      label={_(msg`Hull`)}
-                      accessibilityLabel={_(msg`increase hull`)}
-                      image={HullImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.computer`}
-                      label={_(msg`Computer`)}
-                      accessibilityLabel={_(msg`increase computer`)}
-                      image={ComputerImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.shield`}
-                      label={_(msg`Shield`)}
-                      accessibilityLabel={_(msg`increase shield`)}
-                      image={ShieldImage}
-                    />
+                    <div
+                      className="elevation-2"
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(82px, 1fr))',
+                        padding: 8,
+                        gap: 16,
+                      }}>
+                      <label
+                        style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
+                        <Trans>Cannons</Trans>
+                      </label>
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.cannon.yellow`}
+                        accessibilityLabel="increase yellow cannon"
+                        image={YellowWeaponImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.cannon.orange`}
+                        accessibilityLabel="increase orange cannon"
+                        image={OrangeWeaponImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.cannon.blue`}
+                        accessibilityLabel="increase blue cannon"
+                        image={BlueWeaponImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.cannon.red`}
+                        accessibilityLabel="increase red cannon"
+                        image={RedWeaponImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.cannon.pink`}
+                        accessibilityLabel="increase rift cannon"
+                        image={PinkWeaponImage}
+                      />
+                    </div>
+                    <div
+                      className="elevation-2"
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(82px, 1fr))',
+                        padding: 8,
+                        gap: 16,
+                      }}>
+                      <label
+                        style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
+                        <Trans>Missiles</Trans>
+                      </label>
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.missile.yellow`}
+                        accessibilityLabel="increase yellow missile"
+                        image={YellowWeaponImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.missile.orange`}
+                        accessibilityLabel="increase orange missile"
+                        image={OrangeWeaponImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.missile.blue`}
+                        accessibilityLabel="increase blue missile"
+                        image={BlueWeaponImage}
+                      />
+                      <NumberInput
+                        control={control}
+                        name={`${shipSide}.${index}.missile.red`}
+                        accessibilityLabel="increase red missile"
+                        image={RedWeaponImage}
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      style={{
+                        display: 'flex',
+                        alignSelf: 'flex-end',
+                        justifyContent: 'center',
+                        padding: 4,
+                        width: '100%',
+                        maxWidth: 100,
+                      }}
+                      onClick={() => {
+                        removeFunctions[shipSide](index)
+                      }}>
+                      <TrashBinIcon />
+                    </button>
                   </div>
-                  <div
-                    className="elevation-2"
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fill, minmax(82px, 1fr))',
-                      padding: 8,
-                      gap: 16,
-                    }}>
-                    <label style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
-                      <Trans>Cannons</Trans>
-                    </label>
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.cannon.yellow`}
-                      accessibilityLabel="increase yellow cannon"
-                      image={YellowWeaponImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.cannon.orange`}
-                      accessibilityLabel="increase orange cannon"
-                      image={OrangeWeaponImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.cannon.blue`}
-                      accessibilityLabel="increase blue cannon"
-                      image={BlueWeaponImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.cannon.red`}
-                      accessibilityLabel="increase red cannon"
-                      image={RedWeaponImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.cannon.pink`}
-                      accessibilityLabel="increase rift cannon"
-                      image={PinkWeaponImage}
-                    />
-                  </div>
-                  <div
-                    className="elevation-2"
-                    style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fill, minmax(82px, 1fr))',
-                      padding: 8,
-                      gap: 16,
-                    }}>
-                    <label style={{ display: 'flex', alignSelf: 'center', justifySelf: 'center' }}>
-                      <Trans>Missiles</Trans>
-                    </label>
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.missile.yellow`}
-                      accessibilityLabel="increase yellow missile"
-                      image={YellowWeaponImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.missile.orange`}
-                      accessibilityLabel="increase orange missile"
-                      image={OrangeWeaponImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.missile.blue`}
-                      accessibilityLabel="increase blue missile"
-                      image={BlueWeaponImage}
-                    />
-                    <NumberInput
-                      control={control}
-                      name={`${shipSide}.${index}.missile.red`}
-                      accessibilityLabel="increase red missile"
-                      image={RedWeaponImage}
-                    />
-                  </div>
-                  <button
-                    type="button"
-                    style={{
-                      display: 'flex',
-                      alignSelf: 'flex-end',
-                      justifyContent: 'center',
-                      padding: 4,
-                      width: '100%',
-                      maxWidth: 100,
-                    }}
-                    onClick={() => {
-                      removeFunctions[shipSide](index)
-                    }}>
-                    <TrashBinIcon />
-                  </button>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </div>
+        ))}
+
+        <div style={{ display: 'flex', marginTop: 20, gap: 32 }}>
+          <button
+            type="button"
+            style={{ display: 'flex', flex: 1, justifyContent: 'center' }}
+            onClick={() => {
+              attackerShipReplace([])
+              defenderShipReplace([])
+              setCalculationResult(undefined)
+            }}>
+            <Trans>Clear</Trans>
+          </button>
+          <button
+            type="submit"
+            className="primary"
+            style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+            {isLoading ? (
+              <img
+                src="/gcds-icon.png"
+                width={26}
+                className="loader"
+                style={{ margin: '-0.3em 0' }}
+              />
+            ) : (
+              <Trans>Battle!</Trans>
+            )}
+          </button>
         </div>
-      ))}
-
-      <div style={{ display: 'flex', marginTop: 20, gap: 32 }}>
-        <button
-          type="button"
-          style={{ display: 'flex', flex: 1, justifyContent: 'center' }}
-          onClick={() => {
-            attackerShipReplace([])
-            defenderShipReplace([])
-            setCalculationResult(undefined)
-          }}>
-          <Trans>Clear</Trans>
-        </button>
-        <button
-          type="submit"
-          className="primary"
-          style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
-          {isLoading ? (
-            <img
-              src="/gcds-icon.png"
-              width={26}
-              className="loader"
-              style={{ margin: '-0.3em 0' }}
-            />
-          ) : (
-            <Trans>Battle!</Trans>
-          )}
-        </button>
-      </div>
-
+      </form>
       {calculationResult && <ResultDisplay result={calculationResult} />}
-    </form>
+    </>
   )
 }
 
