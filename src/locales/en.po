@@ -46,7 +46,7 @@ msgstr ""
 msgid "Basic ships"
 msgstr ""
 
-#: src/App.tsx:385
+#: src/App.tsx:387
 msgid "Battle!"
 msgstr ""
 
@@ -54,11 +54,11 @@ msgstr ""
 msgid "Bellman value function programming"
 msgstr ""
 
-#: src/App.tsx:270
+#: src/App.tsx:272
 msgid "Cannons"
 msgstr ""
 
-#: src/App.tsx:371
+#: src/App.tsx:373
 msgid "Clear"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/App.tsx:248
+#: src/App.tsx:250
 msgid "Computer"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Guardian"
 msgstr ""
 
-#: src/App.tsx:241
+#: src/App.tsx:243
 msgid "Hull"
 msgstr ""
 
@@ -136,63 +136,63 @@ msgstr ""
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr ""
 
-#: src/App.tsx:287
+#: src/App.tsx:289
 msgid "Increase blue cannon"
 msgstr ""
 
-#: src/App.tsx:330
+#: src/App.tsx:332
 msgid "Increase blue missile"
 msgstr ""
 
-#: src/App.tsx:249
+#: src/App.tsx:251
 msgid "Increase computer"
 msgstr ""
 
-#: src/App.tsx:242
+#: src/App.tsx:244
 msgid "Increase hull"
 msgstr ""
 
-#: src/App.tsx:235
+#: src/App.tsx:237
 msgid "Increase initiative"
 msgstr ""
 
-#: src/App.tsx:228
+#: src/App.tsx:230
 msgid "Increase number of ships"
 msgstr ""
 
-#: src/App.tsx:281
+#: src/App.tsx:283
 msgid "Increase orange cannon"
 msgstr ""
 
-#: src/App.tsx:324
+#: src/App.tsx:326
 msgid "Increase orange missile"
 msgstr ""
 
-#: src/App.tsx:293
+#: src/App.tsx:295
 msgid "Increase red cannon"
 msgstr ""
 
-#: src/App.tsx:336
+#: src/App.tsx:338
 msgid "Increase red missile"
 msgstr ""
 
-#: src/App.tsx:299
+#: src/App.tsx:301
 msgid "Increase rift cannon"
 msgstr ""
 
-#: src/App.tsx:256
+#: src/App.tsx:258
 msgid "Increase shield"
 msgstr ""
 
-#: src/App.tsx:275
+#: src/App.tsx:277
 msgid "Increase yellow cannon"
 msgstr ""
 
-#: src/App.tsx:318
+#: src/App.tsx:320
 msgid "Increase yellow missile"
 msgstr ""
 
-#: src/App.tsx:234
+#: src/App.tsx:236
 msgid "Initiative"
 msgstr ""
 
@@ -205,16 +205,16 @@ msgstr ""
 msgid "Load a demo:"
 msgstr ""
 
-#: src/App.tsx:313
+#: src/App.tsx:315
 msgid "Missiles"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:15
-#: src/App.tsx:218
+#: src/App.tsx:219
 msgid "NPC"
 msgstr ""
 
-#: src/App.tsx:227
+#: src/App.tsx:229
 msgid "Number"
 msgstr ""
 
@@ -230,12 +230,12 @@ msgstr ""
 msgid "Results"
 msgstr ""
 
-#: src/App.tsx:255
+#: src/App.tsx:257
 msgid "Shield"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:14
-#: src/App.tsx:214
+#: src/App.tsx:216
 msgid "Starbase"
 msgstr ""
 

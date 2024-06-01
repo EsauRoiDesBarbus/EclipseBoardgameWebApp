@@ -210,13 +210,15 @@ function App() {
                           <option value="dreadnought">
                             <Trans>Dreadnought</Trans>
                           </option>
-                          <option value="starbase">
-                            <Trans>Starbase</Trans>
-                          </option>
                           {shipSide === 'defenderShips' ? (
-                            <option value="npc">
-                              <Trans>NPC</Trans>
-                            </option>
+                            <>
+                              <option value="starbase">
+                                <Trans>Starbase</Trans>
+                              </option>
+                              <option value="npc">
+                                <Trans>NPC</Trans>
+                              </option>
+                            </>
                           ) : null}
                         </select>
                       </div>
