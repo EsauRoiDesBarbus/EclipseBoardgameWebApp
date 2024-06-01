@@ -23,6 +23,7 @@ export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...butt
   return (
     <button
       type="button"
+      title={_(msg`Add ${_(getShipName[shipType])}`)}
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -31,7 +32,7 @@ export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...butt
       }}
       {...buttonProps}>
       {_(getShipName[shipType])}
-      <img src={getShipImage(shipType)} width={30} alt={`add ${shipType}`} />
+      <img src={getShipImage(shipType)} width={30} />
     </button>
   )
 }

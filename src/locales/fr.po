@@ -18,6 +18,10 @@ msgstr ""
 msgid "About"
 msgstr "À propos"
 
+#: src/AddBlueprintButton.tsx:26
+msgid "Add {0}"
+msgstr "Ajouter {0}"
+
 #: src/App.tsx:133
 msgid "Add blueprint on {0} side"
 msgstr "Ajouter un plan de vaisseau du côté {0}"

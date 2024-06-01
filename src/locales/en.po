@@ -18,6 +18,10 @@ msgstr ""
 msgid "About"
 msgstr ""
 
+#: src/AddBlueprintButton.tsx:26
+msgid "Add {0}"
+msgstr ""
+
 #: src/App.tsx:133
 msgid "Add blueprint on {0} side"
 msgstr ""
