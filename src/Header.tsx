@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 import { AboutModal } from './features/about/AboutModal'
 import { ColorModeToggle } from './theme/ColorModeToggle'
-import { LocaleSelect } from './LocaleSelect'
+import { LocaleSelect } from './features/i18n/LocaleSelect'
 import { FunctionComponent, useState } from 'react'
 
 export const Header: FunctionComponent = () => {
