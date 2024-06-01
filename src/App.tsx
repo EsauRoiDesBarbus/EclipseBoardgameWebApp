@@ -23,13 +23,11 @@ import { AddBlueprintButton } from './AddBlueprintButton'
 import { getNpcBlueprint } from './getNpcBlueprint'
 import { TrashBinIcon } from './icons/TrashBinIcon'
 import { basicShipsDemo, optimalDamageSplittingDemo } from './demos'
-import { AboutModal } from './features/about/AboutModal'
-import { ColorModeToggle } from './theme/ColorModeToggle'
 import { Trans, msg } from '@lingui/macro'
-import { LocaleSelect } from './LocaleSelect'
 import { useLingui } from '@lingui/react'
 import { ResultDisplay } from './features/result/ResultDisplay'
 import { CalculationResult } from './features/result/types'
+import { Header } from './Header'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
@@ -37,7 +35,6 @@ const npcBlueprints = ['ancient', 'guardian', 'gcds'] as const
 
 function App() {
   const [calculationResult, setCalculationResult] = useState<CalculationResult | undefined>()
-  const [showModal, setShowModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const { _ } = useLingui()
@@ -86,68 +83,41 @@ function App() {
 
   return (
     <>
-      <AboutModal
-        show={showModal}
-        onClose={() => {
-          setShowModal(false)
-        }}
-      />
       <h1>
         <Trans>Eclipse Battle Calculator</Trans>
       </h1>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
+        <Header />
         <div
-          style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              gap: 16,
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: 16,
+          }}>
+          <label>
+            <Trans>Load a demo:</Trans>
+          </label>
+          <button
+            type="button"
+            onClick={() => {
+              attackerShipReplace(basicShipsDemo.attackerShips)
+              defenderShipReplace(basicShipsDemo.defenderShips)
             }}>
-            <button
-              type="button"
-              onClick={() => {
-                setShowModal(true)
-              }}>
-              <Trans>About</Trans>
-            </button>
-            <ColorModeToggle />
-            <LocaleSelect />
-            <a href="https://forms.gle/Ud5MHFKXUMSHkwhW9" target="_blank" rel="noreferrer">
-              <Trans>Feedback</Trans>
-            </a>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              gap: 16,
+            <Trans>Basic ships</Trans>
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
+              defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
             }}>
-            <label>
-              <Trans>Load a demo:</Trans>
-            </label>
-            <button
-              type="button"
-              onClick={() => {
-                attackerShipReplace(basicShipsDemo.attackerShips)
-                defenderShipReplace(basicShipsDemo.defenderShips)
-              }}>
-              <Trans>Basic ships</Trans>
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
-                defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
-              }}>
-              <Trans>Optimal damage splitting</Trans>
-            </button>
-          </div>
+            <Trans>Optimal damage splitting</Trans>
+          </button>
         </div>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column' }}>
         {(['attackerShips', 'defenderShips'] as const).map((shipSide) => (
           <div key={shipSide}>
             <h2>{_(shipSide === 'attackerShips' ? msg`Attack` : msg`Defense`)}</h2>
