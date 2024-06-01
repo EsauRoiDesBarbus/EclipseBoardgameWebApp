@@ -15,6 +15,7 @@ export const Modal: FunctionComponent<Props> = ({ show, onClose, children }) => 
     style={show ? {} : { display: 'none' }}
     onClick={onClose}>
     <section
+      autoFocus
       className="modal-main"
       onClick={(e) => {
         e.stopPropagation()
