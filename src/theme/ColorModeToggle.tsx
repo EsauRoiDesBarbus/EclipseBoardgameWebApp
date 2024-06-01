@@ -12,7 +12,7 @@ const Component = () => {
       type="button"
       title={`Switch between dark and light mode (currently ${colorMode} mode)`}
       onClick={() => setColorMode(nextColorMode)}
-      style={{ display: 'flex' }}>
+      style={{ display: 'flex', padding: 8 }}>
       {colorMode === ColorModes.light ? <SunIcon /> : <MoonIcon />}
     </button>
   )
