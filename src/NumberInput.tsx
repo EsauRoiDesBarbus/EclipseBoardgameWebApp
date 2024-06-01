@@ -18,7 +18,8 @@ type NumberFieldNames = Exclude<
 type Props = {
   name: NumberFieldNames
   control: UseControllerProps<FormValues>['control']
-  label?: string
+  label: string
+  labelHidden?: boolean
   title: string
   image: string
 } & ComponentProps<'input'>
@@ -27,6 +28,7 @@ export const NumberInput: FunctionComponent<Props> = ({
   name,
   control,
   label,
+  labelHidden = false,
   title,
   image,
   ...inputProps
@@ -46,11 +48,14 @@ export const NumberInput: FunctionComponent<Props> = ({
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-      {label ? <label htmlFor={name}>{label}</label> : null}
+      <label htmlFor={name} hidden={labelHidden}>
+        {label}
+      </label>
       <div style={{ display: 'flex', gap: 8, flexGrow: 1 }}>
         <input
           id={name}
           type="number"
+          aria-label={label}
           min={0}
           {...field}
           {...inputProps}
