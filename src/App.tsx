@@ -341,6 +341,7 @@ function App() {
                     </div>
                     <button
                       type="button"
+                      title={_(msg`Remove ship`)}
                       style={{
                         display: 'flex',
                         alignSelf: 'flex-end',

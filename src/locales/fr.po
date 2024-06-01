@@ -50,7 +50,7 @@ msgstr "Chances de victoire de l’attaquant :"
 msgid "Basic ships"
 msgstr "Vaisseaux simples"
 
-#: src/App.tsx:387
+#: src/App.tsx:388
 msgid "Battle!"
 msgstr "Combattre !"
 
@@ -62,7 +62,7 @@ msgstr "programmation par fonction de valeur de Bellman"
 msgid "Cannons"
 msgstr "Canons"
 
-#: src/App.tsx:373
+#: src/App.tsx:374
 msgid "Clear"
 msgstr "Effacer"
 
@@ -229,6 +229,10 @@ msgstr "Répartition des dégâts optimale"
 #: src/features/about/AboutModal.tsx:40
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr "du ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Répartition des dégâts optimale</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
+
+#: src/App.tsx:344
+msgid "Remove ship"
+msgstr "Retirer le vaisseau"
 
 #: src/features/result/ResultDisplay.tsx:14
 msgid "Results"

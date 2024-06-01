@@ -50,7 +50,7 @@ msgstr ""
 msgid "Basic ships"
 msgstr ""
 
-#: src/App.tsx:387
+#: src/App.tsx:388
 msgid "Battle!"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Cannons"
 msgstr ""
 
-#: src/App.tsx:373
+#: src/App.tsx:374
 msgid "Clear"
 msgstr ""
 
@@ -228,6 +228,10 @@ msgstr ""
 
 #: src/features/about/AboutModal.tsx:40
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
+msgstr ""
+
+#: src/App.tsx:344
+msgid "Remove ship"
 msgstr ""
 
 #: src/features/result/ResultDisplay.tsx:14
