@@ -13,7 +13,7 @@ export const AboutModal: FunctionComponent<Props> = ({ ...props }) => (
     <div style={{ textAlign: 'start' }}>
       <p>
         <Trans>
-          I don&apos;t use random simulations, I use advanced tools of decision theory known as
+          I don’t use random simulations, I use advanced tools of decision theory known as
         </Trans>{' '}
         <a href="https://en.wikipedia.org/wiki/Bellman_equation" target="_blank" rel="noreferrer">
           <Trans>Bellman value function programming</Trans>

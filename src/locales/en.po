@@ -145,7 +145,7 @@ msgid "Hull"
 msgstr ""
 
 #: src/AboutModal.tsx:15
-msgid "I don't use random simulations, I use advanced tools of decision theory known as"
+msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr ""
 
 #: src/App.tsx:263

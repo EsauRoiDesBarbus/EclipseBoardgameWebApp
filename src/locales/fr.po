@@ -40,7 +40,7 @@ msgstr "attaquant"
 
 #: src/App.tsx:408
 msgid "Attacker wins:"
-msgstr "Chances de victoire de l'attaquant :"
+msgstr "Chances de victoire de l’attaquant :"
 
 #: src/App.tsx:123
 msgid "Basic ships"
@@ -110,7 +110,7 @@ msgstr "FiF pour la partie OPS."
 
 #: src/AboutModal.tsx:34
 msgid "floating point precision (the UI truncates it for readability),"
-msgstr "la précision d'un nombre à virgule flottante (l'interface utilisateur le tronque pour la lisibilité),"
+msgstr "la précision d’un nombre à virgule flottante (l’interface utilisateur le tronque pour la lisibilité),"
 
 #: src/AboutModal.tsx:60
 msgid "for the frontend,"
@@ -133,12 +133,12 @@ msgid "Hull"
 msgstr "Coque"
 
 #: src/AboutModal.tsx:15
-msgid "I don't use random simulations, I use advanced tools of decision theory known as"
-msgstr "Je ne fais pas de simulations aléatoires, j'utilise des outils avancés en théorie des jeux, connus sous le nom de"
+msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
+msgstr "Je ne fais pas de simulations aléatoires, j’utilise des outils avancés en théorie des jeux, connus sous le nom de"
 
 #: src/App.tsx:263
 msgid "increase computer"
-msgstr "augmenter l'ordinateur"
+msgstr "augmenter l’ordinateur"
 
 #: src/App.tsx:256
 msgid "increase hull"
@@ -146,7 +146,7 @@ msgstr "augmenter la coque"
 
 #: src/App.tsx:249
 msgid "increase initiative"
-msgstr "augmenter l'initiative"
+msgstr "augmenter l’initiative"
 
 #: src/App.tsx:242
 msgid "increase number of ships"
@@ -205,4 +205,4 @@ msgstr "Base stellaire"
 
 #: src/AboutModal.tsx:21
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
-msgstr "pour calculer les chances de victoire de batailles d'<0>Eclipse</0>, avec :"
+msgstr "pour calculer les chances de victoire de batailles d’<0>Eclipse</0>, avec :"
