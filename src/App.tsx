@@ -120,7 +120,7 @@ function App() {
               attackerShipReplace(basicShipsDemo.attackerShips)
               defenderShipReplace(basicShipsDemo.defenderShips)
             }}>
-            Basic ships
+            <Trans>Basic ships</Trans>
           </button>
           <button
             type="button"
@@ -128,7 +128,7 @@ function App() {
               attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
               defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
             }}>
-            Optimal damage splitting
+            <Trans>Optimal damage splitting</Trans>
           </button>
         </div>
       </div>

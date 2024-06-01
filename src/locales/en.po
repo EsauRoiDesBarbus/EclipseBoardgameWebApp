@@ -46,6 +46,10 @@ msgstr ""
 msgid "Attacker wins:"
 msgstr ""
 
+#: src/App.tsx:123
+msgid "Basic ships"
+msgstr ""
+
 #: src/App.tsx:397
 msgid "Battle!"
 msgstr ""
@@ -188,6 +192,10 @@ msgstr ""
 
 #: src/App.tsx:241
 msgid "Number"
+msgstr ""
+
+#: src/App.tsx:131
+msgid "Optimal damage splitting"
 msgstr ""
 
 #: src/AboutModal.tsx:40
