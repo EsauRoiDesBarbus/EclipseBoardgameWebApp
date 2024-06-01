@@ -101,6 +101,7 @@ function App() {
           </label>
           <button
             type="button"
+            title={_(msg`Load basic ships demo`)}
             onClick={() => {
               attackerShipReplace(basicShipsDemo.attackerShips)
               defenderShipReplace(basicShipsDemo.defenderShips)
@@ -109,6 +110,7 @@ function App() {
           </button>
           <button
             type="button"
+            title={_(msg`Load optimal damage splitting demo`)}
             onClick={() => {
               attackerShipReplace(optimalDamageSplittingDemo.attackerShips)
               defenderShipReplace(optimalDamageSplittingDemo.defenderShips)
