@@ -136,25 +136,61 @@ msgstr "Coque"
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr "Je ne fais pas de simulations aléatoires, j’utilise des outils avancés en théorie des jeux, connus sous le nom de"
 
+#: src/App.tsx:287
+msgid "Increase blue cannon"
+msgstr "Ajouter un canon bleu"
+
+#: src/App.tsx:330
+msgid "Increase blue missile"
+msgstr "Ajouter un missile bleu"
+
 #: src/App.tsx:249
-msgid "increase computer"
-msgstr "augmenter l’ordinateur"
+msgid "Increase computer"
+msgstr "Ajouter un ordinateur"
 
 #: src/App.tsx:242
-msgid "increase hull"
-msgstr "augmenter la coque"
+msgid "Increase hull"
+msgstr "Ajouter une coque"
 
 #: src/App.tsx:235
-msgid "increase initiative"
-msgstr "augmenter l’initiative"
+msgid "Increase initiative"
+msgstr "Ajouter un d’intiative"
 
 #: src/App.tsx:228
-msgid "increase number of ships"
-msgstr "augmenter le nombre de vaisseaux"
+msgid "Increase number of ships"
+msgstr "Ajouter un vaisseau"
+
+#: src/App.tsx:281
+msgid "Increase orange cannon"
+msgstr "Ajouter un canon orange"
+
+#: src/App.tsx:324
+msgid "Increase orange missile"
+msgstr "Ajouter un missile orange"
+
+#: src/App.tsx:293
+msgid "Increase red cannon"
+msgstr "Ajouter un canon rouge"
+
+#: src/App.tsx:336
+msgid "Increase red missile"
+msgstr "Ajouter un missile rouge"
+
+#: src/App.tsx:299
+msgid "Increase rift cannon"
+msgstr "Ajouter un canon rift"
 
 #: src/App.tsx:256
-msgid "increase shield"
-msgstr "augmenter le bouclier"
+msgid "Increase shield"
+msgstr "Ajouter un bouclier"
+
+#: src/App.tsx:275
+msgid "Increase yellow cannon"
+msgstr "Ajouter un canon jaune"
+
+#: src/App.tsx:318
+msgid "Increase yellow missile"
+msgstr "Ajouter un missile jaune"
 
 #: src/App.tsx:234
 msgid "Initiative"

@@ -225,35 +225,35 @@ function App() {
                         name={`${shipSide}.${index}.count`}
                         min={1}
                         label={_(msg`Number`)}
-                        title={_(msg`increase number of ships`)}
+                        title={_(msg`Increase number of ships`)}
                         image={getShipImage(shipTypeValue)}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.initiative`}
                         label={_(msg`Initiative`)}
-                        title={_(msg`increase initiative`)}
+                        title={_(msg`Increase initiative`)}
                         image={InitiativeImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.hull`}
                         label={_(msg`Hull`)}
-                        title={_(msg`increase hull`)}
+                        title={_(msg`Increase hull`)}
                         image={HullImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.computer`}
                         label={_(msg`Computer`)}
-                        title={_(msg`increase computer`)}
+                        title={_(msg`Increase computer`)}
                         image={ComputerImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.shield`}
                         label={_(msg`Shield`)}
-                        title={_(msg`increase shield`)}
+                        title={_(msg`Increase shield`)}
                         image={ShieldImage}
                       />
                     </div>
@@ -272,31 +272,31 @@ function App() {
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.yellow`}
-                        title="increase yellow cannon"
+                        title={_(msg`Increase yellow cannon`)}
                         image={YellowWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.orange`}
-                        title="increase orange cannon"
+                        title={_(msg`Increase orange cannon`)}
                         image={OrangeWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.blue`}
-                        title="increase blue cannon"
+                        title={_(msg`Increase blue cannon`)}
                         image={BlueWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.red`}
-                        title="increase red cannon"
+                        title={_(msg`Increase red cannon`)}
                         image={RedWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.pink`}
-                        title="increase rift cannon"
+                        title={_(msg`Increase rift cannon`)}
                         image={PinkWeaponImage}
                       />
                     </div>
@@ -315,25 +315,25 @@ function App() {
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.yellow`}
-                        title="increase yellow missile"
+                        title={_(msg`Increase yellow missile`)}
                         image={YellowWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.orange`}
-                        title="increase orange missile"
+                        title={_(msg`Increase orange missile`)}
                         image={OrangeWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.blue`}
-                        title="increase blue missile"
+                        title={_(msg`Increase blue missile`)}
                         image={BlueWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.red`}
-                        title="increase red missile"
+                        title={_(msg`Increase red missile`)}
                         image={RedWeaponImage}
                       />
                     </div>

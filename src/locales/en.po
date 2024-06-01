@@ -136,24 +136,60 @@ msgstr ""
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr ""
 
+#: src/App.tsx:287
+msgid "Increase blue cannon"
+msgstr ""
+
+#: src/App.tsx:330
+msgid "Increase blue missile"
+msgstr ""
+
 #: src/App.tsx:249
-msgid "increase computer"
+msgid "Increase computer"
 msgstr ""
 
 #: src/App.tsx:242
-msgid "increase hull"
+msgid "Increase hull"
 msgstr ""
 
 #: src/App.tsx:235
-msgid "increase initiative"
+msgid "Increase initiative"
 msgstr ""
 
 #: src/App.tsx:228
-msgid "increase number of ships"
+msgid "Increase number of ships"
+msgstr ""
+
+#: src/App.tsx:281
+msgid "Increase orange cannon"
+msgstr ""
+
+#: src/App.tsx:324
+msgid "Increase orange missile"
+msgstr ""
+
+#: src/App.tsx:293
+msgid "Increase red cannon"
+msgstr ""
+
+#: src/App.tsx:336
+msgid "Increase red missile"
+msgstr ""
+
+#: src/App.tsx:299
+msgid "Increase rift cannon"
 msgstr ""
 
 #: src/App.tsx:256
-msgid "increase shield"
+msgid "Increase shield"
+msgstr ""
+
+#: src/App.tsx:275
+msgid "Increase yellow cannon"
+msgstr ""
+
+#: src/App.tsx:318
+msgid "Increase yellow missile"
 msgstr ""
 
 #: src/App.tsx:234
