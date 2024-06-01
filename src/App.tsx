@@ -225,35 +225,35 @@ function App() {
                         name={`${shipSide}.${index}.count`}
                         min={1}
                         label={_(msg`Number`)}
-                        accessibilityLabel={_(msg`increase number of ships`)}
+                        title={_(msg`increase number of ships`)}
                         image={getShipImage(shipTypeValue)}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.initiative`}
                         label={_(msg`Initiative`)}
-                        accessibilityLabel={_(msg`increase initiative`)}
+                        title={_(msg`increase initiative`)}
                         image={InitiativeImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.hull`}
                         label={_(msg`Hull`)}
-                        accessibilityLabel={_(msg`increase hull`)}
+                        title={_(msg`increase hull`)}
                         image={HullImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.computer`}
                         label={_(msg`Computer`)}
-                        accessibilityLabel={_(msg`increase computer`)}
+                        title={_(msg`increase computer`)}
                         image={ComputerImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.shield`}
                         label={_(msg`Shield`)}
-                        accessibilityLabel={_(msg`increase shield`)}
+                        title={_(msg`increase shield`)}
                         image={ShieldImage}
                       />
                     </div>
@@ -272,31 +272,31 @@ function App() {
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.yellow`}
-                        accessibilityLabel="increase yellow cannon"
+                        title="increase yellow cannon"
                         image={YellowWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.orange`}
-                        accessibilityLabel="increase orange cannon"
+                        title="increase orange cannon"
                         image={OrangeWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.blue`}
-                        accessibilityLabel="increase blue cannon"
+                        title="increase blue cannon"
                         image={BlueWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.red`}
-                        accessibilityLabel="increase red cannon"
+                        title="increase red cannon"
                         image={RedWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.cannon.pink`}
-                        accessibilityLabel="increase rift cannon"
+                        title="increase rift cannon"
                         image={PinkWeaponImage}
                       />
                     </div>
@@ -315,25 +315,25 @@ function App() {
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.yellow`}
-                        accessibilityLabel="increase yellow missile"
+                        title="increase yellow missile"
                         image={YellowWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.orange`}
-                        accessibilityLabel="increase orange missile"
+                        title="increase orange missile"
                         image={OrangeWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.blue`}
-                        accessibilityLabel="increase blue missile"
+                        title="increase blue missile"
                         image={BlueWeaponImage}
                       />
                       <NumberInput
                         control={control}
                         name={`${shipSide}.${index}.missile.red`}
-                        accessibilityLabel="increase red missile"
+                        title="increase red missile"
                         image={RedWeaponImage}
                       />
                     </div>

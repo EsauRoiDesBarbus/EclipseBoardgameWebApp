@@ -19,7 +19,7 @@ type Props = {
   name: NumberFieldNames
   control: UseControllerProps<FormValues>['control']
   label?: string
-  accessibilityLabel: string
+  title: string
   image: string
 } & ComponentProps<'input'>
 
@@ -27,7 +27,7 @@ export const NumberInput: FunctionComponent<Props> = ({
   name,
   control,
   label,
-  accessibilityLabel,
+  title,
   image,
   ...inputProps
 }) => {
@@ -58,6 +58,7 @@ export const NumberInput: FunctionComponent<Props> = ({
         />
         <button
           type="button"
+          title={title}
           onClick={onIncrement}
           style={{
             display: 'flex',
@@ -65,7 +66,7 @@ export const NumberInput: FunctionComponent<Props> = ({
             backgroundColor: 'rgba(0,0,0,0)',
             alignSelf: 'center',
           }}>
-          <img src={image} width={BUTTON_SIZE} alt={accessibilityLabel} />
+          <img src={image} width={BUTTON_SIZE} />
         </button>
       </div>
     </div>
