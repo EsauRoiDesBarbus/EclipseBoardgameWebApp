@@ -52,7 +52,7 @@ msgstr "Vaisseaux simples"
 
 #: src/App.tsx:387
 msgid "Battle!"
-msgstr "Combat !"
+msgstr "Combattre !"
 
 #: src/features/about/AboutModal.tsx:19
 msgid "Bellman value function programming"
