@@ -154,7 +154,7 @@ function App() {
                             appendFunctions[shipSide]({ ...defaultBlueprint, type: shipType })
                           }}
                           disabled={ships.some(
-                            (ship) => ship.type === shipType || ship.type == 'npc' // a NPC can only fight alone
+                            (ship) => ship.type === shipType || ship.type === 'npc' // a NPC can only fight alone
                           )}
                         />
                       )
