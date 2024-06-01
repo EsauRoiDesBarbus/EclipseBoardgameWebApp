@@ -96,7 +96,14 @@ function App() {
         <Trans>Eclipse Battle Calculator</Trans>
       </h1>
       <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: 16,
+          }}>
           <button
             type="button"
             onClick={() => {
@@ -110,7 +117,14 @@ function App() {
             <Trans>Feedback</Trans>
           </a>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: 16,
+          }}>
           <label>
             <Trans>Load a demo:</Trans>
           </label>
