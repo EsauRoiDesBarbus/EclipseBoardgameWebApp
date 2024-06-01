@@ -18,7 +18,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:26
+#: src/features/battleForm/AddBlueprintButton.tsx:26
 msgid "Add {0}"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Add blueprint on {0} side"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:16
+#: src/features/battleForm/AddBlueprintButton.tsx:16
 msgid "Ancient"
 msgstr ""
 
@@ -86,8 +86,8 @@ msgstr ""
 msgid "Credits"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:12
 #: src/App.tsx:210
+#: src/features/battleForm/AddBlueprintButton.tsx:12
 msgid "Cruiser"
 msgstr ""
 
@@ -99,8 +99,8 @@ msgstr ""
 msgid "Defense"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:13
 #: src/App.tsx:213
+#: src/features/battleForm/AddBlueprintButton.tsx:13
 msgid "Dreadnought"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "for the frontend,"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:18
+#: src/features/battleForm/AddBlueprintButton.tsx:18
 msgid "GCDS"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "graph with the probability of survival of each ship,"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:17
+#: src/features/battleForm/AddBlueprintButton.tsx:17
 msgid "Guardian"
 msgstr ""
 
@@ -208,8 +208,8 @@ msgstr ""
 msgid "Initiative"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:11
 #: src/App.tsx:207
+#: src/features/battleForm/AddBlueprintButton.tsx:11
 msgid "Interceptor"
 msgstr ""
 
@@ -229,8 +229,8 @@ msgstr ""
 msgid "Missiles"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:15
 #: src/App.tsx:221
+#: src/features/battleForm/AddBlueprintButton.tsx:15
 msgid "NPC"
 msgstr ""
 
@@ -278,8 +278,8 @@ msgstr ""
 msgid "Shield"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:14
 #: src/App.tsx:218
+#: src/features/battleForm/AddBlueprintButton.tsx:14
 msgid "Starbase"
 msgstr ""
 

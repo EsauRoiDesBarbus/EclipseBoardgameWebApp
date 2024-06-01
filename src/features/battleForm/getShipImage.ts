@@ -1,10 +1,10 @@
-import InterceptorImage from './assets/ship/interceptor.png'
-import CruiserImage from './assets/ship/cruiser.png'
-import DreadnoughtImage from './assets/ship/dreadnought.png'
-import StarbaseImage from './assets/ship/starbase.png'
-import AncientImage from './assets/ship/ancient.png'
-import GuardianImage from './assets/ship/guardian.png'
-import GcdsImage from './assets/ship/gcds.png'
+import InterceptorImage from '../../assets/ship/interceptor.png'
+import CruiserImage from '../../assets/ship/cruiser.png'
+import DreadnoughtImage from '../../assets/ship/dreadnought.png'
+import StarbaseImage from '../../assets/ship/starbase.png'
+import AncientImage from '../../assets/ship/ancient.png'
+import GuardianImage from '../../assets/ship/guardian.png'
+import GcdsImage from '../../assets/ship/gcds.png'
 
 import type { ShipType } from './types'
 

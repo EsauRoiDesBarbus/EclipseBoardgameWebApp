@@ -1,4 +1,4 @@
-import type { Ship } from '../types'
+import type { Ship } from '../features/battleForm/types'
 
 type ApiShip = 'int' | 'cru' | 'dre' | 'sba' | 'npc'
 

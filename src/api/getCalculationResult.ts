@@ -1,5 +1,5 @@
 import type { CalculationResult } from '../features/result/types'
-import type { Ship } from '../types'
+import type { Ship } from '../features/battleForm/types'
 import { adaptCalculationResult } from './adaptCalculationResult'
 import { parseShip } from './parseShip'
 import type { CalculationResultResponse } from './types'

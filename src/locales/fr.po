@@ -18,7 +18,7 @@ msgstr ""
 msgid "About"
 msgstr "À propos"
 
-#: src/AddBlueprintButton.tsx:26
+#: src/features/battleForm/AddBlueprintButton.tsx:26
 msgid "Add {0}"
 msgstr "Ajouter {0}"
 
@@ -26,7 +26,7 @@ msgstr "Ajouter {0}"
 msgid "Add blueprint on {0} side"
 msgstr "Ajouter un plan de vaisseau du côté {0}"
 
-#: src/AddBlueprintButton.tsx:16
+#: src/features/battleForm/AddBlueprintButton.tsx:16
 msgid "Ancient"
 msgstr ""
 
@@ -86,8 +86,8 @@ msgstr "Ordinateur"
 msgid "Credits"
 msgstr "Remerciements"
 
-#: src/AddBlueprintButton.tsx:12
 #: src/App.tsx:210
+#: src/features/battleForm/AddBlueprintButton.tsx:12
 msgid "Cruiser"
 msgstr "Frégate"
 
@@ -99,8 +99,8 @@ msgstr "défenseur"
 msgid "Defense"
 msgstr "Défense"
 
-#: src/AddBlueprintButton.tsx:13
 #: src/App.tsx:213
+#: src/features/battleForm/AddBlueprintButton.tsx:13
 msgid "Dreadnought"
 msgstr "Croiseur"
 
@@ -128,7 +128,7 @@ msgstr "la précision d’un nombre à virgule flottante (l’interface utilisat
 msgid "for the frontend,"
 msgstr "pour la partie frontend,"
 
-#: src/AddBlueprintButton.tsx:18
+#: src/features/battleForm/AddBlueprintButton.tsx:18
 msgid "GCDS"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "graph with the probability of survival of each ship,"
 msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
 
-#: src/AddBlueprintButton.tsx:17
+#: src/features/battleForm/AddBlueprintButton.tsx:17
 msgid "Guardian"
 msgstr "Gardien"
 
@@ -208,8 +208,8 @@ msgstr "Ajouter un missile jaune"
 msgid "Initiative"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:11
 #: src/App.tsx:207
+#: src/features/battleForm/AddBlueprintButton.tsx:11
 msgid "Interceptor"
 msgstr "Intercepteur"
 
@@ -229,8 +229,8 @@ msgstr "Charger la démo Répartition optimale des dégâts"
 msgid "Missiles"
 msgstr ""
 
-#: src/AddBlueprintButton.tsx:15
 #: src/App.tsx:221
+#: src/features/battleForm/AddBlueprintButton.tsx:15
 msgid "NPC"
 msgstr "PNJ"
 
@@ -278,8 +278,8 @@ msgstr "Canon rift"
 msgid "Shield"
 msgstr "Bouclier"
 
-#: src/AddBlueprintButton.tsx:14
 #: src/App.tsx:218
+#: src/features/battleForm/AddBlueprintButton.tsx:14
 msgid "Starbase"
 msgstr "Base stellaire"
 
