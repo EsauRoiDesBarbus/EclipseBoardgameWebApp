@@ -1,4 +1,4 @@
-export type Weapon = {
+type Weapon = {
   yellow: number
   orange: number
   blue: number
@@ -20,12 +20,3 @@ export type Ship = {
 }
 
 export type FormValues = { attackerShips: Ship[]; defenderShips: Ship[] }
-
-export type Side = 'attack' | 'defense'
-
-export type SurvivalChance = { label: string; value: number; side: Side }
-
-export type CalculationResult = {
-  winChance: number
-  survivalChances: SurvivalChance[]
-}

@@ -13,12 +13,12 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/AboutModal.tsx:11
-#: src/App.tsx:105
+#: src/App.tsx:112
+#: src/features/about/AboutModal.tsx:11
 msgid "About"
 msgstr "À propos"
 
-#: src/App.tsx:147
+#: src/App.tsx:161
 msgid "Add blueprint on {0} side"
 msgstr "Ajouter un plan de vaisseau du côté {0}"
 
@@ -26,69 +26,69 @@ msgstr "Ajouter un plan de vaisseau du côté {0}"
 msgid "Ancient"
 msgstr ""
 
-#: src/AboutModal.tsx:48
+#: src/features/about/AboutModal.tsx:48
 msgid "Any question, suggestion, bug report, use the feedback button."
 msgstr "Si tu as des questions, des suggestions, des bugs, utilise le bouton de feedback."
 
-#: src/App.tsx:137
+#: src/App.tsx:151
 msgid "Attack"
 msgstr "Attaque"
 
-#: src/App.tsx:148
+#: src/App.tsx:162
 msgid "attacker"
 msgstr "attaquant"
 
-#: src/App.tsx:408
+#: src/features/calculationResult/ResultDisplay.tsx:17
 msgid "Attacker wins:"
 msgstr "Chances de victoire de l’attaquant :"
 
-#: src/App.tsx:123
+#: src/App.tsx:137
 msgid "Basic ships"
 msgstr "Vaisseaux simples"
 
-#: src/App.tsx:397
+#: src/App.tsx:411
 msgid "Battle!"
 msgstr "Combat !"
 
-#: src/AboutModal.tsx:19
+#: src/features/about/AboutModal.tsx:19
 msgid "Bellman value function programming"
 msgstr "programmation par fonction de valeur de Bellman"
 
-#: src/App.tsx:283
+#: src/App.tsx:297
 msgid "Cannons"
 msgstr "Canons"
 
-#: src/App.tsx:383
+#: src/App.tsx:397
 msgid "Clear"
 msgstr "Effacer"
 
-#: src/Modal.tsx:28
+#: src/ui/Modal.tsx:28
 msgid "Close"
 msgstr "Fermer"
 
-#: src/App.tsx:262
+#: src/App.tsx:276
 msgid "Computer"
 msgstr "Ordinateur"
 
-#: src/AboutModal.tsx:50
+#: src/features/about/AboutModal.tsx:50
 msgid "Credits"
 msgstr "Remerciements"
 
 #: src/AddBlueprintButton.tsx:12
-#: src/App.tsx:222
+#: src/App.tsx:236
 msgid "Cruiser"
 msgstr "Frégate"
 
-#: src/App.tsx:148
+#: src/App.tsx:162
 msgid "defender"
 msgstr "défenseur"
 
-#: src/App.tsx:137
+#: src/App.tsx:151
 msgid "Defense"
 msgstr "Défense"
 
 #: src/AddBlueprintButton.tsx:13
-#: src/App.tsx:225
+#: src/App.tsx:239
 msgid "Dreadnought"
 msgstr "Croiseur"
 
@@ -96,23 +96,23 @@ msgstr "Croiseur"
 msgid "Eclipse Battle Calculator"
 msgstr "Calculateur de bataille pour Eclipse"
 
-#: src/AboutModal.tsx:54
+#: src/features/about/AboutModal.tsx:54
 msgid "Etienne Bertin (aka. esauroidesbarbus) for the maths and the backend,"
 msgstr "Etienne Bertin (ou esauroidesbarbus) pour les maths et le backend,"
 
-#: src/App.tsx:110
+#: src/App.tsx:117
 msgid "Feedback"
 msgstr ""
 
-#: src/AboutModal.tsx:63
+#: src/features/about/AboutModal.tsx:63
 msgid "FiF for OPS."
 msgstr "FiF pour la partie OPS."
 
-#: src/AboutModal.tsx:34
+#: src/features/about/AboutModal.tsx:34
 msgid "floating point precision (the UI truncates it for readability),"
 msgstr "la précision d’un nombre à virgule flottante (l’interface utilisateur le tronque pour la lisibilité),"
 
-#: src/AboutModal.tsx:60
+#: src/features/about/AboutModal.tsx:60
 msgid "for the frontend,"
 msgstr "pour la partie frontend,"
 
@@ -120,7 +120,7 @@ msgstr "pour la partie frontend,"
 msgid "GCDS"
 msgstr ""
 
-#: src/AboutModal.tsx:37
+#: src/features/about/AboutModal.tsx:37
 msgid "graph with the probability of survival of each ship,"
 msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
 
@@ -128,81 +128,81 @@ msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
 msgid "Guardian"
 msgstr "Gardien"
 
-#: src/App.tsx:255
+#: src/App.tsx:269
 msgid "Hull"
 msgstr "Coque"
 
-#: src/AboutModal.tsx:15
+#: src/features/about/AboutModal.tsx:15
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr "Je ne fais pas de simulations aléatoires, j’utilise des outils avancés en théorie des jeux, connus sous le nom de"
 
-#: src/App.tsx:263
+#: src/App.tsx:277
 msgid "increase computer"
 msgstr "augmenter l’ordinateur"
 
-#: src/App.tsx:256
+#: src/App.tsx:270
 msgid "increase hull"
 msgstr "augmenter la coque"
 
-#: src/App.tsx:249
+#: src/App.tsx:263
 msgid "increase initiative"
 msgstr "augmenter l’initiative"
 
-#: src/App.tsx:242
+#: src/App.tsx:256
 msgid "increase number of ships"
 msgstr "augmenter le nombre de vaisseaux"
 
-#: src/App.tsx:270
+#: src/App.tsx:284
 msgid "increase shield"
 msgstr "augmenter le bouclier"
 
-#: src/App.tsx:248
+#: src/App.tsx:262
 msgid "Initiative"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:11
-#: src/App.tsx:219
+#: src/App.tsx:233
 msgid "Interceptor"
 msgstr "Intercepteur"
 
-#: src/App.tsx:115
+#: src/App.tsx:129
 msgid "Load a demo:"
 msgstr "Charger une démo :"
 
-#: src/App.tsx:325
+#: src/App.tsx:339
 msgid "Missiles"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:15
-#: src/App.tsx:232
+#: src/App.tsx:246
 msgid "NPC"
 msgstr "PNJ"
 
-#: src/App.tsx:241
+#: src/App.tsx:255
 msgid "Number"
 msgstr "Nombre"
 
-#: src/App.tsx:131
+#: src/App.tsx:145
 msgid "Optimal damage splitting"
 msgstr "Répartition des dégâts optimale"
 
-#: src/AboutModal.tsx:40
+#: src/features/about/AboutModal.tsx:40
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr "du ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Répartition des dégâts optimale</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
 
-#: src/App.tsx:405
+#: src/features/calculationResult/ResultDisplay.tsx:14
 msgid "Results"
 msgstr "Résultats"
 
-#: src/App.tsx:269
+#: src/App.tsx:283
 msgid "Shield"
 msgstr "Bouclier"
 
 #: src/AddBlueprintButton.tsx:14
-#: src/App.tsx:228
+#: src/App.tsx:242
 msgid "Starbase"
 msgstr "Base stellaire"
 
-#: src/AboutModal.tsx:21
+#: src/features/about/AboutModal.tsx:21
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
 msgstr "pour calculer les chances de victoire de batailles d’<0>Eclipse</0>, avec :"

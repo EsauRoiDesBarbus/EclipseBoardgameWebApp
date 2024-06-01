@@ -1,5 +1,5 @@
-import { Side, CalculationResult, SurvivalChance } from '../types'
-import { CalculationResultResponse } from './types'
+import type { CalculationResult, Side, SurvivalChance } from '../features/result/types'
+import type { CalculationResultResponse } from './types'
 
 const adaptSideSurvivalChance = (
   survivalChances: CalculationResultResponse['attackShipsStillAlive'],

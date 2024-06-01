@@ -13,16 +13,12 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/App.tsx:242
-#~ msgid "\"increase number of ships"
-#~ msgstr ""
-
-#: src/AboutModal.tsx:11
-#: src/App.tsx:105
+#: src/App.tsx:112
+#: src/features/about/AboutModal.tsx:11
 msgid "About"
 msgstr ""
 
-#: src/App.tsx:147
+#: src/App.tsx:161
 msgid "Add blueprint on {0} side"
 msgstr ""
 
@@ -30,73 +26,69 @@ msgstr ""
 msgid "Ancient"
 msgstr ""
 
-#: src/AboutModal.tsx:48
+#: src/features/about/AboutModal.tsx:48
 msgid "Any question, suggestion, bug report, use the feedback button."
 msgstr ""
 
-#: src/App.tsx:137
+#: src/App.tsx:151
 msgid "Attack"
 msgstr ""
 
-#: src/App.tsx:148
+#: src/App.tsx:162
 msgid "attacker"
 msgstr ""
 
-#: src/App.tsx:408
+#: src/features/calculationResult/ResultDisplay.tsx:17
 msgid "Attacker wins:"
 msgstr ""
 
-#: src/App.tsx:123
+#: src/App.tsx:137
 msgid "Basic ships"
 msgstr ""
 
-#: src/App.tsx:397
+#: src/App.tsx:411
 msgid "Battle!"
 msgstr ""
 
-#: src/AboutModal.tsx:28
-#~ msgid "battles, with:"
-#~ msgstr ""
-
-#: src/AboutModal.tsx:19
+#: src/features/about/AboutModal.tsx:19
 msgid "Bellman value function programming"
 msgstr ""
 
-#: src/App.tsx:283
+#: src/App.tsx:297
 msgid "Cannons"
 msgstr ""
 
-#: src/App.tsx:383
+#: src/App.tsx:397
 msgid "Clear"
 msgstr ""
 
-#: src/Modal.tsx:28
+#: src/ui/Modal.tsx:28
 msgid "Close"
 msgstr ""
 
-#: src/App.tsx:262
+#: src/App.tsx:276
 msgid "Computer"
 msgstr ""
 
-#: src/AboutModal.tsx:50
+#: src/features/about/AboutModal.tsx:50
 msgid "Credits"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:12
-#: src/App.tsx:222
+#: src/App.tsx:236
 msgid "Cruiser"
 msgstr ""
 
-#: src/App.tsx:148
+#: src/App.tsx:162
 msgid "defender"
 msgstr ""
 
-#: src/App.tsx:137
+#: src/App.tsx:151
 msgid "Defense"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:13
-#: src/App.tsx:225
+#: src/App.tsx:239
 msgid "Dreadnought"
 msgstr ""
 
@@ -104,35 +96,31 @@ msgstr ""
 msgid "Eclipse Battle Calculator"
 msgstr ""
 
-#: src/AboutModal.tsx:54
+#: src/features/about/AboutModal.tsx:54
 msgid "Etienne Bertin (aka. esauroidesbarbus) for the maths and the backend,"
 msgstr ""
 
-#: src/App.tsx:110
+#: src/App.tsx:117
 msgid "Feedback"
 msgstr ""
 
-#: src/AboutModal.tsx:63
+#: src/features/about/AboutModal.tsx:63
 msgid "FiF for OPS."
 msgstr ""
 
-#: src/AboutModal.tsx:34
+#: src/features/about/AboutModal.tsx:34
 msgid "floating point precision (the UI truncates it for readability),"
 msgstr ""
 
-#: src/AboutModal.tsx:60
+#: src/features/about/AboutModal.tsx:60
 msgid "for the frontend,"
 msgstr ""
-
-#: src/AddBlueprintButton.tsx:17
-#~ msgid "Gcds"
-#~ msgstr ""
 
 #: src/AddBlueprintButton.tsx:18
 msgid "GCDS"
 msgstr ""
 
-#: src/AboutModal.tsx:37
+#: src/features/about/AboutModal.tsx:37
 msgid "graph with the probability of survival of each ship,"
 msgstr ""
 
@@ -140,85 +128,81 @@ msgstr ""
 msgid "Guardian"
 msgstr ""
 
-#: src/App.tsx:255
+#: src/App.tsx:269
 msgid "Hull"
 msgstr ""
 
-#: src/AboutModal.tsx:15
+#: src/features/about/AboutModal.tsx:15
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr ""
 
-#: src/App.tsx:263
+#: src/App.tsx:277
 msgid "increase computer"
 msgstr ""
 
-#: src/App.tsx:256
+#: src/App.tsx:270
 msgid "increase hull"
 msgstr ""
 
-#: src/App.tsx:249
+#: src/App.tsx:263
 msgid "increase initiative"
 msgstr ""
 
-#: src/App.tsx:242
+#: src/App.tsx:256
 msgid "increase number of ships"
 msgstr ""
 
-#: src/App.tsx:270
+#: src/App.tsx:284
 msgid "increase shield"
 msgstr ""
 
-#: src/App.tsx:248
+#: src/App.tsx:262
 msgid "Initiative"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:11
-#: src/App.tsx:219
+#: src/App.tsx:233
 msgid "Interceptor"
 msgstr ""
 
-#: src/App.tsx:115
+#: src/App.tsx:129
 msgid "Load a demo:"
 msgstr ""
 
-#: src/App.tsx:325
+#: src/App.tsx:339
 msgid "Missiles"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:15
-#: src/App.tsx:232
+#: src/App.tsx:246
 msgid "NPC"
 msgstr ""
 
-#: src/App.tsx:241
+#: src/App.tsx:255
 msgid "Number"
 msgstr ""
 
-#: src/App.tsx:131
+#: src/App.tsx:145
 msgid "Optimal damage splitting"
 msgstr ""
 
-#: src/AboutModal.tsx:40
+#: src/features/about/AboutModal.tsx:40
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr ""
 
-#: src/App.tsx:405
+#: src/features/calculationResult/ResultDisplay.tsx:14
 msgid "Results"
 msgstr ""
 
-#: src/App.tsx:269
+#: src/App.tsx:283
 msgid "Shield"
 msgstr ""
 
 #: src/AddBlueprintButton.tsx:14
-#: src/App.tsx:228
+#: src/App.tsx:242
 msgid "Starbase"
 msgstr ""
 
-#: src/AboutModal.tsx:21
-#~ msgid "to compute win chance of"
-#~ msgstr ""
-
-#: src/AboutModal.tsx:21
+#: src/features/about/AboutModal.tsx:21
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
 msgstr ""

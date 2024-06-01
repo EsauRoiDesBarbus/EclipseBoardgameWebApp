@@ -2,7 +2,7 @@ import { FunctionComponent, useEffect, useRef } from 'react'
 import * as d3 from 'd3'
 
 import { SurvivalChance } from './types'
-import { formatPercent } from './utils/formatPercent'
+import { formatPercent } from '../../utils/formatPercent'
 
 type Props = {
   survivalChances: SurvivalChance[]

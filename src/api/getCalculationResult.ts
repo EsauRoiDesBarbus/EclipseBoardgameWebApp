@@ -1,7 +1,8 @@
-import { Ship, CalculationResult } from '../types'
+import type { CalculationResult } from '../features/result/types'
+import type { Ship } from '../types'
 import { adaptCalculationResult } from './adaptCalculationResult'
 import { parseShip } from './parseShip'
-import { CalculationResultResponse } from './types'
+import type { CalculationResultResponse } from './types'
 
 const API_BASE_URL = window.location.href
 

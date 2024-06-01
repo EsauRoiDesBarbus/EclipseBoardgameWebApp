@@ -14,22 +14,22 @@ import BlueWeaponImage from './assets/weaponBlue.png'
 import RedWeaponImage from './assets/weaponRed.png'
 import PinkWeaponImage from './assets/weaponPink.png'
 
-import type { FormValues, CalculationResult } from './types'
+import type { FormValues } from './types'
 import { getShipImage } from './getShipImage'
 import { getCalculationResult } from './api/getCalculationResult'
-import { ProbabilityDiagram } from './ProbabilityDiagram'
 import { useEffect, useState } from 'react'
-import { formatPercent } from './utils/formatPercent'
 import { defaultBlueprint } from './blueprints'
 import { AddBlueprintButton } from './AddBlueprintButton'
 import { getNpcBlueprint } from './getNpcBlueprint'
 import { TrashBinIcon } from './icons/TrashBinIcon'
 import { basicShipsDemo, optimalDamageSplittingDemo } from './demos'
-import { AboutModal } from './AboutModal'
+import { AboutModal } from './features/about/AboutModal'
 import { ColorModeToggle } from './theme/ColorModeToggle'
 import { Trans, msg } from '@lingui/macro'
 import { LocaleSelect } from './LocaleSelect'
 import { useLingui } from '@lingui/react'
+import { ResultDisplay } from './features/result/ResultDisplay'
+import { CalculationResult } from './features/result/types'
 
 const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
 const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
@@ -413,21 +413,7 @@ function App() {
         </button>
       </div>
 
-      {calculationResult && (
-        <div>
-          <h2>
-            <Trans>Results</Trans>
-          </h2>
-          <p>
-            <Trans>Attacker wins: </Trans>
-            {formatPercent(calculationResult.winChance)}
-          </p>
-          <ProbabilityDiagram
-            survivalChances={calculationResult.survivalChances}
-            width={Math.min(1096, window.innerWidth - 64)}
-          />
-        </div>
-      )}
+      {calculationResult && <ResultDisplay result={calculationResult} />}
     </form>
   )
 }
