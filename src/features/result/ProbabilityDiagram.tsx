@@ -6,14 +6,14 @@ import { formatPercent } from '../../utils/formatPercent'
 
 type Props = {
   survivalChances: SurvivalChance[]
-  width?: number
-  height?: number
+  width: number
+  height: number
 }
 
 export const ProbabilityDiagram: FunctionComponent<Props> = ({
   survivalChances,
-  width = 800,
-  height = 400,
+  width,
+  height,
 }) => {
   const ref = useRef<SVGSVGElement>(null)
 

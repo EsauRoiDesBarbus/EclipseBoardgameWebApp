@@ -18,6 +18,7 @@ export const ResultDisplay: FunctionComponent<Props> = ({ result }) => (
     </p>
     <ProbabilityDiagram
       survivalChances={result.survivalChances}
+      height={400}
       width={Math.min(1096, window.innerWidth - 64)}
     />
   </div>
