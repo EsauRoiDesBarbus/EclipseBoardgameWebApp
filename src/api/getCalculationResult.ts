@@ -3,6 +3,7 @@ import type { Ship } from '../features/battleForm/types'
 import { adaptCalculationResult } from './adaptCalculationResult'
 import { parseShip } from './parseShip'
 import type { CalculationResultResponse } from './types'
+import { mockGetCalculationResult } from './mock'
 
 const API_BASE_URL = window.location.href
 
@@ -22,8 +23,14 @@ export const getCalculationResult = async ({
   const url = new URL(`${API_BASE_URL}winChance`)
   url.searchParams.append('battleInfo', battleInfo)
 
-  const response = await fetch(url)
-  const json = (await response.json()) as CalculationResultResponse
+  let json: CalculationResultResponse
+  if (process.env.NODE_ENV === 'development') {
+    json = await mockGetCalculationResult()
+  } else {
+    const response = await fetch(url)
+    json = (await response.json()) as CalculationResultResponse
+  }
+
   return adaptCalculationResult(
     json,
     attackerShips.map((ship) => ship.type),
