@@ -1,7 +1,7 @@
 import { ComponentProps, FunctionComponent } from 'react'
 import { Trans } from '@lingui/macro'
 
-import { Modal } from '../../ui/Modal'
+import { Modal } from 'src/ui/Modal'
 
 type Props = Omit<ComponentProps<typeof Modal>, 'children'>
 

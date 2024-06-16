@@ -1,5 +1,5 @@
-import { MoonIcon } from '../icons/MoonIcon'
-import { SunIcon } from '../icons/SunIcon'
+import { MoonIcon } from 'src/assets/icons/MoonIcon'
+import { SunIcon } from 'src/assets/icons/SunIcon'
 import { ColorModeProvider, ColorModes } from './ColorModeContext'
 import { useColorMode } from './useColorMode'
 
