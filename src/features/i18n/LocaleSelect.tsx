@@ -1,4 +1,5 @@
 import { useLingui } from '@lingui/react'
+
 import { updateLocale } from './updateLocale'
 
 export const LocaleSelect = () => {

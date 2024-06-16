@@ -1,6 +1,7 @@
-import { PropsWithChildren, useEffect } from 'react'
 import { i18n } from '@lingui/core'
 import { I18nProvider as LinguiProvider } from '@lingui/react'
+import { PropsWithChildren, useEffect } from 'react'
+
 import { updateLocale } from './updateLocale'
 
 const defaultLocale = navigator.language.split('-')[0]

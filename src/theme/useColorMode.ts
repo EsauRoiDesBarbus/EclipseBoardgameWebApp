@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+
 import { ColorModeContext, ContextValue } from './ColorModeContext'
 
 export function useColorMode(): ContextValue {

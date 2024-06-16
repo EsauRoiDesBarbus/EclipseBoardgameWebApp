@@ -1,6 +1,7 @@
-import { FunctionComponent, PropsWithChildren } from 'react'
-import './modal.css'
 import { Trans } from '@lingui/macro'
+import { FunctionComponent, PropsWithChildren } from 'react'
+
+import './modal.css'
 
 type Props = PropsWithChildren<{
   show: boolean

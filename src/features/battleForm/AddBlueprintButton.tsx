@@ -1,7 +1,8 @@
-import { ComponentProps, FunctionComponent } from 'react'
-import { getShipImage } from './getShipImage'
 import { msg } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { ComponentProps, FunctionComponent } from 'react'
+
+import { getShipImage } from './getShipImage'
 import { shipNameToTranslation } from './shipNameToTranslation'
 
 type Props = {

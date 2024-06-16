@@ -1,8 +1,10 @@
-import { FunctionComponent } from 'react'
 import { Trans } from '@lingui/macro'
+import { FunctionComponent } from 'react'
+
 import { formatPercent } from 'src/utils/formatPercent'
-import type { CalculationResult } from './types'
+
 import { ProbabilityDiagram } from './ProbabilityDiagram'
+import type { CalculationResult } from './types'
 
 type Props = {
   result: CalculationResult

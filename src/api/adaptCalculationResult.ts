@@ -1,8 +1,10 @@
 import { i18n } from '@lingui/core'
 import { t } from '@lingui/macro'
+
+import { shipNameToTranslation } from 'src/features/battleForm/shipNameToTranslation'
 import type { ShipType } from 'src/features/battleForm/types'
 import type { CalculationResult, Side, SurvivalChance } from 'src/features/result/types'
-import { shipNameToTranslation } from 'src/features/battleForm/shipNameToTranslation'
+
 import type { CalculationResultResponse } from './types'
 
 const getSurvivalChanceLabel = (side: Side, shipType: ShipType, nSurvived: number) => {

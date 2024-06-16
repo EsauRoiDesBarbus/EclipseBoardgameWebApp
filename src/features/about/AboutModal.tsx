@@ -1,5 +1,5 @@
-import { ComponentProps, FunctionComponent } from 'react'
 import { Trans } from '@lingui/macro'
+import { ComponentProps, FunctionComponent } from 'react'
 
 import { Modal } from 'src/ui/Modal'
 

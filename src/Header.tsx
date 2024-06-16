@@ -1,8 +1,9 @@
 import { Trans } from '@lingui/macro'
-import { AboutModal } from './features/about/AboutModal'
-import { ColorModeToggle } from './theme/ColorModeToggle'
-import { LocaleSelect } from './features/i18n/LocaleSelect'
 import { FunctionComponent, useState } from 'react'
+
+import { AboutModal } from 'src/features/about/AboutModal'
+import { LocaleSelect } from 'src/features/i18n/LocaleSelect'
+import { ColorModeToggle } from 'src/theme/ColorModeToggle'
 
 export const Header: FunctionComponent = () => {
   const [showModal, setShowModal] = useState(false)

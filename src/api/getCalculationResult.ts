@@ -1,9 +1,10 @@
-import type { CalculationResult } from 'src/features/result/types'
 import type { Ship } from 'src/features/battleForm/types'
+import type { CalculationResult } from 'src/features/result/types'
+
 import { adaptCalculationResult } from './adaptCalculationResult'
+import { mockGetCalculationResult } from './mock'
 import { parseShip } from './parseShip'
 import type { CalculationResultResponse } from './types'
-import { mockGetCalculationResult } from './mock'
 
 const API_BASE_URL = window.location.href
 
