@@ -53,7 +53,7 @@ const drawDiagram = (
 
   const yScale = d3
     .scaleLinear()
-    .domain([0, d3.max(data, (d) => d.value)] as [number, number])
+    .domain([0, 1] as [number, number])
     .range([height - yAxisOffset, 0])
 
   // Create bars
