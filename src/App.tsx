@@ -76,9 +76,15 @@ function App() {
 
   const onSubmit = async (data: FormValues) => {
     setIsLoading(true)
-    const result = await getCalculationResult(data)
-    setCalculationResult(result)
-    setIsLoading(false)
+    try {
+      const result = await getCalculationResult(data)
+      setCalculationResult(result)
+    } catch (error) {
+      console.error(error)
+      alert(_(msg`An error occurred. Please try again.`))
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (

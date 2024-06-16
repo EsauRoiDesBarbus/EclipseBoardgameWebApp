@@ -27,23 +27,27 @@ msgstr "À propos"
 msgid "Add {0}"
 msgstr "Ajouter {0}"
 
-#: src/App.tsx:135
+#: src/App.tsx:141
 msgid "Add blueprint on {0} side"
 msgstr "Ajouter un plan de vaisseau du côté {0}"
 
+#: src/App.tsx:84
+msgid "An error occurred. Please try again."
+msgstr "Une erreur est survenue. Merci de réessayer plus tard."
+
 #: src/features/battleForm/AddBlueprintButton.tsx:16
 msgid "Ancient"
-msgstr ""
+msgstr "Ancien"
 
 #: src/features/about/AboutModal.tsx:48
 msgid "Any question, suggestion, bug report, use the feedback button."
 msgstr "Si tu as des questions, des suggestions, des bugs, utilise le bouton de feedback."
 
-#: src/App.tsx:125
+#: src/App.tsx:131
 msgid "Attack"
 msgstr "Attaque"
 
-#: src/App.tsx:137
+#: src/App.tsx:143
 msgid "attacker"
 msgstr "attaquant"
 
@@ -51,11 +55,11 @@ msgstr "attaquant"
 msgid "Attacker wins:"
 msgstr "Chances de victoire de l’attaquant :"
 
-#: src/App.tsx:109
+#: src/App.tsx:115
 msgid "Basic ships"
 msgstr "Vaisseaux simples"
 
-#: src/App.tsx:408
+#: src/App.tsx:414
 msgid "Battle!"
 msgstr "Combattre !"
 
@@ -63,19 +67,19 @@ msgstr "Combattre !"
 msgid "Bellman value function programming"
 msgstr "programmation par fonction de valeur de Bellman"
 
-#: src/App.tsx:295
+#: src/App.tsx:301
 msgid "Blue cannon"
 msgstr "Canon bleu"
 
-#: src/App.tsx:348
+#: src/App.tsx:354
 msgid "Blue missile"
 msgstr "Missile bleu"
 
-#: src/App.tsx:274
+#: src/App.tsx:280
 msgid "Cannons"
 msgstr "Canons"
 
-#: src/App.tsx:394
+#: src/App.tsx:400
 msgid "Clear"
 msgstr "Effacer"
 
@@ -83,7 +87,7 @@ msgstr "Effacer"
 msgid "Close"
 msgstr "Fermer"
 
-#: src/App.tsx:252
+#: src/App.tsx:258
 msgid "Computer"
 msgstr "Ordinateur"
 
@@ -91,25 +95,25 @@ msgstr "Ordinateur"
 msgid "Credits"
 msgstr "Remerciements"
 
-#: src/App.tsx:210
+#: src/App.tsx:216
 #: src/features/battleForm/AddBlueprintButton.tsx:12
 msgid "Cruiser"
 msgstr "Frégate"
 
-#: src/App.tsx:137
+#: src/App.tsx:143
 msgid "defender"
 msgstr "défenseur"
 
-#: src/App.tsx:125
+#: src/App.tsx:131
 msgid "Defense"
 msgstr "Défense"
 
-#: src/App.tsx:213
+#: src/App.tsx:219
 #: src/features/battleForm/AddBlueprintButton.tsx:13
 msgid "Dreadnought"
 msgstr "Croiseur"
 
-#: src/App.tsx:87
+#: src/App.tsx:93
 msgid "Eclipse Battle Calculator"
 msgstr "Calculateur de bataille pour Eclipse"
 
@@ -119,7 +123,7 @@ msgstr "Etienne Bertin (ou esauroidesbarbus) pour les maths et le backend,"
 
 #: src/Header.tsx:35
 msgid "Feedback"
-msgstr ""
+msgstr "Feedback"
 
 #: src/features/about/AboutModal.tsx:63
 msgid "FiF for OPS."
@@ -135,7 +139,7 @@ msgstr "pour la partie frontend,"
 
 #: src/features/battleForm/AddBlueprintButton.tsx:18
 msgid "GCDS"
-msgstr ""
+msgstr "SDCG"
 
 #: src/features/about/AboutModal.tsx:37
 msgid "graph with the probability of survival of each ship,"
@@ -145,7 +149,7 @@ msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
 msgid "Guardian"
 msgstr "Gardien"
 
-#: src/App.tsx:245
+#: src/App.tsx:251
 msgid "Hull"
 msgstr "Coque"
 
@@ -153,97 +157,97 @@ msgstr "Coque"
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr "Je ne fais pas de simulations aléatoires, j’utilise des outils avancés en théorie des jeux, connus sous le nom de"
 
-#: src/App.tsx:297
+#: src/App.tsx:303
 msgid "Increase blue cannon"
 msgstr "Ajouter un canon bleu"
 
-#: src/App.tsx:350
+#: src/App.tsx:356
 msgid "Increase blue missile"
 msgstr "Ajouter un missile bleu"
 
-#: src/App.tsx:253
+#: src/App.tsx:259
 msgid "Increase computer"
 msgstr "Ajouter un ordinateur"
 
-#: src/App.tsx:246
+#: src/App.tsx:252
 msgid "Increase hull"
 msgstr "Ajouter une coque"
 
-#: src/App.tsx:239
+#: src/App.tsx:245
 msgid "Increase initiative"
 msgstr "Ajouter un d’intiative"
 
-#: src/App.tsx:232
+#: src/App.tsx:238
 msgid "Increase number of ships"
 msgstr "Ajouter un vaisseau"
 
-#: src/App.tsx:289
+#: src/App.tsx:295
 msgid "Increase orange cannon"
 msgstr "Ajouter un canon orange"
 
-#: src/App.tsx:342
+#: src/App.tsx:348
 msgid "Increase orange missile"
 msgstr "Ajouter un missile orange"
 
-#: src/App.tsx:305
+#: src/App.tsx:311
 msgid "Increase red cannon"
 msgstr "Ajouter un canon rouge"
 
-#: src/App.tsx:358
+#: src/App.tsx:364
 msgid "Increase red missile"
 msgstr "Ajouter un missile rouge"
 
-#: src/App.tsx:313
+#: src/App.tsx:319
 msgid "Increase rift cannon"
 msgstr "Ajouter un canon rift"
 
-#: src/App.tsx:260
+#: src/App.tsx:266
 msgid "Increase shield"
 msgstr "Ajouter un bouclier"
 
-#: src/App.tsx:281
+#: src/App.tsx:287
 msgid "Increase yellow cannon"
 msgstr "Ajouter un canon jaune"
 
-#: src/App.tsx:334
+#: src/App.tsx:340
 msgid "Increase yellow missile"
 msgstr "Ajouter un missile jaune"
 
-#: src/App.tsx:238
+#: src/App.tsx:244
 msgid "Initiative"
-msgstr ""
+msgstr "Initiative"
 
-#: src/App.tsx:207
+#: src/App.tsx:213
 #: src/features/battleForm/AddBlueprintButton.tsx:11
 msgid "Interceptor"
 msgstr "Intercepteur"
 
-#: src/App.tsx:100
+#: src/App.tsx:106
 msgid "Load a demo:"
 msgstr "Charger une démo :"
 
-#: src/App.tsx:104
+#: src/App.tsx:110
 msgid "Load basic ships demo"
 msgstr "Charger la démo Vaisseaux simples"
 
-#: src/App.tsx:113
+#: src/App.tsx:119
 msgid "Load optimal damage splitting demo"
 msgstr "Charger la démo Répartition optimale des dégâts"
 
-#: src/App.tsx:327
+#: src/App.tsx:333
 msgid "Missiles"
-msgstr ""
+msgstr "Missiles"
 
-#: src/App.tsx:221
+#: src/App.tsx:227
 #: src/features/battleForm/AddBlueprintButton.tsx:15
 msgid "NPC"
 msgstr "PNJ"
 
-#: src/App.tsx:231
+#: src/App.tsx:237
 msgid "Number"
 msgstr "Nombre"
 
-#: src/App.tsx:118
+#: src/App.tsx:124
 msgid "Optimal damage splitting"
 msgstr "Répartition optimale des dégâts"
 
@@ -251,23 +255,23 @@ msgstr "Répartition optimale des dégâts"
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr "du ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Répartition optimale des dégâts</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
 
-#: src/App.tsx:287
+#: src/App.tsx:293
 msgid "Orange cannon"
 msgstr "Canon orange"
 
-#: src/App.tsx:340
+#: src/App.tsx:346
 msgid "Orange missile"
 msgstr "Missile orange"
 
-#: src/App.tsx:303
+#: src/App.tsx:309
 msgid "Red cannon"
 msgstr "Canon rouge"
 
-#: src/App.tsx:356
+#: src/App.tsx:362
 msgid "Red missile"
 msgstr "Missile rouge"
 
-#: src/App.tsx:364
+#: src/App.tsx:370
 msgid "Remove ship"
 msgstr "Retirer le vaisseau"
 
@@ -275,15 +279,15 @@ msgstr "Retirer le vaisseau"
 msgid "Results"
 msgstr "Résultats"
 
-#: src/App.tsx:311
+#: src/App.tsx:317
 msgid "Rift cannon"
 msgstr "Canon rift"
 
-#: src/App.tsx:259
+#: src/App.tsx:265
 msgid "Shield"
 msgstr "Bouclier"
 
-#: src/App.tsx:218
+#: src/App.tsx:224
 #: src/features/battleForm/AddBlueprintButton.tsx:14
 msgid "Starbase"
 msgstr "Base stellaire"
@@ -292,10 +296,10 @@ msgstr "Base stellaire"
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
 msgstr "pour calculer les chances de victoire de batailles d’<0>Eclipse</0>, avec :"
 
-#: src/App.tsx:279
+#: src/App.tsx:285
 msgid "Yellow cannon"
 msgstr "Canon jaune"
 
-#: src/App.tsx:332
+#: src/App.tsx:338
 msgid "Yellow missile"
 msgstr "Missile jaune"
