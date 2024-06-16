@@ -1,6 +1,6 @@
 import { i18n } from '@lingui/core'
 import { t } from '@lingui/macro'
-import { ShipType } from '../features/battleForm/types'
+import type { ShipType } from '../features/battleForm/types'
 import type { CalculationResult, Side, SurvivalChance } from '../features/result/types'
 import { shipNameToTranslation } from '../features/battleForm/shipNameToTranslation'
 import type { CalculationResultResponse } from './types'
