@@ -34,6 +34,7 @@ const xAxisOffset = 30
 const yAxisTopOffset = 10
 const yAxisBottomOffset = 50
 const yAxisOffset = yAxisTopOffset + yAxisBottomOffset
+const labelHeight = 30
 
 const drawDiagram = (
   svg: d3.Selection<SVGSVGElement, unknown, null, undefined>,
@@ -80,7 +81,12 @@ const drawDiagram = (
     .append('text')
     .text((d) => formatPercent(d.value)) // Format value as percentage
     .attr('x', (d) => xScale(d.label)! + xScale.bandwidth() / 2) // Center text in bar
-    .attr('y', (d) => yScale(d.value) + 20) // Position text slightly above top of bar
+    .attr('y', (d) =>
+      // Position text slightly below top of bar, or above if bar is too short
+      yScale(d.value) < height - (yAxisOffset + labelHeight)
+        ? yScale(d.value) + 20
+        : yScale(d.value) - 10
+    )
     .attr('text-anchor', 'middle') // Center text horizontally
     .attr('fill', 'white') // Text color
     .attr('font-size', '12px')
