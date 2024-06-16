@@ -2,28 +2,18 @@ import { ComponentProps, FunctionComponent } from 'react'
 import { getShipImage } from './getShipImage'
 import { msg } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { shipNameToTranslation } from './shipNameToTranslation'
 
 type Props = {
   shipType: Parameters<typeof getShipImage>[0]
 } & ComponentProps<'button'>
-
-const getShipName = {
-  interceptor: msg`Interceptor`,
-  cruiser: msg`Cruiser`,
-  dreadnought: msg`Dreadnought`,
-  starbase: msg`Starbase`,
-  npc: msg`NPC`,
-  ancient: msg`Ancient`,
-  guardian: msg`Guardian`,
-  gcds: msg`GCDS`,
-} as const
 
 export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...buttonProps }) => {
   const { _ } = useLingui()
   return (
     <button
       type="button"
-      title={_(msg`Add ${_(getShipName[shipType])}`)}
+      title={_(msg`Add ${_(shipNameToTranslation[shipType])}`)}
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -31,7 +21,7 @@ export const AddBlueprintButton: FunctionComponent<Props> = ({ shipType, ...butt
         gap: 8,
       }}
       {...buttonProps}>
-      {_(getShipName[shipType])}
+      {_(shipNameToTranslation[shipType])}
       <img src={getShipImage(shipType)} width={30} />
     </button>
   )
