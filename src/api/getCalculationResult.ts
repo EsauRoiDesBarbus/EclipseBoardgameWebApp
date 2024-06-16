@@ -24,5 +24,9 @@ export const getCalculationResult = async ({
 
   const response = await fetch(url)
   const json = (await response.json()) as CalculationResultResponse
-  return adaptCalculationResult(json)
+  return adaptCalculationResult(
+    json,
+    attackerShips.map((ship) => ship.type),
+    defenderShips.map((ship) => ship.type)
+  )
 }

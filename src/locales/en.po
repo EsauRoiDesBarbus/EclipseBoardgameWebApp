@@ -18,12 +18,16 @@ msgstr ""
 msgid "Eclipse Battle Calculator"
 msgstr ""
 
+#: src/api/adaptCalculationResult.ts:13
+msgid "{0} or more survived"
+msgstr ""
+
 #: src/features/about/AboutModal.tsx:11
 #: src/Header.tsx:24
 msgid "About"
 msgstr ""
 
-#: src/features/battleForm/AddBlueprintButton.tsx:26
+#: src/features/battleForm/AddBlueprintButton.tsx:16
 msgid "Add {0}"
 msgstr ""
 
@@ -35,7 +39,7 @@ msgstr ""
 msgid "An error occurred. Please try again."
 msgstr ""
 
-#: src/features/battleForm/AddBlueprintButton.tsx:16
+#: src/features/battleForm/shipNameToTranslation.ts:9
 msgid "Ancient"
 msgstr ""
 
@@ -45,6 +49,10 @@ msgstr ""
 
 #: src/App.tsx:131
 msgid "Attack"
+msgstr ""
+
+#: src/api/adaptCalculationResult.ts:11
+msgid "Attack {0}"
 msgstr ""
 
 #: src/App.tsx:143
@@ -96,7 +104,7 @@ msgid "Credits"
 msgstr ""
 
 #: src/App.tsx:216
-#: src/features/battleForm/AddBlueprintButton.tsx:12
+#: src/features/battleForm/shipNameToTranslation.ts:5
 msgid "Cruiser"
 msgstr ""
 
@@ -108,8 +116,12 @@ msgstr ""
 msgid "Defense"
 msgstr ""
 
+#: src/api/adaptCalculationResult.ts:12
+msgid "Defense {0}"
+msgstr ""
+
 #: src/App.tsx:219
-#: src/features/battleForm/AddBlueprintButton.tsx:13
+#: src/features/battleForm/shipNameToTranslation.ts:6
 msgid "Dreadnought"
 msgstr ""
 
@@ -137,7 +149,7 @@ msgstr ""
 msgid "for the frontend,"
 msgstr ""
 
-#: src/features/battleForm/AddBlueprintButton.tsx:18
+#: src/features/battleForm/shipNameToTranslation.ts:11
 msgid "GCDS"
 msgstr ""
 
@@ -145,7 +157,7 @@ msgstr ""
 msgid "graph with the probability of survival of each ship,"
 msgstr ""
 
-#: src/features/battleForm/AddBlueprintButton.tsx:17
+#: src/features/battleForm/shipNameToTranslation.ts:10
 msgid "Guardian"
 msgstr ""
 
@@ -218,7 +230,7 @@ msgid "Initiative"
 msgstr ""
 
 #: src/App.tsx:213
-#: src/features/battleForm/AddBlueprintButton.tsx:11
+#: src/features/battleForm/shipNameToTranslation.ts:4
 msgid "Interceptor"
 msgstr ""
 
@@ -239,7 +251,7 @@ msgid "Missiles"
 msgstr ""
 
 #: src/App.tsx:227
-#: src/features/battleForm/AddBlueprintButton.tsx:15
+#: src/features/battleForm/shipNameToTranslation.ts:8
 msgid "NPC"
 msgstr ""
 
@@ -288,7 +300,7 @@ msgid "Shield"
 msgstr ""
 
 #: src/App.tsx:224
-#: src/features/battleForm/AddBlueprintButton.tsx:14
+#: src/features/battleForm/shipNameToTranslation.ts:7
 msgid "Starbase"
 msgstr ""
 

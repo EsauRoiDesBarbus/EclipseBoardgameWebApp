@@ -18,12 +18,16 @@ msgstr ""
 msgid "Eclipse Battle Calculator"
 msgstr "Eclipse - Calculateur de bataille"
 
+#: src/api/adaptCalculationResult.ts:13
+msgid "{0} or more survived"
+msgstr "{0} ou plus ont survécu"
+
 #: src/features/about/AboutModal.tsx:11
 #: src/Header.tsx:24
 msgid "About"
 msgstr "À propos"
 
-#: src/features/battleForm/AddBlueprintButton.tsx:26
+#: src/features/battleForm/AddBlueprintButton.tsx:16
 msgid "Add {0}"
 msgstr "Ajouter {0}"
 
@@ -35,7 +39,7 @@ msgstr "Ajouter un plan de vaisseau du côté {0}"
 msgid "An error occurred. Please try again."
 msgstr "Une erreur est survenue. Merci de réessayer plus tard."
 
-#: src/features/battleForm/AddBlueprintButton.tsx:16
+#: src/features/battleForm/shipNameToTranslation.ts:9
 msgid "Ancient"
 msgstr "Ancien"
 
@@ -46,6 +50,10 @@ msgstr "Si tu as des questions, des suggestions, des bugs, utilise le bouton de 
 #: src/App.tsx:131
 msgid "Attack"
 msgstr "Attaque"
+
+#: src/api/adaptCalculationResult.ts:11
+msgid "Attack {0}"
+msgstr "{0} d’attaque"
 
 #: src/App.tsx:143
 msgid "attacker"
@@ -96,7 +104,7 @@ msgid "Credits"
 msgstr "Remerciements"
 
 #: src/App.tsx:216
-#: src/features/battleForm/AddBlueprintButton.tsx:12
+#: src/features/battleForm/shipNameToTranslation.ts:5
 msgid "Cruiser"
 msgstr "Frégate"
 
@@ -108,8 +116,12 @@ msgstr "défenseur"
 msgid "Defense"
 msgstr "Défense"
 
+#: src/api/adaptCalculationResult.ts:12
+msgid "Defense {0}"
+msgstr "{0} de défense"
+
 #: src/App.tsx:219
-#: src/features/battleForm/AddBlueprintButton.tsx:13
+#: src/features/battleForm/shipNameToTranslation.ts:6
 msgid "Dreadnought"
 msgstr "Croiseur"
 
@@ -137,7 +149,7 @@ msgstr "la précision d’un nombre à virgule flottante (l’interface utilisat
 msgid "for the frontend,"
 msgstr "pour la partie frontend,"
 
-#: src/features/battleForm/AddBlueprintButton.tsx:18
+#: src/features/battleForm/shipNameToTranslation.ts:11
 msgid "GCDS"
 msgstr "SDCG"
 
@@ -145,7 +157,7 @@ msgstr "SDCG"
 msgid "graph with the probability of survival of each ship,"
 msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
 
-#: src/features/battleForm/AddBlueprintButton.tsx:17
+#: src/features/battleForm/shipNameToTranslation.ts:10
 msgid "Guardian"
 msgstr "Gardien"
 
@@ -218,7 +230,7 @@ msgid "Initiative"
 msgstr "Initiative"
 
 #: src/App.tsx:213
-#: src/features/battleForm/AddBlueprintButton.tsx:11
+#: src/features/battleForm/shipNameToTranslation.ts:4
 msgid "Interceptor"
 msgstr "Intercepteur"
 
@@ -239,7 +251,7 @@ msgid "Missiles"
 msgstr "Missiles"
 
 #: src/App.tsx:227
-#: src/features/battleForm/AddBlueprintButton.tsx:15
+#: src/features/battleForm/shipNameToTranslation.ts:8
 msgid "NPC"
 msgstr "PNJ"
 
@@ -288,7 +300,7 @@ msgid "Shield"
 msgstr "Bouclier"
 
 #: src/App.tsx:224
-#: src/features/battleForm/AddBlueprintButton.tsx:14
+#: src/features/battleForm/shipNameToTranslation.ts:7
 msgid "Starbase"
 msgstr "Base stellaire"
 
