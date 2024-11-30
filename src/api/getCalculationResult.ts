@@ -6,7 +6,7 @@ import { mockGetCalculationResult } from './mock'
 import { parseShip } from './parseShip'
 import type { CalculationResultResponse } from './types'
 
-const API_BASE_URL = window.location.href
+const API_BASE_URL = process.env.API_BASE_URL
 
 type Params = {
   attackerShips: Ship[]
