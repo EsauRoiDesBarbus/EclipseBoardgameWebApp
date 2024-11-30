@@ -18,24 +18,24 @@ msgstr ""
 msgid "Eclipse Battle Calculator"
 msgstr ""
 
-#: src/api/adaptCalculationResult.ts:13
+#: src/api/adaptCalculationResult.ts:15
 msgid "{0} or more survived"
 msgstr ""
 
 #: src/features/about/AboutModal.tsx:11
-#: src/Header.tsx:24
+#: src/Header.tsx:25
 msgid "About"
 msgstr ""
 
-#: src/features/battleForm/AddBlueprintButton.tsx:16
+#: src/features/battleForm/AddBlueprintButton.tsx:17
 msgid "Add {0}"
 msgstr ""
 
-#: src/App.tsx:141
+#: src/App.tsx:145
 msgid "Add blueprint on {0} side"
 msgstr ""
 
-#: src/App.tsx:84
+#: src/App.tsx:88
 msgid "An error occurred. Please try again."
 msgstr ""
 
@@ -47,27 +47,27 @@ msgstr ""
 msgid "Any question, suggestion, bug report, use the feedback button."
 msgstr ""
 
-#: src/App.tsx:131
+#: src/App.tsx:135
 msgid "Attack"
 msgstr ""
 
-#: src/api/adaptCalculationResult.ts:11
+#: src/api/adaptCalculationResult.ts:13
 msgid "Attack {0}"
 msgstr ""
 
-#: src/App.tsx:143
+#: src/App.tsx:147
 msgid "attacker"
 msgstr ""
 
-#: src/features/result/ResultDisplay.tsx:17
+#: src/features/result/ResultDisplay.tsx:19
 msgid "Attacker wins:"
 msgstr ""
 
-#: src/App.tsx:115
+#: src/App.tsx:119
 msgid "Basic ships"
 msgstr ""
 
-#: src/App.tsx:414
+#: src/App.tsx:418
 msgid "Battle!"
 msgstr ""
 
@@ -75,27 +75,27 @@ msgstr ""
 msgid "Bellman value function programming"
 msgstr ""
 
-#: src/App.tsx:301
+#: src/App.tsx:305
 msgid "Blue cannon"
 msgstr ""
 
-#: src/App.tsx:354
+#: src/App.tsx:358
 msgid "Blue missile"
 msgstr ""
 
-#: src/App.tsx:280
+#: src/App.tsx:284
 msgid "Cannons"
 msgstr ""
 
-#: src/App.tsx:400
+#: src/App.tsx:404
 msgid "Clear"
 msgstr ""
 
-#: src/ui/Modal.tsx:29
+#: src/ui/Modal.tsx:30
 msgid "Close"
 msgstr ""
 
-#: src/App.tsx:258
+#: src/App.tsx:262
 msgid "Computer"
 msgstr ""
 
@@ -103,29 +103,29 @@ msgstr ""
 msgid "Credits"
 msgstr ""
 
-#: src/App.tsx:216
+#: src/App.tsx:220
 #: src/features/battleForm/shipNameToTranslation.ts:5
 msgid "Cruiser"
 msgstr ""
 
-#: src/App.tsx:143
+#: src/App.tsx:147
 msgid "defender"
 msgstr ""
 
-#: src/App.tsx:131
+#: src/App.tsx:135
 msgid "Defense"
 msgstr ""
 
-#: src/api/adaptCalculationResult.ts:12
+#: src/api/adaptCalculationResult.ts:14
 msgid "Defense {0}"
 msgstr ""
 
-#: src/App.tsx:219
+#: src/App.tsx:223
 #: src/features/battleForm/shipNameToTranslation.ts:6
 msgid "Dreadnought"
 msgstr ""
 
-#: src/App.tsx:93
+#: src/App.tsx:97
 msgid "Eclipse Battle Calculator"
 msgstr ""
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Etienne Bertin (aka. esauroidesbarbus) for the maths and the backend,"
 msgstr ""
 
-#: src/Header.tsx:35
+#: src/Header.tsx:36
 msgid "Feedback"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 msgid "Guardian"
 msgstr ""
 
-#: src/App.tsx:251
+#: src/App.tsx:255
 msgid "Hull"
 msgstr ""
 
@@ -169,97 +169,97 @@ msgstr ""
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr ""
 
-#: src/App.tsx:303
+#: src/App.tsx:307
 msgid "Increase blue cannon"
 msgstr ""
 
-#: src/App.tsx:356
+#: src/App.tsx:360
 msgid "Increase blue missile"
 msgstr ""
 
-#: src/App.tsx:259
+#: src/App.tsx:263
 msgid "Increase computer"
 msgstr ""
 
-#: src/App.tsx:252
+#: src/App.tsx:256
 msgid "Increase hull"
 msgstr ""
 
-#: src/App.tsx:245
+#: src/App.tsx:249
 msgid "Increase initiative"
 msgstr ""
 
-#: src/App.tsx:238
+#: src/App.tsx:242
 msgid "Increase number of ships"
 msgstr ""
 
-#: src/App.tsx:295
+#: src/App.tsx:299
 msgid "Increase orange cannon"
 msgstr ""
 
-#: src/App.tsx:348
+#: src/App.tsx:352
 msgid "Increase orange missile"
 msgstr ""
 
-#: src/App.tsx:311
+#: src/App.tsx:315
 msgid "Increase red cannon"
 msgstr ""
 
-#: src/App.tsx:364
+#: src/App.tsx:368
 msgid "Increase red missile"
 msgstr ""
 
-#: src/App.tsx:319
+#: src/App.tsx:323
 msgid "Increase rift cannon"
 msgstr ""
 
-#: src/App.tsx:266
+#: src/App.tsx:270
 msgid "Increase shield"
 msgstr ""
 
-#: src/App.tsx:287
+#: src/App.tsx:291
 msgid "Increase yellow cannon"
 msgstr ""
 
-#: src/App.tsx:340
+#: src/App.tsx:344
 msgid "Increase yellow missile"
 msgstr ""
 
-#: src/App.tsx:244
+#: src/App.tsx:248
 msgid "Initiative"
 msgstr ""
 
-#: src/App.tsx:213
+#: src/App.tsx:217
 #: src/features/battleForm/shipNameToTranslation.ts:4
 msgid "Interceptor"
 msgstr ""
 
-#: src/App.tsx:106
+#: src/App.tsx:110
 msgid "Load a demo:"
 msgstr ""
 
-#: src/App.tsx:110
+#: src/App.tsx:114
 msgid "Load basic ships demo"
 msgstr ""
 
-#: src/App.tsx:119
+#: src/App.tsx:123
 msgid "Load optimal damage splitting demo"
 msgstr ""
 
-#: src/App.tsx:333
+#: src/App.tsx:337
 msgid "Missiles"
 msgstr ""
 
-#: src/App.tsx:227
+#: src/App.tsx:231
 #: src/features/battleForm/shipNameToTranslation.ts:8
 msgid "NPC"
 msgstr ""
 
-#: src/App.tsx:237
+#: src/App.tsx:241
 msgid "Number"
 msgstr ""
 
-#: src/App.tsx:124
+#: src/App.tsx:128
 msgid "Optimal damage splitting"
 msgstr ""
 
@@ -267,39 +267,39 @@ msgstr ""
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr ""
 
-#: src/App.tsx:293
+#: src/App.tsx:297
 msgid "Orange cannon"
 msgstr ""
 
-#: src/App.tsx:346
+#: src/App.tsx:350
 msgid "Orange missile"
 msgstr ""
 
-#: src/App.tsx:309
+#: src/App.tsx:313
 msgid "Red cannon"
 msgstr ""
 
-#: src/App.tsx:362
+#: src/App.tsx:366
 msgid "Red missile"
 msgstr ""
 
-#: src/App.tsx:370
+#: src/App.tsx:374
 msgid "Remove ship"
 msgstr ""
 
-#: src/features/result/ResultDisplay.tsx:14
+#: src/features/result/ResultDisplay.tsx:16
 msgid "Results"
 msgstr ""
 
-#: src/App.tsx:317
+#: src/App.tsx:321
 msgid "Rift cannon"
 msgstr ""
 
-#: src/App.tsx:265
+#: src/App.tsx:269
 msgid "Shield"
 msgstr ""
 
-#: src/App.tsx:224
+#: src/App.tsx:228
 #: src/features/battleForm/shipNameToTranslation.ts:7
 msgid "Starbase"
 msgstr ""
@@ -308,10 +308,10 @@ msgstr ""
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
 msgstr ""
 
-#: src/App.tsx:285
+#: src/App.tsx:289
 msgid "Yellow cannon"
 msgstr ""
 
-#: src/App.tsx:338
+#: src/App.tsx:342
 msgid "Yellow missile"
 msgstr ""
