@@ -81,7 +81,7 @@ const drawDiagram = (
     .enter()
     .append('text')
     .text((d) => formatPercent(d.value)) // Format value as percentage
-    .attr('x', (d) => xScale(d.label)! + xScale.bandwidth() / 2) // Center text in bar
+    .attr('x', (d) => (xScale(d.label) ?? 0) + xScale.bandwidth() / 2) // Center text in bar
     .attr('y', (d) =>
       // Position text slightly below top of bar, or above if bar is too short
       yScale(d.value) < height - (yAxisOffset + labelHeight)

@@ -9,12 +9,14 @@ export default defineConfig({
         plugins: ['macros'],
       },
     }),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     lingui(),
   ],
   resolve: {
     alias: {
       src: '/src',
     },
+  },
+  server: {
+    open: true,
   },
 })

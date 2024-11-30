@@ -23,6 +23,7 @@ import { getShipImage } from 'src/features/battleForm/getShipImage'
 import type { FormValues } from 'src/features/battleForm/types'
 import { ResultDisplay } from 'src/features/result/ResultDisplay'
 import { CalculationResult } from 'src/features/result/types'
+import { useDebounce } from 'src/utils/useDebounce'
 
 import './App.css'
 import { Header } from './Header'
@@ -72,10 +73,15 @@ function App() {
   const appendFunctions = { attackerShips: attackerShipAppend, defenderShips: defenderShipAppend }
   const removeFunctions = { attackerShips: attackerShipRemove, defenderShips: defenderShipRemove }
 
+  const getCalculationResultDebounced = useDebounce(getCalculationResult, 500, {
+    leading: true,
+    trailing: false,
+  })
+
   const onSubmit = async (data: FormValues) => {
     setIsLoading(true)
     try {
-      const result = await getCalculationResult(data)
+      const result = await getCalculationResultDebounced(data)
       setCalculationResult(result)
     } catch (error) {
       console.error(error)
