@@ -6,7 +6,7 @@ import { mockGetCalculationResult } from './mock'
 import { parseShip } from './parseShip'
 import type { CalculationResultResponse } from './types'
 
-const API_BASE_URL = process.env.API_BASE_URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL as string
 
 type Params = {
   attackerShips: Ship[]
