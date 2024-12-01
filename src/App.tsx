@@ -399,7 +399,7 @@ function App() {
             </div>
             {errors[shipSide]?.message && (
               <p role="alert" style={{ color: 'red' }}>
-                {errors[shipSide].message}
+                {_(errors[shipSide].message)}
               </p>
             )}
           </div>
