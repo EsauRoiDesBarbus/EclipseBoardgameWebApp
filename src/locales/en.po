@@ -250,11 +250,11 @@ msgstr ""
 msgid "Missiles"
 msgstr ""
 
-#: src/features/battleForm/formResolver.ts:11
+#: src/features/battleForm/formResolver.ts:5
 msgid "Missing attacker ships."
 msgstr ""
 
-#: src/features/battleForm/formResolver.ts:14
+#: src/features/battleForm/formResolver.ts:6
 msgid "Missing defender ships."
 msgstr ""
 

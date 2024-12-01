@@ -250,11 +250,11 @@ msgstr "Charger la démo Répartition optimale des dégâts"
 msgid "Missiles"
 msgstr "Missiles"
 
-#: src/features/battleForm/formResolver.ts:11
+#: src/features/battleForm/formResolver.ts:5
 msgid "Missing attacker ships."
 msgstr "Vaisseau en attaque manquant."
 
-#: src/features/battleForm/formResolver.ts:14
+#: src/features/battleForm/formResolver.ts:6
 msgid "Missing defender ships."
 msgstr "Vaisseau en défense manquant."
 
