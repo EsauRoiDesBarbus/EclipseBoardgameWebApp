@@ -18,6 +18,7 @@ import { AddBlueprintButton } from 'src/features/battleForm/AddBlueprintButton'
 import { NumberInput } from 'src/features/battleForm/NumberInput'
 import { defaultBlueprint } from 'src/features/battleForm/blueprints'
 import { basicShipsDemo, optimalDamageSplittingDemo } from 'src/features/battleForm/demos'
+import { formResolver } from 'src/features/battleForm/formResolver'
 import { getNpcBlueprint } from 'src/features/battleForm/getNpcBlueprint'
 import { getShipImage } from 'src/features/battleForm/getShipImage'
 import type { FormValues } from 'src/features/battleForm/types'
@@ -44,11 +45,18 @@ function App() {
     }
   }, [calculationResult])
 
-  const { register, control, handleSubmit, watch } = useForm<FormValues>({
+  const {
+    register,
+    control,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<FormValues>({
     defaultValues: {
       attackerShips: [],
       defenderShips: [],
     },
+    resolver: formResolver,
   })
 
   const {
@@ -389,6 +397,11 @@ function App() {
                 )
               })}
             </div>
+            {errors[shipSide]?.message && (
+              <p role="alert" style={{ color: 'red' }}>
+                {errors[shipSide].message}
+              </p>
+            )}
           </div>
         ))}
 
