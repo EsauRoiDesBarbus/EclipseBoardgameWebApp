@@ -1,19 +1,20 @@
-import { FunctionComponent, useEffect, useRef } from 'react'
 import * as d3 from 'd3'
+import { FunctionComponent, useEffect, useRef } from 'react'
 
-import { SurvivalChance } from './types'
-import { formatPercent } from './utils/formatPercent'
+import { formatPercent } from 'src/utils/formatPercent'
+
+import type { SurvivalChance } from './types'
 
 type Props = {
   survivalChances: SurvivalChance[]
-  width?: number
-  height?: number
+  width: number
+  height: number
 }
 
 export const ProbabilityDiagram: FunctionComponent<Props> = ({
   survivalChances,
-  width = 800,
-  height = 400,
+  width,
+  height,
 }) => {
   const ref = useRef<SVGSVGElement>(null)
 
@@ -34,6 +35,7 @@ const xAxisOffset = 30
 const yAxisTopOffset = 10
 const yAxisBottomOffset = 50
 const yAxisOffset = yAxisTopOffset + yAxisBottomOffset
+const labelHeight = 30
 
 const drawDiagram = (
   svg: d3.Selection<SVGSVGElement, unknown, null, undefined>,
@@ -53,7 +55,7 @@ const drawDiagram = (
 
   const yScale = d3
     .scaleLinear()
-    .domain([0, d3.max(data, (d) => d.value)] as [number, number])
+    .domain([0, 1] as [number, number])
     .range([height - yAxisOffset, 0])
 
   // Create bars
@@ -79,8 +81,13 @@ const drawDiagram = (
     .enter()
     .append('text')
     .text((d) => formatPercent(d.value)) // Format value as percentage
-    .attr('x', (d) => xScale(d.label)! + xScale.bandwidth() / 2) // Center text in bar
-    .attr('y', (d) => yScale(d.value) + 20) // Position text slightly above top of bar
+    .attr('x', (d) => (xScale(d.label) ?? 0) + xScale.bandwidth() / 2) // Center text in bar
+    .attr('y', (d) =>
+      // Position text slightly below top of bar, or above if bar is too short
+      yScale(d.value) < height - (yAxisOffset + labelHeight)
+        ? yScale(d.value) + 20
+        : yScale(d.value) - 10
+    )
     .attr('text-anchor', 'middle') // Center text horizontally
     .attr('fill', 'white') // Text color
     .attr('font-size', '12px')

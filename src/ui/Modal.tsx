@@ -1,4 +1,6 @@
+import { Trans } from '@lingui/macro'
 import { FunctionComponent, PropsWithChildren } from 'react'
+
 import './modal.css'
 
 type Props = PropsWithChildren<{
@@ -14,6 +16,7 @@ export const Modal: FunctionComponent<Props> = ({ show, onClose, children }) => 
     style={show ? {} : { display: 'none' }}
     onClick={onClose}>
     <section
+      autoFocus
       className="modal-main"
       onClick={(e) => {
         e.stopPropagation()
@@ -24,7 +27,7 @@ export const Modal: FunctionComponent<Props> = ({ show, onClose, children }) => 
         onClick={onClose}
         className="primary"
         style={{ marginTop: 20, width: 'fit-content', alignSelf: 'center' }}>
-        Close
+        <Trans>Close</Trans>
       </button>
     </section>
   </div>

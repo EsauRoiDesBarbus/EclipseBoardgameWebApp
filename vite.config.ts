@@ -1,7 +1,22 @@
-import { defineConfig } from 'vite'
+import { lingui } from '@lingui/vite-plugin'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      babel: {
+        plugins: ['macros'],
+      },
+    }),
+    lingui(),
+  ],
+  resolve: {
+    alias: {
+      src: '/src',
+    },
+  },
+  server: {
+    open: true,
+  },
 })

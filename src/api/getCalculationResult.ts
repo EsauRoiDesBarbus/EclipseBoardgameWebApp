@@ -1,9 +1,12 @@
-import { Ship, CalculationResult } from '../types'
-import { adaptCalculationResult } from './adaptCalculationResult'
-import { parseShip } from './parseShip'
-import { CalculationResultResponse } from './types'
+import type { Ship } from 'src/features/battleForm/types'
+import type { CalculationResult } from 'src/features/result/types'
 
-const API_BASE_URL = window.location.href
+import { adaptCalculationResult } from './adaptCalculationResult'
+import { mockGetCalculationResult } from './mock'
+import { parseShip } from './parseShip'
+import type { CalculationResultResponse } from './types'
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? window.location.href
 
 type Params = {
   attackerShips: Ship[]
@@ -21,7 +24,17 @@ export const getCalculationResult = async ({
   const url = new URL(`${API_BASE_URL}winChance`)
   url.searchParams.append('battleInfo', battleInfo)
 
-  const response = await fetch(url)
-  const json = (await response.json()) as CalculationResultResponse
-  return adaptCalculationResult(json)
+  let json: CalculationResultResponse
+  if (process.env.NODE_ENV === 'development') {
+    json = await mockGetCalculationResult()
+  } else {
+    const response = await fetch(url)
+    json = (await response.json()) as CalculationResultResponse
+  }
+
+  return adaptCalculationResult(
+    json,
+    attackerShips.map((ship) => ship.type),
+    defenderShips.map((ship) => ship.type)
+  )
 }

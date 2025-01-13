@@ -1,5 +1,6 @@
 import { ComponentProps, FunctionComponent } from 'react'
 import { UseControllerProps, useController } from 'react-hook-form'
+
 import type { FormValues } from './types'
 
 const BUTTON_SIZE = 30
@@ -18,8 +19,9 @@ type NumberFieldNames = Exclude<
 type Props = {
   name: NumberFieldNames
   control: UseControllerProps<FormValues>['control']
-  label?: string
-  accessibilityLabel: string
+  label: string
+  labelHidden?: boolean
+  title: string
   image: string
 } & ComponentProps<'input'>
 
@@ -27,7 +29,8 @@ export const NumberInput: FunctionComponent<Props> = ({
   name,
   control,
   label,
-  accessibilityLabel,
+  labelHidden = false,
+  title,
   image,
   ...inputProps
 }) => {
@@ -46,11 +49,14 @@ export const NumberInput: FunctionComponent<Props> = ({
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-      {label ? <label htmlFor={name}>{label}</label> : null}
+      <label htmlFor={name} hidden={labelHidden}>
+        {label}
+      </label>
       <div style={{ display: 'flex', gap: 8, flexGrow: 1 }}>
         <input
           id={name}
           type="number"
+          aria-label={label}
           min={0}
           {...field}
           {...inputProps}
@@ -58,6 +64,7 @@ export const NumberInput: FunctionComponent<Props> = ({
         />
         <button
           type="button"
+          title={title}
           onClick={onIncrement}
           style={{
             display: 'flex',
@@ -65,7 +72,7 @@ export const NumberInput: FunctionComponent<Props> = ({
             backgroundColor: 'rgba(0,0,0,0)',
             alignSelf: 'center',
           }}>
-          <img src={image} width={BUTTON_SIZE} alt={accessibilityLabel} />
+          <img src={image} width={BUTTON_SIZE} />
         </button>
       </div>
     </div>
