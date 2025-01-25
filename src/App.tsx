@@ -21,6 +21,7 @@ import { basicShipsDemo, optimalDamageSplittingDemo } from 'src/features/battleF
 import { formResolver } from 'src/features/battleForm/formResolver'
 import { getNpcBlueprint } from 'src/features/battleForm/getNpcBlueprint'
 import { getShipImage } from 'src/features/battleForm/getShipImage'
+import { shipNameToTranslation } from 'src/features/battleForm/shipNameToTranslation'
 import type { FormValues } from 'src/features/battleForm/types'
 import { ResultDisplay } from 'src/features/result/ResultDisplay'
 import { CalculationResult } from 'src/features/result/types'
@@ -214,33 +215,13 @@ function App() {
                           display: 'flex',
                           flexDirection: 'column',
                           gap: 8,
-                          justifyContent: 'space-between',
                         }}>
                         <label htmlFor={`ships.${index}.type`}>Type</label>
-                        <select
-                          {...register(`${shipSide}.${index}.type`)}
-                          id={`${shipSide}.${index}.type`}
-                          style={{ display: 'flex', flexGrow: 1, maxHeight: 36 }}>
-                          <option value="interceptor">
-                            <Trans>Interceptor</Trans>
-                          </option>
-                          <option value="cruiser">
-                            <Trans>Cruiser</Trans>
-                          </option>
-                          <option value="dreadnought">
-                            <Trans>Dreadnought</Trans>
-                          </option>
-                          {shipSide === 'defenderShips' ? (
-                            <>
-                              <option value="starbase">
-                                <Trans>Starbase</Trans>
-                              </option>
-                              <option value="npc">
-                                <Trans>NPC</Trans>
-                              </option>
-                            </>
-                          ) : null}
-                        </select>
+                        <p
+                          id={`ships.${index}.type`}
+                          style={{ display: 'flex', fontWeight: '600', marginTop: 0, marginBottom: 0, flexGrow: 1, alignItems: 'center' }}>
+                          {_(shipNameToTranslation[field.type])}
+                        </p>
                       </div>
                       <NumberInput
                         control={control}
