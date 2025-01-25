@@ -20,6 +20,7 @@ import { defaultBlueprint } from 'src/features/battleForm/blueprints'
 import { basicShipsDemo, optimalDamageSplittingDemo } from 'src/features/battleForm/demos'
 import { formResolver } from 'src/features/battleForm/formResolver'
 import { getNpcBlueprint } from 'src/features/battleForm/getNpcBlueprint'
+import { getShipCountMax } from 'src/features/battleForm/getShipCountMax'
 import { getShipImage } from 'src/features/battleForm/getShipImage'
 import { shipNameToTranslation } from 'src/features/battleForm/shipNameToTranslation'
 import type { FormValues } from 'src/features/battleForm/types'
@@ -217,7 +218,14 @@ function App() {
                         <label htmlFor={`ships.${index}.type`}>Type</label>
                         <p
                           id={`ships.${index}.type`}
-                          style={{ display: 'flex', fontWeight: '600', marginTop: 0, marginBottom: 0, flexGrow: 1, alignItems: 'center' }}>
+                          style={{
+                            display: 'flex',
+                            fontWeight: '600',
+                            marginTop: 0,
+                            marginBottom: 0,
+                            flexGrow: 1,
+                            alignItems: 'center',
+                          }}>
                           {_(shipNameToTranslation[field.type])}
                         </p>
                       </div>
@@ -225,6 +233,7 @@ function App() {
                         control={control}
                         name={`${shipSide}.${index}.count`}
                         min={1}
+                        max={getShipCountMax(field.type)}
                         label={_(msg`Number`)}
                         title={_(msg`Increase number of ships`)}
                         image={getShipImage(field.type)}

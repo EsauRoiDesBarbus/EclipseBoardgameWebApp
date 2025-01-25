@@ -37,6 +37,8 @@ export const NumberInput: FunctionComponent<Props> = ({
   const { field } = useController({ name, control })
 
   const onIncrement = () => {
+    if (inputProps.max && field.value >= Number(inputProps.max)) return
+
     field.onChange((Number(field.value) || 0) + 1)
   }
 
@@ -60,7 +62,7 @@ export const NumberInput: FunctionComponent<Props> = ({
           min={0}
           {...field}
           {...inputProps}
-          style={{ margin: 3, maxWidth: BUTTON_SIZE - 6, textAlign: 'center' }}
+          style={{ margin: 3, width: BUTTON_SIZE - 6, textAlign: 'center' }}
         />
         <button
           type="button"
