@@ -47,7 +47,6 @@ function App() {
   }, [calculationResult])
 
   const {
-    register,
     control,
     handleSubmit,
     watch,
@@ -193,7 +192,6 @@ function App() {
                 </div>
               </div>
               {fields[shipSide].map((field, index) => {
-                const shipTypeValue = watch(`${shipSide}.${index}.type`)
                 return (
                   <div
                     key={field.id}
@@ -229,7 +227,7 @@ function App() {
                         min={1}
                         label={_(msg`Number`)}
                         title={_(msg`Increase number of ships`)}
-                        image={getShipImage(shipTypeValue)}
+                        image={getShipImage(field.type)}
                       />
                       <NumberInput
                         control={control}
