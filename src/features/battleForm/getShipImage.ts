@@ -18,18 +18,18 @@ export const getShipImage = (shipType: ShipTypeWithNpc) => {
       return DreadnoughtImage
     case 'starbase':
       return StarbaseImage
-    case 'ancient':
     case 'ancientAVariant':
     case 'ancientBVariant':
+    case 'ancientCVariant':
     case 'npc':
       return AncientImage
-    case 'guardian':
     case 'guardianAVariant':
     case 'guardianBVariant':
+    case 'guardianCVariant':
       return GuardianImage
-    case 'gcds':
     case 'gcdsAVariant':
     case 'gcdsBVariant':
+    case 'gcdsCVariant':
       return GcdsImage
     default:
       return InterceptorImage

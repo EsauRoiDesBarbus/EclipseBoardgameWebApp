@@ -39,15 +39,15 @@ const defenderBlueprints = [
   'starbase',
 ] as const satisfies ShipType[]
 const npcBlueprints = [
-  'ancient',
   'ancientAVariant',
   'ancientBVariant',
-  'guardian',
+  'ancientCVariant',
   'guardianAVariant',
   'guardianBVariant',
-  'gcds',
+  'guardianCVariant',
   'gcdsAVariant',
   'gcdsBVariant',
+  'gcdsCVariant',
 ] as const satisfies NpcShipType[]
 
 function App() {

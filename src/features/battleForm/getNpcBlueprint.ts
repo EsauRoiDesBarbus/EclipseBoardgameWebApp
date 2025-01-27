@@ -1,35 +1,35 @@
 import {
-  ancientBlueprint,
   ancientAVariantBlueprint,
   ancientBVariantBlueprint,
-  guardianBlueprint,
+  ancientCVariantBlueprint,
   guardianAVariantBlueprint,
   guardianBVariantBlueprint,
-  gcdsBlueprint,
+  guardianCVariantBlueprint,
   gcdsAVariantBlueprint,
   gcdsBVariantBlueprint,
+  gcdsCVariantBlueprint,
 } from './blueprints'
 import { NpcShipType, Ship } from './types'
 
 export const getNpcBlueprint = (shipType: NpcShipType): Ship => {
   switch (shipType) {
-    case 'ancient':
-      return ancientBlueprint
     case 'ancientAVariant':
       return ancientAVariantBlueprint
     case 'ancientBVariant':
       return ancientBVariantBlueprint
-    case 'guardian':
-      return guardianBlueprint
+    case 'ancientCVariant':
+      return ancientCVariantBlueprint
     case 'guardianAVariant':
       return guardianAVariantBlueprint
     case 'guardianBVariant':
       return guardianBVariantBlueprint
-    case 'gcds':
-      return gcdsBlueprint
+    case 'guardianCVariant':
+      return guardianCVariantBlueprint
     case 'gcdsAVariant':
       return gcdsAVariantBlueprint
     case 'gcdsBVariant':
       return gcdsBVariantBlueprint
+    case 'gcdsCVariant':
+      return gcdsCVariantBlueprint
   }
 }

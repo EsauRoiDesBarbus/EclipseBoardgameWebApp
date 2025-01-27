@@ -22,7 +22,7 @@ export const defaultBlueprint = {
   },
 } as const satisfies Ship
 
-export const ancientBlueprint = {
+export const ancientAVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 2,
@@ -44,7 +44,7 @@ export const ancientBlueprint = {
   },
 } as const satisfies Ship
 
-export const ancientAVariantBlueprint = {
+export const ancientBVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 1,
@@ -66,7 +66,7 @@ export const ancientAVariantBlueprint = {
   },
 } as const satisfies Ship
 
-export const ancientBVariantBlueprint = {
+export const ancientCVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 3,
@@ -88,7 +88,7 @@ export const ancientBVariantBlueprint = {
   },
 } as const satisfies Ship
 
-export const guardianBlueprint = {
+export const guardianAVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 3,
@@ -110,7 +110,7 @@ export const guardianBlueprint = {
   },
 } as const satisfies Ship
 
-export const guardianAVariantBlueprint = {
+export const guardianBVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 1,
@@ -132,7 +132,7 @@ export const guardianAVariantBlueprint = {
   },
 } as const satisfies Ship
 
-export const guardianBVariantBlueprint = {
+export const guardianCVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 2,
@@ -154,7 +154,7 @@ export const guardianBVariantBlueprint = {
   },
 } as const satisfies Ship
 
-export const gcdsBlueprint = {
+export const gcdsAVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 0,
@@ -176,7 +176,7 @@ export const gcdsBlueprint = {
   },
 } as const satisfies Ship
 
-export const gcdsAVariantBlueprint = {
+export const gcdsBVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 2,
@@ -198,7 +198,7 @@ export const gcdsAVariantBlueprint = {
   },
 } as const satisfies Ship
 
-export const gcdsBVariantBlueprint = {
+export const gcdsCVariantBlueprint = {
   count: 1,
   type: 'npc',
   initiative: 3,

@@ -8,15 +8,15 @@ type Weapon = {
 
 export type ShipType = 'interceptor' | 'cruiser' | 'dreadnought' | 'starbase' | 'npc'
 export type NpcShipType =
-  | 'ancient'
   | 'ancientAVariant'
   | 'ancientBVariant'
-  | 'guardian'
+  | 'ancientCVariant'
   | 'guardianAVariant'
   | 'guardianBVariant'
-  | 'gcds'
+  | 'guardianCVariant'
   | 'gcdsAVariant'
   | 'gcdsBVariant'
+  | 'gcdsCVariant'
 export type ShipTypeWithNpc = ShipType | NpcShipType
 
 export type Ship = {
