@@ -23,7 +23,7 @@ import { getNpcBlueprint } from 'src/features/battleForm/getNpcBlueprint'
 import { getShipCountMax } from 'src/features/battleForm/getShipCountMax'
 import { getShipImage } from 'src/features/battleForm/getShipImage'
 import { shipNameToTranslation } from 'src/features/battleForm/shipNameToTranslation'
-import type { FormValues, ShipType } from 'src/features/battleForm/types'
+import type { FormValues, ShipType, NpcShipType } from 'src/features/battleForm/types'
 import { ResultDisplay } from 'src/features/result/ResultDisplay'
 import { CalculationResult } from 'src/features/result/types'
 import { useDebounce } from 'src/utils/useDebounce'
@@ -38,10 +38,22 @@ const defenderBlueprints = [
   'dreadnought',
   'starbase',
 ] as const satisfies ShipType[]
+const npcBlueprints = [
+  'ancient',
+  'ancientAVariant',
+  'ancientBVariant',
+  'guardian',
+  'guardianAVariant',
+  'guardianBVariant',
+  'gcds',
+  'gcdsAVariant',
+  'gcdsBVariant',
+] as const satisfies NpcShipType[]
 
 function App() {
   const [calculationResult, setCalculationResult] = useState<CalculationResult | undefined>()
   const [isLoading, setIsLoading] = useState(false)
+  const [showNpcPanel, setShowNpcPanel] = useState(false)
 
   const { _ } = useLingui()
 
@@ -183,7 +195,18 @@ function App() {
                       )
                     }
                   )}
+                  {shipSide === 'defenderShips' && (
+                    <AddBlueprintButton
+                      shipType="npc"
+                      key={`add-${shipSide}-npc`}
+                      onClick={() => {
+                        setShowNpcPanel((previous) => !previous)
+                      }}
+                      disabled={fields[shipSide].length > 0} // a NPC can only fight alone
+                    />
+                  )}
                   {shipSide === 'defenderShips' &&
+                    showNpcPanel &&
                     npcBlueprints.map((shipType) => (
                       <AddBlueprintButton
                         shipType={shipType}
@@ -405,6 +428,7 @@ function App() {
               attackerShipReplace([])
               defenderShipReplace([])
               setCalculationResult(undefined)
+              setShowNpcPanel(false)
             }}>
             <Trans>Clear</Trans>
           </button>

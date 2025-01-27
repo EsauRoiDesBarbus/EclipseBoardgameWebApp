@@ -6,9 +6,9 @@ import GuardianImage from 'src/assets/ship/guardian.png'
 import InterceptorImage from 'src/assets/ship/interceptor.png'
 import StarbaseImage from 'src/assets/ship/starbase.png'
 
-import type { ShipType } from './types'
+import type { ShipTypeWithNpc } from './types'
 
-export const getShipImage = (shipType: ShipType | 'ancient' | 'guardian' | 'gcds') => {
+export const getShipImage = (shipType: ShipTypeWithNpc) => {
   switch (shipType) {
     case 'interceptor':
       return InterceptorImage
@@ -19,11 +19,17 @@ export const getShipImage = (shipType: ShipType | 'ancient' | 'guardian' | 'gcds
     case 'starbase':
       return StarbaseImage
     case 'ancient':
+    case 'ancientAVariant':
+    case 'ancientBVariant':
     case 'npc':
       return AncientImage
     case 'guardian':
+    case 'guardianAVariant':
+    case 'guardianBVariant':
       return GuardianImage
     case 'gcds':
+    case 'gcdsAVariant':
+    case 'gcdsBVariant':
       return GcdsImage
     default:
       return InterceptorImage
