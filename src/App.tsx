@@ -23,7 +23,7 @@ import { getNpcBlueprint } from 'src/features/battleForm/getNpcBlueprint'
 import { getShipCountMax } from 'src/features/battleForm/getShipCountMax'
 import { getShipImage } from 'src/features/battleForm/getShipImage'
 import { shipNameToTranslation } from 'src/features/battleForm/shipNameToTranslation'
-import type { FormValues } from 'src/features/battleForm/types'
+import type { FormValues, ShipType } from 'src/features/battleForm/types'
 import { ResultDisplay } from 'src/features/result/ResultDisplay'
 import { CalculationResult } from 'src/features/result/types'
 import { useDebounce } from 'src/utils/useDebounce'
@@ -31,9 +31,13 @@ import { useDebounce } from 'src/utils/useDebounce'
 import './App.css'
 import { Header } from './Header'
 
-const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
-const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
-const npcBlueprints = ['ancient', 'guardian', 'gcds'] as const
+const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const satisfies ShipType[]
+const defenderBlueprints = [
+  'interceptor',
+  'cruiser',
+  'dreadnought',
+  'starbase',
+] as const satisfies ShipType[]
 
 function App() {
   const [calculationResult, setCalculationResult] = useState<CalculationResult | undefined>()
