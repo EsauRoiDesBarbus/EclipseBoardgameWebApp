@@ -23,7 +23,7 @@ import { getNpcBlueprint } from 'src/features/battleForm/getNpcBlueprint'
 import { getShipCountMax } from 'src/features/battleForm/getShipCountMax'
 import { getShipImage } from 'src/features/battleForm/getShipImage'
 import { shipNameToTranslation } from 'src/features/battleForm/shipNameToTranslation'
-import type { FormValues } from 'src/features/battleForm/types'
+import type { FormValues, ShipType, NpcShipType } from 'src/features/battleForm/types'
 import { ResultDisplay } from 'src/features/result/ResultDisplay'
 import { CalculationResult } from 'src/features/result/types'
 import { useDebounce } from 'src/utils/useDebounce'
@@ -31,13 +31,29 @@ import { useDebounce } from 'src/utils/useDebounce'
 import './App.css'
 import { Header } from './Header'
 
-const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const
-const defenderBlueprints = ['interceptor', 'cruiser', 'dreadnought', 'starbase'] as const
-const npcBlueprints = ['ancient', 'guardian', 'gcds'] as const
+const attackerBlueprints = ['interceptor', 'cruiser', 'dreadnought'] as const satisfies ShipType[]
+const defenderBlueprints = [
+  'interceptor',
+  'cruiser',
+  'dreadnought',
+  'starbase',
+] as const satisfies ShipType[]
+const npcBlueprints = [
+  'ancientAVariant',
+  'ancientBVariant',
+  'ancientCVariant',
+  'guardianAVariant',
+  'guardianBVariant',
+  'guardianCVariant',
+  'gcdsAVariant',
+  'gcdsBVariant',
+  'gcdsCVariant',
+] as const satisfies NpcShipType[]
 
 function App() {
   const [calculationResult, setCalculationResult] = useState<CalculationResult | undefined>()
   const [isLoading, setIsLoading] = useState(false)
+  const [showNpcPanel, setShowNpcPanel] = useState(false)
 
   const { _ } = useLingui()
 
@@ -179,19 +195,42 @@ function App() {
                       )
                     }
                   )}
-                  {shipSide === 'defenderShips' &&
-                    npcBlueprints.map((shipType) => (
-                      <AddBlueprintButton
-                        shipType={shipType}
-                        key={`add-${shipSide}-${shipType}`}
-                        onClick={() => {
-                          appendFunctions[shipSide](getNpcBlueprint(shipType))
-                        }}
-                        disabled={fields[shipSide].length > 0} // a NPC can only fight alone
-                      />
-                    ))}
+                  {shipSide === 'defenderShips' && (
+                    <AddBlueprintButton
+                      shipType="npc"
+                      key={`add-${shipSide}-npc`}
+                      onClick={() => {
+                        setShowNpcPanel((previous) => !previous)
+                      }}
+                      disabled={fields[shipSide].length > 0} // a NPC can only fight alone
+                    />
+                  )}
                 </div>
               </div>
+
+              {shipSide === 'defenderShips' && showNpcPanel && (
+                <div
+                  className="elevation-1"
+                  style={{
+                    display: 'grid',
+                    gridGap: 16,
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+                    padding: '16px',
+                  }}>
+                  {npcBlueprints.map((shipType) => (
+                    <AddBlueprintButton
+                      shipType={shipType}
+                      key={`add-${shipSide}-${shipType}`}
+                      onClick={() => {
+                        appendFunctions[shipSide](getNpcBlueprint(shipType))
+                        setShowNpcPanel(false)
+                      }}
+                      disabled={fields[shipSide].length > 0} // a NPC can only fight alone
+                    />
+                  ))}
+                </div>
+              )}
+
               {fields[shipSide].map((field, index) => {
                 return (
                   <div
@@ -401,6 +440,7 @@ function App() {
               attackerShipReplace([])
               defenderShipReplace([])
               setCalculationResult(undefined)
+              setShowNpcPanel(false)
             }}>
             <Trans>Clear</Trans>
           </button>
