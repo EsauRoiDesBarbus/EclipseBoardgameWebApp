@@ -205,20 +205,32 @@ function App() {
                       disabled={fields[shipSide].length > 0} // a NPC can only fight alone
                     />
                   )}
-                  {shipSide === 'defenderShips' &&
-                    showNpcPanel &&
-                    npcBlueprints.map((shipType) => (
-                      <AddBlueprintButton
-                        shipType={shipType}
-                        key={`add-${shipSide}-${shipType}`}
-                        onClick={() => {
-                          appendFunctions[shipSide](getNpcBlueprint(shipType))
-                        }}
-                        disabled={fields[shipSide].length > 0} // a NPC can only fight alone
-                      />
-                    ))}
                 </div>
               </div>
+
+              {shipSide === 'defenderShips' && showNpcPanel && (
+                <div
+                  className="elevation-1"
+                  style={{
+                    display: 'grid',
+                    gridGap: 16,
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+                    padding: '16px',
+                  }}>
+                  {npcBlueprints.map((shipType) => (
+                    <AddBlueprintButton
+                      shipType={shipType}
+                      key={`add-${shipSide}-${shipType}`}
+                      onClick={() => {
+                        appendFunctions[shipSide](getNpcBlueprint(shipType))
+                        setShowNpcPanel(false)
+                      }}
+                      disabled={fields[shipSide].length > 0} // a NPC can only fight alone
+                    />
+                  ))}
+                </div>
+              )}
+
               {fields[shipSide].map((field, index) => {
                 return (
                   <div
