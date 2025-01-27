@@ -17,6 +17,7 @@ export type NpcShipType =
   | 'gcds'
   | 'gcdsAVariant'
   | 'gcdsBVariant'
+export type ShipTypeWithNpc = ShipType | NpcShipType
 
 export type Ship = {
   count: number
