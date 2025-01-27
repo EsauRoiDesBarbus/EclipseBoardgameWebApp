@@ -40,15 +40,9 @@ msgid "An error occurred. Please try again."
 msgstr ""
 
 #: src/features/battleForm/shipNameToTranslation.ts:12
-msgid "Ancient"
-msgstr ""
-
 #: src/features/battleForm/shipNameToTranslation.ts:13
-msgid "Ancient A Variant"
-msgstr ""
-
 #: src/features/battleForm/shipNameToTranslation.ts:14
-msgid "Ancient B Variant"
+msgid "Ancient"
 msgstr ""
 
 #: src/features/about/AboutModal.tsx:48
@@ -75,7 +69,7 @@ msgstr ""
 msgid "Basic ships"
 msgstr ""
 
-#: src/App.tsx:447
+#: src/App.tsx:459
 msgid "Battle!"
 msgstr ""
 
@@ -83,19 +77,19 @@ msgstr ""
 msgid "Bellman value function programming"
 msgstr ""
 
-#: src/App.tsx:328
+#: src/App.tsx:340
 msgid "Blue cannon"
 msgstr ""
 
-#: src/App.tsx:381
+#: src/App.tsx:393
 msgid "Blue missile"
 msgstr ""
 
-#: src/App.tsx:307
+#: src/App.tsx:319
 msgid "Cannons"
 msgstr ""
 
-#: src/App.tsx:433
+#: src/App.tsx:445
 msgid "Clear"
 msgstr ""
 
@@ -103,7 +97,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/App.tsx:285
+#: src/App.tsx:297
 msgid "Computer"
 msgstr ""
 
@@ -156,15 +150,9 @@ msgid "for the frontend,"
 msgstr ""
 
 #: src/features/battleForm/shipNameToTranslation.ts:18
-msgid "GCDS"
-msgstr ""
-
 #: src/features/battleForm/shipNameToTranslation.ts:19
-msgid "GCDS A Variant"
-msgstr ""
-
 #: src/features/battleForm/shipNameToTranslation.ts:20
-msgid "GCDS B Variant"
+msgid "GCDS"
 msgstr ""
 
 #: src/features/about/AboutModal.tsx:37
@@ -172,18 +160,12 @@ msgid "graph with the probability of survival of each ship,"
 msgstr ""
 
 #: src/features/battleForm/shipNameToTranslation.ts:15
+#: src/features/battleForm/shipNameToTranslation.ts:16
+#: src/features/battleForm/shipNameToTranslation.ts:17
 msgid "Guardian"
 msgstr ""
 
-#: src/features/battleForm/shipNameToTranslation.ts:16
-msgid "Guardian A Variant"
-msgstr ""
-
-#: src/features/battleForm/shipNameToTranslation.ts:17
-msgid "Guardian B Variant"
-msgstr ""
-
-#: src/App.tsx:278
+#: src/App.tsx:290
 msgid "Hull"
 msgstr ""
 
@@ -191,63 +173,63 @@ msgstr ""
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr ""
 
-#: src/App.tsx:330
+#: src/App.tsx:342
 msgid "Increase blue cannon"
 msgstr ""
 
-#: src/App.tsx:383
+#: src/App.tsx:395
 msgid "Increase blue missile"
 msgstr ""
 
-#: src/App.tsx:286
+#: src/App.tsx:298
 msgid "Increase computer"
 msgstr ""
 
-#: src/App.tsx:279
+#: src/App.tsx:291
 msgid "Increase hull"
 msgstr ""
 
-#: src/App.tsx:272
+#: src/App.tsx:284
 msgid "Increase initiative"
 msgstr ""
 
-#: src/App.tsx:265
+#: src/App.tsx:277
 msgid "Increase number of ships"
 msgstr ""
 
-#: src/App.tsx:322
+#: src/App.tsx:334
 msgid "Increase orange cannon"
 msgstr ""
 
-#: src/App.tsx:375
+#: src/App.tsx:387
 msgid "Increase orange missile"
 msgstr ""
 
-#: src/App.tsx:338
+#: src/App.tsx:350
 msgid "Increase red cannon"
 msgstr ""
 
-#: src/App.tsx:391
+#: src/App.tsx:403
 msgid "Increase red missile"
 msgstr ""
 
-#: src/App.tsx:346
+#: src/App.tsx:358
 msgid "Increase rift cannon"
 msgstr ""
 
-#: src/App.tsx:293
+#: src/App.tsx:305
 msgid "Increase shield"
 msgstr ""
 
-#: src/App.tsx:314
+#: src/App.tsx:326
 msgid "Increase yellow cannon"
 msgstr ""
 
-#: src/App.tsx:367
+#: src/App.tsx:379
 msgid "Increase yellow missile"
 msgstr ""
 
-#: src/App.tsx:271
+#: src/App.tsx:283
 msgid "Initiative"
 msgstr ""
 
@@ -267,7 +249,7 @@ msgstr ""
 msgid "Load optimal damage splitting demo"
 msgstr ""
 
-#: src/App.tsx:360
+#: src/App.tsx:372
 msgid "Missiles"
 msgstr ""
 
@@ -283,7 +265,7 @@ msgstr ""
 msgid "NPC"
 msgstr ""
 
-#: src/App.tsx:264
+#: src/App.tsx:276
 msgid "Number"
 msgstr ""
 
@@ -295,23 +277,23 @@ msgstr ""
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr ""
 
-#: src/App.tsx:320
+#: src/App.tsx:332
 msgid "Orange cannon"
 msgstr ""
 
-#: src/App.tsx:373
+#: src/App.tsx:385
 msgid "Orange missile"
 msgstr ""
 
-#: src/App.tsx:336
+#: src/App.tsx:348
 msgid "Red cannon"
 msgstr ""
 
-#: src/App.tsx:389
+#: src/App.tsx:401
 msgid "Red missile"
 msgstr ""
 
-#: src/App.tsx:397
+#: src/App.tsx:409
 msgid "Remove ship"
 msgstr ""
 
@@ -319,11 +301,11 @@ msgstr ""
 msgid "Results"
 msgstr ""
 
-#: src/App.tsx:344
+#: src/App.tsx:356
 msgid "Rift cannon"
 msgstr ""
 
-#: src/App.tsx:292
+#: src/App.tsx:304
 msgid "Shield"
 msgstr ""
 
@@ -335,10 +317,10 @@ msgstr ""
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
 msgstr ""
 
-#: src/App.tsx:312
+#: src/App.tsx:324
 msgid "Yellow cannon"
 msgstr ""
 
-#: src/App.tsx:365
+#: src/App.tsx:377
 msgid "Yellow missile"
 msgstr ""

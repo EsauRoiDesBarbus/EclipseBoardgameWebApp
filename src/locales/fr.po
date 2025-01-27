@@ -40,16 +40,10 @@ msgid "An error occurred. Please try again."
 msgstr "Une erreur est survenue. Merci de réessayer plus tard."
 
 #: src/features/battleForm/shipNameToTranslation.ts:12
+#: src/features/battleForm/shipNameToTranslation.ts:13
+#: src/features/battleForm/shipNameToTranslation.ts:14
 msgid "Ancient"
 msgstr "Ancien"
-
-#: src/features/battleForm/shipNameToTranslation.ts:13
-msgid "Ancient A Variant"
-msgstr "Ancien - Variante A"
-
-#: src/features/battleForm/shipNameToTranslation.ts:14
-msgid "Ancient B Variant"
-msgstr "Ancien - Variante B"
 
 #: src/features/about/AboutModal.tsx:48
 msgid "Any question, suggestion, bug report, use the feedback button."
@@ -75,7 +69,7 @@ msgstr "Chances de victoire de l’attaquant :"
 msgid "Basic ships"
 msgstr "Vaisseaux simples"
 
-#: src/App.tsx:447
+#: src/App.tsx:459
 msgid "Battle!"
 msgstr "Combattre !"
 
@@ -83,19 +77,19 @@ msgstr "Combattre !"
 msgid "Bellman value function programming"
 msgstr "programmation par fonction de valeur de Bellman"
 
-#: src/App.tsx:328
+#: src/App.tsx:340
 msgid "Blue cannon"
 msgstr "Canon bleu"
 
-#: src/App.tsx:381
+#: src/App.tsx:393
 msgid "Blue missile"
 msgstr "Missile bleu"
 
-#: src/App.tsx:307
+#: src/App.tsx:319
 msgid "Cannons"
 msgstr "Canons"
 
-#: src/App.tsx:433
+#: src/App.tsx:445
 msgid "Clear"
 msgstr "Effacer"
 
@@ -103,7 +97,7 @@ msgstr "Effacer"
 msgid "Close"
 msgstr "Fermer"
 
-#: src/App.tsx:285
+#: src/App.tsx:297
 msgid "Computer"
 msgstr "Ordinateur"
 
@@ -156,34 +150,22 @@ msgid "for the frontend,"
 msgstr "pour la partie frontend,"
 
 #: src/features/battleForm/shipNameToTranslation.ts:18
+#: src/features/battleForm/shipNameToTranslation.ts:19
+#: src/features/battleForm/shipNameToTranslation.ts:20
 msgid "GCDS"
 msgstr "SDCG"
-
-#: src/features/battleForm/shipNameToTranslation.ts:19
-msgid "GCDS A Variant"
-msgstr "SDCG - Variante A"
-
-#: src/features/battleForm/shipNameToTranslation.ts:20
-msgid "GCDS B Variant"
-msgstr "SDCG - Variante B"
 
 #: src/features/about/AboutModal.tsx:37
 msgid "graph with the probability of survival of each ship,"
 msgstr "un graphique avec la probabilité de survie de chaque vaisseau,"
 
 #: src/features/battleForm/shipNameToTranslation.ts:15
+#: src/features/battleForm/shipNameToTranslation.ts:16
+#: src/features/battleForm/shipNameToTranslation.ts:17
 msgid "Guardian"
 msgstr "Gardien"
 
-#: src/features/battleForm/shipNameToTranslation.ts:16
-msgid "Guardian A Variant"
-msgstr "Gardien - Variante A"
-
-#: src/features/battleForm/shipNameToTranslation.ts:17
-msgid "Guardian B Variant"
-msgstr "Gardien - Variante B"
-
-#: src/App.tsx:278
+#: src/App.tsx:290
 msgid "Hull"
 msgstr "Coque"
 
@@ -191,63 +173,63 @@ msgstr "Coque"
 msgid "I don’t use random simulations, I use advanced tools of decision theory known as"
 msgstr "Je ne fais pas de simulations aléatoires, j’utilise des outils avancés en théorie des jeux, connus sous le nom de"
 
-#: src/App.tsx:330
+#: src/App.tsx:342
 msgid "Increase blue cannon"
 msgstr "Ajouter un canon bleu"
 
-#: src/App.tsx:383
+#: src/App.tsx:395
 msgid "Increase blue missile"
 msgstr "Ajouter un missile bleu"
 
-#: src/App.tsx:286
+#: src/App.tsx:298
 msgid "Increase computer"
 msgstr "Ajouter un ordinateur"
 
-#: src/App.tsx:279
+#: src/App.tsx:291
 msgid "Increase hull"
 msgstr "Ajouter une coque"
 
-#: src/App.tsx:272
+#: src/App.tsx:284
 msgid "Increase initiative"
 msgstr "Ajouter un d’initiative"
 
-#: src/App.tsx:265
+#: src/App.tsx:277
 msgid "Increase number of ships"
 msgstr "Ajouter un vaisseau"
 
-#: src/App.tsx:322
+#: src/App.tsx:334
 msgid "Increase orange cannon"
 msgstr "Ajouter un canon orange"
 
-#: src/App.tsx:375
+#: src/App.tsx:387
 msgid "Increase orange missile"
 msgstr "Ajouter un missile orange"
 
-#: src/App.tsx:338
+#: src/App.tsx:350
 msgid "Increase red cannon"
 msgstr "Ajouter un canon rouge"
 
-#: src/App.tsx:391
+#: src/App.tsx:403
 msgid "Increase red missile"
 msgstr "Ajouter un missile rouge"
 
-#: src/App.tsx:346
+#: src/App.tsx:358
 msgid "Increase rift cannon"
 msgstr "Ajouter un canon rift"
 
-#: src/App.tsx:293
+#: src/App.tsx:305
 msgid "Increase shield"
 msgstr "Ajouter un bouclier"
 
-#: src/App.tsx:314
+#: src/App.tsx:326
 msgid "Increase yellow cannon"
 msgstr "Ajouter un canon jaune"
 
-#: src/App.tsx:367
+#: src/App.tsx:379
 msgid "Increase yellow missile"
 msgstr "Ajouter un missile jaune"
 
-#: src/App.tsx:271
+#: src/App.tsx:283
 msgid "Initiative"
 msgstr "Initiative"
 
@@ -267,7 +249,7 @@ msgstr "Charger la démo Vaisseaux simples"
 msgid "Load optimal damage splitting demo"
 msgstr "Charger la démo Répartition optimale des dégâts"
 
-#: src/App.tsx:360
+#: src/App.tsx:372
 msgid "Missiles"
 msgstr "Missiles"
 
@@ -283,7 +265,7 @@ msgstr "Vaisseau en défense manquant."
 msgid "NPC"
 msgstr "PNJ"
 
-#: src/App.tsx:264
+#: src/App.tsx:276
 msgid "Number"
 msgstr "Nombre"
 
@@ -295,23 +277,23 @@ msgstr "Répartition optimale des dégâts"
 msgid "optimal targeting: player ships deal damage in the way that maximizes their chance of winning, like a human player (non player ships follow non player targeting rules), check out the <0>Optimal damage splitting</0> demo for a tricky battle where damage needs to be split between 2 ships."
 msgstr "du ciblage optimal : les vaisseaux des joueurs infligent des dégâts de manière à maximiser leurs chances de gagner, comme un joueur humain (les vaisseaux non-joueurs suivent les règles de ciblage des non-joueurs), regarde la démo <0>Répartition optimale des dégâts</0> pour une bataille délicate, où les dégâts doivent être répartis entre 2 vaisseaux."
 
-#: src/App.tsx:320
+#: src/App.tsx:332
 msgid "Orange cannon"
 msgstr "Canon orange"
 
-#: src/App.tsx:373
+#: src/App.tsx:385
 msgid "Orange missile"
 msgstr "Missile orange"
 
-#: src/App.tsx:336
+#: src/App.tsx:348
 msgid "Red cannon"
 msgstr "Canon rouge"
 
-#: src/App.tsx:389
+#: src/App.tsx:401
 msgid "Red missile"
 msgstr "Missile rouge"
 
-#: src/App.tsx:397
+#: src/App.tsx:409
 msgid "Remove ship"
 msgstr "Retirer le vaisseau"
 
@@ -319,11 +301,11 @@ msgstr "Retirer le vaisseau"
 msgid "Results"
 msgstr "Résultats"
 
-#: src/App.tsx:344
+#: src/App.tsx:356
 msgid "Rift cannon"
 msgstr "Canon rift"
 
-#: src/App.tsx:292
+#: src/App.tsx:304
 msgid "Shield"
 msgstr "Bouclier"
 
@@ -335,10 +317,10 @@ msgstr "Base stellaire"
 msgid "to compute win chance of <0>Eclipse</0> battles, with:"
 msgstr "pour calculer les chances de victoire de batailles d’<0>Eclipse</0>, avec :"
 
-#: src/App.tsx:312
+#: src/App.tsx:324
 msgid "Yellow cannon"
 msgstr "Canon jaune"
 
-#: src/App.tsx:365
+#: src/App.tsx:377
 msgid "Yellow missile"
 msgstr "Missile jaune"
