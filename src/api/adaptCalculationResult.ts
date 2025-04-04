@@ -25,9 +25,10 @@ const adaptSideSurvivalChance = (
   survivalChances.reduce((adaptedChances, shipModel, i) => {
     shipModel.forEach((survivalChance, j) => {
       adaptedChances.push({
-        label: getSurvivalChanceLabel(side, shipTypes[i], j),
         value: survivalChance,
         side,
+        shipType: shipTypes[i],
+        survivedNumber: j + 1,
       })
     })
     return adaptedChances
